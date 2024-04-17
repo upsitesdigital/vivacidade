@@ -1,0 +1,122 @@
+/*======================================
+  Card event
+======================================*/
+
+.card-event-featured {
+  box-shadow: 0 10px 14px 0 rgba($color-black, 0.1);
+  border-radius: 8px;
+  background: #FFFFFF;
+  overflow: hidden;
+  .image {
+    width: 100%;
+    height: 238px;
+    background-color: black;
+    position: relative;
+    .cat {
+      position: absolute;
+      bottom: -13px;
+      left: 39px;
+      font-family: $font-alt;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 16.8px;
+      text-align: left;
+      color: $color-white;
+      padding: 10px 16px;
+      background: #F07E04;
+      border-radius: 100px;
+    }
+  }
+  .content {
+    padding: 32px 34px 26px 40px;
+    .head {
+      @include columns( $quant: 1fr 35px, $gutter: 105px, $align: center, $template: '');
+      border-bottom: 1px solid #EAEAEA;
+      padding: 0 0 15px 0;
+      h3 {
+        font-family: $font-alt;
+        font-size: 18px;
+        font-weight: 800;
+        line-height: 21.6px;
+        text-align: left;
+        color: $color-black;
+      }
+      .link {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        background: $color-red;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .icon {
+          transform: rotate(-90deg);
+          width: 15px;
+          height: 24px;
+          stroke: $color-white;
+          stroke-width: 2px;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+        }
+      }
+    }
+    .infos {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0 0 0;
+      span {
+        font-family: $font-main;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 16.8px;
+        text-align: left;
+        color: #767676;
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        .flag {
+          width: 20px;
+          height: 20px;
+          fill: transparent;
+          stroke: #767676;
+          stroke-width: 1.5px;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+        }
+        .calendar {
+          width: 20px;
+          height: 20px;
+          fill: transparent;
+          stroke: #767676;
+          stroke-width: 1.5px;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+        }
+        .arrow {
+          width: 12px;
+          height: 20px;
+          margin: 0 3px;
+          transform: rotate(-90deg);
+          fill: transparent;
+          stroke: #767676;
+          stroke-width: 1.5px;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+        }
+      }
+    }
+  }
+}
+
+@include breakpoint2($min:xl, $max:'') {}
+
+@include breakpoint2($min:lg, $max:xl) {}
+
+@include breakpoint2($min:md, $max:lg) {}
+
+@include breakpoint2($min:sm, $max:md) {}
+
+@include breakpoint2($min:xs, $max:sm) {}
+
+@include breakpoint2($min:'', $max:xs) {}

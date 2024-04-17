@@ -1,0 +1,62 @@
+/*======================================
+  Card event
+======================================*/
+
+.card-blog-featured {
+  box-shadow: 0 10px 14px 0 rgba($color-black, 0.1);
+  border-radius: 8px;
+  background: #FFFFFF;
+  overflow: hidden;
+  max-width: 551px;
+  .image {
+    width: 100%;
+    height: 238px;
+    background-color: black;
+    position: relative;
+  }
+  .content {
+    padding: 32px 34px 33px 40px;
+    .head {
+      @include columns( $quant: 1fr 35px, $gutter: 105px, $align: center, $template: '');
+      padding: 0 0 15px 0;
+      h3 {
+        font-family: $font-alt;
+        font-size: 18px;
+        font-weight: 800;
+        line-height: 21.6px;
+        text-align: left;
+        color: $color-black;
+      }
+      .link {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        background: $color-red;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .icon {
+          transform: rotate(-90deg);
+          width: 15px;
+          height: 24px;
+          stroke: $color-white;
+          stroke-width: 2px;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+        }
+      }
+    }
+  }
+}
+
+@include breakpoint2($min:xl, $max:'') {}
+
+@include breakpoint2($min:lg, $max:xl) {}
+
+@include breakpoint2($min:md, $max:lg) {}
+
+@include breakpoint2($min:sm, $max:md) {}
+
+@include breakpoint2($min:xs, $max:sm) {}
+
+@include breakpoint2($min:'', $max:xs) {}
