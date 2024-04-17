@@ -8,6 +8,7 @@
   background: #FFFFFF;
   overflow: hidden;
   max-width: 551px;
+  @include animate($time: 0.3s);
   .image {
     width: 100%;
     height: 238px;
@@ -41,9 +42,11 @@
         height: 35px;
         border-radius: 50%;
         background: $color-red;
+        border: 1px solid $color-red;
         display: flex;
         align-items: center;
         justify-content: center;
+        @include animate($time: 0.3s);
         .icon {
           transform: rotate(-90deg);
           width: 15px;
@@ -52,9 +55,19 @@
           stroke-width: 2px;
           stroke-linecap: round;
           stroke-linejoin: round;
+          @include animate($time: 0.3s);
+        }
+        &:hover {
+          background: $color-white;
+          .icon {
+            stroke: $color-red;
+          }
         }
       }
     }
+  }
+  &:hover {
+    box-shadow: 0 10px 14px 0 rgba($color-black, 0.2);
   }
 }
 
