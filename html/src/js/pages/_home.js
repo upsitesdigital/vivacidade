@@ -10,7 +10,6 @@ export default function() {
   });
 
   $(document).on('click', 'header .grid .menu .search,header .grid .menu .box-search .close', function() {
-    console.log('oi');
     var $target = $(this).closest('.menu').find('.box-search');
     $target.toggleClass('act');
     return false;
