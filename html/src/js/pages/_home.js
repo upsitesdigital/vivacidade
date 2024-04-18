@@ -16,7 +16,7 @@ export default function() {
   });
 
   $.getJSON("https://api.ipify.org/?format=json", function(e) {
-    $.getJSON("http://www.geoplugin.net/json.gp?ip=" + e.ip, function(e) {
+    $.getJSON("//www.geoplugin.net/json.gp?ip=" + e.ip, function(e) {
       //console.log(e);
       console.log(e.geoplugin_city);
       console.log(e.geoplugin_region);
