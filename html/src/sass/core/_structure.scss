@@ -3,7 +3,7 @@
 ======================================*/
 
 body {
-  // background: url(../images/bg.png) top center no-repeat;
+  //background: url(../images/bg.png) center 5px no-repeat;
 }
 
 // header
@@ -26,23 +26,19 @@ header {
       }
     }
     .menu {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      @include flex($align: center, $justify: space-between);
       position: relative;
       nav {
         padding: 0 0 0 32px;
         ul {
-          display: flex;
-          align-items: center;
-          gap: 44.1px;
+          @include flex($align: center, $gap: 44.1px);
           li {
             padding: 38px 0;
             position: relative;
             &::after {
               content: '';
               width: 0;
-              height: 5px;
+              height: 3px;
               background-color: $color-red;
               position: absolute;
               bottom: 0;
@@ -50,15 +46,8 @@ header {
               @include animate($time: 0.3s);
             }
             a {
-              font-family: $font-alt;
-              font-size: 14px;
-              font-weight: 600;
-              line-height: 20px;
-              text-align: left;
-              color: #030303;
-              display: flex;
-              align-items: center;
-              gap: 3px;
+              @include font($family: $font-alt, $size: 14px, $weight: 600, $height: 20px, $color: #030303);
+              @include flex($align: center, $gap: 3px);
             }
             &.has-child {
               a {
@@ -107,12 +96,7 @@ header {
                   height: 2px;
                 }
                 a {
-                  font-family: $font-alt;
-                  font-size: 16px;
-                  font-weight: 700;
-                  line-height: 19.2px;
-                  text-align: left;
-                  color: $color-black;
+                  @include font($family: $font-alt, $size: 16px, $weight: 700, $height: 19.2px);
                   @include columns( $quant: 24px 1fr, $gutter: 23px, $align: center, $template: '');
                   span {
                     display: block;
@@ -173,12 +157,7 @@ header {
         padding: 10px 20px;
         input {
           width: 100%;
-          font-family: $font-alt;
-          font-size: 18px;
-          font-weight: 500;
-          line-height: 50px;
-          text-align: left;
-          color: $color-white;
+          @include font($family: $font-alt, $size: 18px, $weight: 500, $height: 50px, $color: $color-white);
           background: transparent;
           outline: none;
           border: none;
@@ -234,12 +213,7 @@ header {
           stroke-linejoin: round;
         }
         span {
-          font-family: $font-alt;
-          font-size: 12px;
-          font-weight: 700;
-          line-height: 14.4px;
-          text-align: left;
-          color: #030303;
+          @include font($family: $font-alt, $size: 12px, $weight: 700, $height: 14.4px, $color: #030303);
         }
         .icon {
           width: 13px;
@@ -313,21 +287,11 @@ footer {
     .title {
       padding: 60px 0 0 0;
       h4 {
-        font-family: $font-alt;
-        font-size: 32px;
-        font-weight: 800;
-        line-height: 38.4px;
-        text-align: left;
-        color: $color-black;
+        @include font($family: $font-alt, $size: 32px, $weight: 800, $height: 38.4px);
         padding: 0 0 16px 0;
       }
       p {
-        font-family: $font-alt;
-        font-size: 16px;
-        font-weight: 500;
-        line-height: 22.4px;
-        text-align: left;
-        color: #626262;
+        @include font($family: $font-alt, $size: 16px, $weight: 500, $height: 22.4px, $color: #626262);
       }
     }
     .form {
@@ -336,12 +300,7 @@ footer {
         @include columns( $quant: 1fr 96px, $gutter: 7px, $align: end, $template: '');
         label {
           .label {
-            font-family: $font-alt;
-            font-size: 14px;
-            font-weight: 700;
-            line-height: 19.6px;
-            text-align: left;
-            color: $color-black;
+            @include font($family: $font-alt, $size: 14px, $weight: 700, $height: 19.6px);
             display: block;
             padding: 0 0 17px 27px;
           }
@@ -351,12 +310,7 @@ footer {
             border-radius: 60px;
             border: 1px solid #CDCDCD;
             padding: 0 0 0 26px;
-            font-family: $font-alt;
-            font-size: 14px;
-            font-weight: 400;
-            line-height: 19.6px;
-            text-align: left;
-            color: #ADADAD;
+            @include font($family: $font-alt, $size: 14px, $weight: 400, $height: 19.6px, $color: #ADADAD);
           }
         }
         .submit {
@@ -366,12 +320,7 @@ footer {
             border-radius: 60px;
             border: 1px solid $color-red;
             background: $color-red;
-            font-family: $font-alt;
-            font-size: 14px;
-            font-weight: 700;
-            line-height: 19.6px;
-            text-align: center;
-            color: $color-white;
+            @include font($family: $font-alt, $size: 14px, $weight: 700, $height: 100%, $align: center, $color: $color-white);
             @include animate($time: 0.3s);
             &:hover {
               background: $color-white;
@@ -410,33 +359,18 @@ footer {
         }
       }
       h5 {
-        font-family: $font-alt;
-        font-size: 14px;
-        font-weight: 600;
-        line-height: 16.8px;
-        text-align: left;
-        color: $color-black;
+        @include font($family: $font-alt, $size: 14px, $weight: 600, $height: 16.8px);
         padding: 6px 0 16px 0;
       }
       p {
-        font-family: $font-main;
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 22.4px;
-        text-align: left;
-        color: $color-black;
+        @include font($size: 14px, $height: 22.4px);
       }
       .list {
         margin: -1px 0 0 0;
         li {
           padding: 7px 0 8px 0;
           a {
-            font-family: $font-alt;
-            font-size: 14px;
-            font-weight: 400;
-            line-height: 16.8px;
-            text-align: left;
-            color: $color-black;
+            @include font($family: $font-alt, $size: 14px, $weight: 400, $height: 16.8px);
             &:hover {
               color: $color-white;
             }
@@ -460,13 +394,8 @@ footer {
       justify-content: space-between;
       a,
       p {
-        font-family: $font-main;
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 22.4px;
+        @include font($size: 14px, $weight: 400, $height: 22.4px, $color: $color-white);
         letter-spacing: 0.01em;
-        text-align: left;
-        color: $color-white;
       }
       a {
         &:hover {

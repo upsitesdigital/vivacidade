@@ -85,6 +85,26 @@
   *display: inline;
 }
 
+@mixin flex($align: 'center', $justify: '', $gap: '') {
+  display: flex;
+  align-items: $align;
+  @if ($justify!='') {
+    justify-content: $justify;
+  }
+  @if ($gap!='') {
+    gap: $gap;
+  }
+}
+
+@mixin font($family: $font-main, $size: $font-size, $weight: 400, $height: 120%, $align: left, $color: $color-black) {
+  font-family: $family;
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $height;
+  text-align: $align;
+  color: $color;
+}
+
 // Mixin to create a grid
 @mixin columns($quant: repeat(12, 1fr), $gutter: 20, $align: top, $template: '') {
   display: grid;

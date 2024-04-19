@@ -15,6 +15,26 @@ export default function() {
     return false;
   });
 
+  $(document).on('click', '.list-events .grid .sidebar .box-filter .more-options', function() {
+    console.log('click');
+    var $target = $(this).closest('.box-filter').find('.box li.extra-field').get();
+    var time = 5;
+    console.log($(this).hasClass('act'));
+    if ($(this).hasClass('act')) {
+      $target.reverse();
+    }
+    $(this).toggleClass('act');
+    $.each($target, function(index) {
+      var $this = $(this);
+      setTimeout(function() {
+        console.log('hide');
+        $this.toggleClass('hide');
+      }, time);
+      time += 100;
+    });
+    return false;
+  });
+
   $.getJSON("https://api.ipify.org/?format=json", function(e) {
     $.getJSON("//www.geoplugin.net/json.gp?ip=" + e.ip, function(e) {
       //console.log(e);
