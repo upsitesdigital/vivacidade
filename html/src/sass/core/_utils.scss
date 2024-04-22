@@ -85,9 +85,17 @@
   *display: inline;
 }
 
-@mixin flex($align: 'center', $justify: '', $gap: '') {
-  display: flex;
+@mixin flex($type: '', $direction: '', $align: 'center', $justify: '', $gap: '') {
+  @if ($type!='') {
+    display: $type + '-flex';
+  }
+  @else {
+    display: flex;
+  }
   align-items: $align;
+  @if ($direction!='') {
+    flex-direction: $direction;
+  }
   @if ($justify!='') {
     justify-content: $justify;
   }

@@ -83,4 +83,18 @@ export default function() {
     adaptiveHeight: true,
     centerPadding: 0
   });
+
+  const $photogallery = $('.slide-photo-gallery .slide');
+  $photogallery.slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    dots: false,
+    arrows: true,
+    prevArrow: $('.slide-photo-gallery .btn.btn-prev'),
+    nextArrow: $('.slide-photo-gallery .btn.btn-next'),
+    centerMode: false,
+    focusOnSelect: true,
+    adaptiveHeight: true,
+    centerPadding: 0
+  });
 }

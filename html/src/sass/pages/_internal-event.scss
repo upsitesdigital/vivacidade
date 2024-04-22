@@ -1,0 +1,528 @@
+/*======================================
+  Event internal
+======================================*/
+
+.internal-event {
+  padding: 60px 0 0 0;
+  position: relative;
+  &:before {
+    content: '';
+    width: 100%;
+    height: 53%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #F9F9F9;
+  }
+  .container {
+    position: relative;
+  }
+  .cat-list {
+    @include flex($align: center, $justify: start, $gap: 23px);
+    .back {
+      @include flex($align: center, $justify: start, $gap: 4px);
+      @include font($family: $font-alt, $size: 12px, $weight: 700, $height: 14.4px, $color: $color-red);
+      .icon {
+        width: 8px;
+        height: 14px;
+        margin: 0;
+        stroke: $color-red;
+        stroke-width: 3px;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        transform: rotate(90deg);
+      }
+    }
+    .cat {
+      @include font($family: $font-alt, $size: 14px, $weight: 700, $height: 16.8px, $color: $color-white);
+      padding: 10px 16px;
+      background-color: $color-red;
+      border-radius: 30px;
+    }
+  }
+  .grid {
+    @include columns( $quant: 2.08fr 1fr, $gutter: 41px 27px, $align: stretch, $template: '');
+    padding: 16px 0 0 0;
+    .title {
+      padding: 0 25px 0 0;
+      h1 {
+        @include font($family: $font-alt, $size: 36px, $weight: 800, $height: 43.2px);
+        padding: 0 0 24px 0;
+      }
+      p {
+        @include font($size: 16px, $height: 22.4px, $color: rgba($color-black, 0.7));
+      }
+    }
+    .share {
+      @include flex($direction: column, $align: end, $justify: space-between, $gap: 28px);
+      padding: 18px 6px 0 0;
+      .top {
+        @include flex($align: start, $justify: end, $gap: 28px);
+      }
+      h4 {
+        @include font($size: 16px, $height: 24px, $color: rgba($color-black, 0.7));
+      }
+      ul {
+        @include flex($align: center, $justify: start, $gap: 11px);
+        li {
+          a {
+            .whatsup {
+              width: 24px;
+              height: 24px;
+              margin: 0;
+              fill: transparent;
+              stroke: $color-black;
+              stroke-width: 1.5px;
+              stroke-linecap: round;
+              stroke-linejoin: round;
+            }
+            .facebook {
+              width: 24px;
+              height: 24px;
+              margin: 0;
+              fill: $color-black;
+            }
+            .mail {
+              width: 24px;
+              height: 24px;
+              margin: 0;
+              fill: transparent;
+              stroke: $color-black;
+              stroke-width: 1.5px;
+              stroke-linecap: round;
+              stroke-linejoin: round;
+            }
+          }
+        }
+      }
+      .stamp {
+        @include font($family: $font-alt, $size: 14px, $weight: 700, $height: 16.8px);
+        @include flex($align: center, $gap: 8px);
+        padding: 11px 10px;
+        border-radius: 30px;
+        background-color: #FFECD8;
+        .icon {
+          width: 20px;
+          height: 20px;
+          fill: transparent;
+          stroke: $color-black;
+          stroke-width: 2px;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+        }
+      }
+    }
+    .image {
+      overflow: hidden;
+      border-radius: 8px;
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .establishment-details {
+      border-radius: 8px;
+      padding: 30px 25px 0 25px;
+      border: 1px solid #D7D7D7;
+      box-shadow: 0 2px 0 0 #0000001A;
+      h2 {
+        @include font($family: $font-alt, $size: 20px, $weight: 800, $height: 24px);
+        padding: 0 0 17px 0;
+      }
+      ul {
+        li {
+          padding: 19px 0 18px 0;
+          border-bottom: 1px solid #D7D7D7;
+          @include columns( $quant: 42px 1fr, $gutter: 0, $align: start, $template: '');
+          .icon {
+            .flag,
+            .clock,
+            .file {
+              width: 20px;
+              height: 20px;
+              margin: 0;
+              fill: transparent;
+              stroke: $color-black;
+              stroke-width: 2px;
+              stroke-linecap: round;
+              stroke-linejoin: round;
+            }
+          }
+          .content {
+            h3 {
+              @include font($family: $font-alt, $size: 14px, $weight: 800, $height: 16.8px);
+              padding: 2px 0;
+            }
+            p {
+              @include font($family: $font-alt, $size: 14px, $weight: 600, $height: 22.4px, $color: rgba($color-black, 0.7));
+              padding: 0 2px 0 0;
+              a {
+                text-decoration: underline;
+              }
+            }
+            .link-map {
+              @include flex($type: inline, $align: center, $justify: start, $gap: 4px);
+              @include font($family: $font-alt, $size: 12px, $weight: 700, $height: 14.4px, $color: $color-red);
+              .icon {
+                width: 8px;
+                height: 14px;
+                margin: 0;
+                stroke: $color-red;
+                stroke-width: 3px;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+                transform: rotate(-90deg);
+              }
+            }
+          }
+          &:last-child {
+            border-bottom: none;
+          }
+        }
+      }
+    }
+    .more-details {
+      padding: 44px 40px 47px 44px;
+      border-radius: 8px;
+      border: 1px solid #D7D7D7;
+      box-shadow: 0 2px 0 0 #0000001A;
+      h2 {
+        @include font($family: $font-alt, $size: 20px, $weight: 800, $height: 24px);
+        padding: 0 0 14px 0;
+      }
+      p {
+        @include font($size: 16px, $height: 22.4px, $color: rgba($color-black, 0.7));
+        padding: 0 0 21px 0;
+      }
+      .tags {
+        border-top: 1px solid #D7D7D7;
+        margin: 25px 0 0 0;
+        padding: 45px 0 0 0;
+        ul {
+          display: inline-block;
+          margin: 0 -11px;
+          font-size: 0;
+          li {
+            @include font($family: $font-alt, $size: 14px, $weight: 700, $height: 16.8px);
+            @include flex($type: inline, $align: center, $gap: 8px);
+            padding: 11px 10px;
+            margin: 0 10px;
+            border-radius: 30px;
+            background-color: #F0F0F0;
+            .icon {
+              width: 20px;
+              height: 20px;
+              fill: transparent;
+              stroke: $color-black;
+              stroke-width: 2px;
+              stroke-linecap: round;
+              stroke-linejoin: round;
+            }
+          }
+        }
+      }
+    }
+    .contact-details {
+      border-radius: 8px;
+      padding: 44px 25px 0 29px;
+      border: 1px solid #D7D7D7;
+      box-shadow: 0 2px 0 0 #0000001A;
+      h2 {
+        @include font($family: $font-alt, $size: 20px, $weight: 800, $height: 24px);
+        padding: 0 0 17px 0;
+      }
+      ul {
+        li {
+          padding: 19px 0 18px 0;
+          border-bottom: 1px solid #D7D7D7;
+          @include columns( $quant: 42px 1fr, $gutter: 0, $align: start, $template: '');
+          .icon {
+            .phone,
+            .pointer,
+            .thumb-up {
+              width: 20px;
+              height: 20px;
+              margin: 0;
+              fill: transparent;
+              stroke: $color-black;
+              stroke-width: 2px;
+              stroke-linecap: round;
+              stroke-linejoin: round;
+            }
+          }
+          .content {
+            h3 {
+              @include font($family: $font-alt, $size: 14px, $weight: 800, $height: 16.8px);
+              padding: 2px 0;
+            }
+            p {
+              @include font($family: $font-alt, $size: 14px, $weight: 600, $height: 22.4px, $color: rgba($color-black, 0.7));
+              padding: 0 2px 0 0;
+              a {
+                text-decoration: underline;
+              }
+            }
+            .link-map {
+              @include flex($type: inline, $align: center, $justify: start, $gap: 4px);
+              @include font($family: $font-alt, $size: 12px, $weight: 700, $height: 14.4px, $color: $color-red);
+              .icon {
+                width: 8px;
+                height: 14px;
+                margin: 0;
+                stroke: $color-red;
+                stroke-width: 3px;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+                transform: rotate(-90deg);
+              }
+            }
+          }
+          &:last-child {
+            border-bottom: none;
+          }
+        }
+      }
+    }
+  }
+  .banner-ticket {
+    @include flex($align: center, $justify: center, $gap: 30px);
+    margin: 25px 0 0 0;
+    padding: 22px 0;
+    background-color: #F0F0F0;
+    border-radius: 8px;
+    position: relative;
+    &::before {
+      content: '';
+      width: 138px;
+      height: 87px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background: url(../img/banner-ticket-before.png) 0 0 no-repeat;
+      display: block;
+    }
+    &::after {
+      content: '';
+      width: 138px;
+      height: 87px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: url(../img/banner-ticket-after.png) 0 0 no-repeat;
+      display: block;
+    }
+    h4 {
+      @include font($family: $font-alt, $size: 20px, $weight: 800, $height: 24px);
+      @include flex($align: center, $justify: start, $gap: 16px);
+      .ticket {
+        width: 28px;
+        height: 28px;
+        fill: transparent;
+        stroke: $color-red;
+        stroke-width: 1.5px;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+    }
+    a {
+      @include font($family: $font-alt, $size: 14px, $weight: 700, $height: 19.6px, $color: $color-white);
+      background-color: $color-red;
+      padding: 11px 41px;
+      border-radius: 40px;
+    }
+  }
+  .photo-gallery {
+    padding: 108px 0 53px 0;
+    h2 {
+      @include font($family: $font-alt, $size: 32px, $weight: 800, $height: 38.4px);
+      padding: 0 0 17px 0;
+    }
+    .slide-photo-gallery {
+      position: relative;
+      .btn {
+        position: absolute;
+        top: 50%;
+        margin-top: -25px;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        padding: 0 11px;
+        overflow: hidden;
+        .icon {
+          @include animate($time: 0.3s);
+        }
+        &.btn-prev {
+          left: -94px;
+          &:hover {
+            .icon {
+              margin-left: -5px;
+            }
+          }
+        }
+        &.btn-next {
+          right: -91px;
+          .icon {
+            transform: rotate(180deg);
+          }
+          &:hover {
+            .icon {
+              margin-right: -5px;
+            }
+          }
+        }
+      }
+      .slide {
+        margin: 0 -14px;
+        .slick-slide {
+          padding: 14px 14px 25px 14px;
+          .item {
+            width: 100%;
+            height: 244px;
+            overflow: hidden;
+            border-radius: 8px;
+            background-color: red;
+            img {
+              object-fit: cover;
+              width: 100%;
+              height: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.cat-events-sigle {
+  padding: 0 0 39px 0;
+  .title {
+    border-top: 1px solid #E8E8E8;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 70px 0 17px 0;
+    h2 {
+      font-family: $font-alt;
+      font-size: 32px;
+      font-weight: 800;
+      line-height: 38.4px;
+      text-align: left;
+      color: $color-black;
+    }
+    .link {
+      font-family: $font-alt;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 19.2px;
+      text-align: left;
+      color: $color-red;
+      .icon {
+        transform: rotate(-90deg);
+        width: 12px;
+        height: 10px;
+        stroke: $color-red;
+        stroke-width: 2px;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        margin: 0 0 0 5px;
+        @include animate($time: 0.3s);
+      }
+      &:hover {
+        .icon {
+          margin: 0 -5px 0 10px;
+        }
+      }
+    }
+  }
+  .slide-box {
+    position: relative;
+    padding: 0 0 44px 0;
+    .slide {
+      margin: 0 -14px;
+      .item {
+        padding: 14px 14px 25px 14px;
+      }
+    }
+    .btn {
+      position: absolute;
+      top: 50%;
+      margin-top: -55px;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      padding: 0 11px;
+      overflow: hidden;
+      .icon {
+        @include animate($time: 0.3s);
+      }
+      &.btn-prev {
+        left: -94px;
+        &:hover {
+          .icon {
+            margin-left: -5px;
+          }
+        }
+      }
+      &.btn-next {
+        right: -91px;
+        .icon {
+          transform: rotate(180deg);
+        }
+        &:hover {
+          .icon {
+            margin-right: -5px;
+          }
+        }
+      }
+    }
+    .slick-dots {
+      display: flex;
+      width: calc(100% - 28px);
+      margin: 0 auto;
+      li {
+        height: 2px;
+        padding: 0;
+        width: 100%;
+        line-height: 0;
+        button {
+          font-size: 0;
+          border: none;
+          height: 2px;
+          background-color: #E8E8E8;
+          margin: 0;
+          width: 100%;
+          @include animate($time: 0.6s);
+        }
+        &.slick-active {
+          button {
+            background-color: $color-black;
+          }
+        }
+      }
+    }
+  }
+}
+
+.full-banner {
+  padding: 68px 0 140px 0;
+  text-align: center;
+}
+
+@include breakpoint2($min:xl, $max:'') {}
+
+@include breakpoint2($min:lg, $max:xl) {}
+
+@include breakpoint2($min:md, $max:lg) {}
+
+@include breakpoint2($min:sm, $max:md) {}
+
+@include breakpoint2($min:xs, $max:sm) {}
+
+@include breakpoint2($min:'', $max:xs) {}

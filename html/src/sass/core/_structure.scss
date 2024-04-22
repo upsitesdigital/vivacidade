@@ -3,7 +3,7 @@
 ======================================*/
 
 body {
-  //background: url(../images/bg.png) center 5px no-repeat;
+  //background: url(../images/bg.png) center 6px no-repeat;
 }
 
 // header
@@ -68,6 +68,10 @@ header {
                   width: 20px;
                   height: 20px;
                   fill: transparent;
+                  stroke: $color-red;
+                  stroke-width: 1.5px;
+                  stroke-linecap: round;
+                  stroke-linejoin: round;
                   margin: 0 0 0 3px;
                 }
               }
