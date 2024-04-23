@@ -7,7 +7,7 @@
   border-radius: 8px;
   background: #FFFFFF;
   overflow: hidden;
-  max-width: 551px;
+  //max-width: 551px;
   @include animate($time: 0.3s);
   .image {
     width: 100%;
@@ -30,12 +30,7 @@
       @include columns( $quant: 1fr 35px, $gutter: 105px, $align: center, $template: '');
       padding: 0 0 15px 0;
       h3 {
-        font-family: $font-alt;
-        font-size: 18px;
-        font-weight: 800;
-        line-height: 21.6px;
-        text-align: left;
-        color: $color-black;
+        @include font($family: $font-alt, $size: 18px, $weight: 800, $height: 21.6px);
       }
       .link {
         width: 35px;
@@ -43,9 +38,7 @@
         border-radius: 50%;
         background: $color-red;
         border: 1px solid $color-red;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include flex($align: center, $justify: center);
         @include animate($time: 0.3s);
         .icon {
           transform: rotate(-90deg);

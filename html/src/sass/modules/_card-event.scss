@@ -27,12 +27,7 @@
       position: absolute;
       bottom: -7px;
       left: 19px;
-      font-family: $font-alt;
-      font-size: 11px;
-      font-weight: 700;
-      line-height: 13.2px;
-      text-align: left;
-      color: $color-white;
+      @include font($family: $font-alt, $size: 11px, $weight: 700, $height: 13.2px, $color: $color-white);
       padding: 6px 10px;
       background: #2C2A7F;
       border-radius: 100px;
@@ -44,35 +39,18 @@
       border-bottom: 1px solid #EAEAEA;
       padding: 0 0 11px 0;
       h3 {
-        font-family: $font-alt;
-        font-size: 16px;
-        font-weight: 800;
-        line-height: 19.2px;
-        text-align: left;
-        color: $color-black;
+        @include font($family: $font-alt, $size: 16px, $weight: 800, $height: 19.2px);
         padding: 0 0 9px 0;
       }
       p {
-        font-family: $font-main;
-        font-size: 12px;
-        font-weight: 400;
-        line-height: 16.8px;
-        text-align: left;
-        color: rgba($color-black, 0.7);
+        @include font($family: $font-alt, $size: 12px, $height: 16.8px, $color: rgba($color-black, 0.7));
       }
     }
     .infos {
       padding: 12px 0 0 0;
       span {
-        font-family: $font-main;
-        font-size: 12px;
-        font-weight: 700;
-        line-height: 14.4px;
-        text-align: left;
-        color: $color-black;
-        display: flex;
-        align-items: center;
-        gap: 9px;
+        @include font($family: $font-alt, $size: 12px, $weight: 700, $height: 14.4px);
+        @include flex($align: center, $gap: 9px);
         padding: 0 0 8px 0;
         .flag {
           width: 20px;

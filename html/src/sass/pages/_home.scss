@@ -13,9 +13,7 @@
     margin-top: -14px;
     width: 28px;
     height: 28px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex($align: center, $justify: center);
     overflow: hidden;
     .icon {
       @include animate($time: 0.3s);
@@ -66,28 +64,16 @@
         position: absolute;
         bottom: 39px;
         left: 44px;
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
+        @include flex($align: flex-end, $justify: space-between);
         border-top: 1px solid $color-white;
         padding: 32px 0 0 0;
         .left {
           h2 {
-            font-family: $font-alt;
-            font-size: 20px;
-            font-weight: 800;
-            line-height: 24px;
-            text-align: left;
-            color: $color-white;
+            @include font($family: $font-alt, $size: 20px, $weight: 800, $height: 24px, $color: $color-white);
             padding: 0 0 8px 0;
           }
           .link {
-            font-family: $font-alt;
-            font-size: 16px;
-            font-weight: 700;
-            line-height: 19.2px;
-            text-align: left;
-            color: $color-red;
+            @include font($family: $font-alt, $size: 16px, $weight: 700, $height: 19.2px, $color: $color-red);
             .icon {
               @include animate($time: 0.3s);
               width: 12px;
@@ -107,20 +93,11 @@
           }
         }
         .right {
-          display: flex;
-          align-items: center;
-          justify-content: end;
+          @include flex($align: center, $justify: end);
           padding: 0 12px 4px 0;
           span {
-            font-family: $font-main;
-            font-size: 14px;
-            font-weight: 700;
-            line-height: 16.8px;
-            text-align: left;
-            color: $color-white;
-            display: flex;
-            align-items: center;
-            gap: 9px;
+            @include font($family: $font-alt, $size: 14px, $weight: 700, $height: 16.8px, $color: $color-white);
+            @include flex($align: center, $gap: 9px);
             .flag {
               width: 20px;
               height: 20px;
@@ -162,31 +139,16 @@
     .text {
       padding: 40px 0 0 0;
       .subtitle {
-        font-family: $font-main;
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 22.4px;
-        text-align: left;
-        color: $color-black;
+        @include font($size: 16px, $height: 22.4px);
         display: block;
         padding: 0 0 8px 0;
       }
       h2 {
-        font-family: $font-alt;
-        font-size: 56px;
-        font-weight: 800;
-        line-height: 67.2px;
-        text-align: left;
-        color: $color-black;
+        @include font($family: $font-alt, $size: 56px, $weight: 800, $height: 67.2px);
         padding: 0 0 24px 0;
       }
       p {
-        font-family: $font-main;
-        font-size: 18px;
-        font-weight: 400;
-        line-height: 25.2px;
-        text-align: left;
-        color: rgba($color-black, 0.6);
+        @include font($size: 18px, $height: 25.2px, $color: rgba($color-black, 0.6));
       }
     }
     .form {
@@ -204,12 +166,7 @@
         border: 1px solid #A6A6A6;
         padding: 0 9px 0 40px;
         input {
-          font-family: $font-alt;
-          font-size: 18px;
-          font-weight: 500;
-          line-height: 25.2px;
-          text-align: left;
-          color: rgba($color-black, 0.5);
+          @include font($family: $font-alt, $size: 18px, $weight: 500, $height: 25.2px, $color: rgba($color-black, 0.5));
           outline: none;
           border: none;
           background: transparent;
@@ -222,9 +179,7 @@
           border: none;
           background: $color-red;
           border: 1px solid $color-red;
-          display: flex;
-          align-items: center;
-          justify-content: center;
+          @include flex($align: center, $justify: center);
           @include animate($time: 0.3s);
           .icon {
             width: 24px;
@@ -251,12 +206,7 @@
 .list-cat {
   padding: 63px 0 0 0;
   h2 {
-    font-family: $font-alt;
-    font-size: 24px;
-    font-weight: 800;
-    line-height: 28.8px;
-    text-align: left;
-    color: $color-black;
+    @include font($family: $font-alt, $size: 24px, $weight: 800, $height: 28.8px);
     padding: 0 0 24px 0;
   }
   .grid {
@@ -276,12 +226,7 @@
         }
       }
       h3 {
-        font-family: $font-alt;
-        font-size: 16px;
-        font-weight: 700;
-        line-height: 19.2px;
-        text-align: left;
-        color: $color-black;
+        @include font($family: $font-alt, $size: 16px, $weight: 700, $height: 19.2px);
       }
       &:hover {
         background-color: rgba(230, 230, 230, .3);
@@ -303,25 +248,13 @@
     background-color: #F9F9F9;
   }
   .title {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @include flex($align: center, $justify: space-between);
     padding: 0 0 18px 0;
     h2 {
-      font-family: $font-alt;
-      font-size: 32px;
-      font-weight: 800;
-      line-height: 38.4px;
-      text-align: left;
-      color: $color-black;
+      @include font($family: $font-alt, $size: 32px, $weight: 800, $height: 38.4px);
     }
     .location {
-      font-family: $font-alt;
-      font-size: 16px;
-      font-weight: 700;
-      line-height: 19.2px;
-      text-align: left;
-      color: $color-black;
+      @include font($family: $font-alt, $size: 16px, $weight: 700, $height: 19.2px);
     }
   }
   .slide-box {
@@ -338,9 +271,7 @@
       margin-top: -55px;
       width: 50px;
       height: 50px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      @include flex($align: center, $justify: center);
       background-color: $color-white;
       border-radius: 50%;
       padding: 0 11px;
@@ -380,12 +311,7 @@
     border-radius: 8px;
     h2 {
       padding: 50px 0 0 55px;
-      font-family: $font-alt;
-      font-size: 32px;
-      font-weight: 800;
-      line-height: 38.4px;
-      text-align: left;
-      color: $color-black;
+      @include font($family: $font-alt, $size: 32px, $weight: 800, $height: 38.4px);
     }
     .image {
       padding: 0 55px 0 25px;
@@ -398,12 +324,7 @@
     .text {
       padding: 45px 0 0 0;
       p {
-        font-family: $font-alt;
-        font-size: 18px;
-        font-weight: 600;
-        line-height: 21.6px;
-        text-align: left;
-        color: $color-black;
+        @include font($family: $font-alt, $size: 18px, $weight: 600, $height: 21.6px);
         padding: 0 0 13px 0;
       }
       .link {
@@ -415,12 +336,7 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        font-family: $font-alt;
-        font-size: 16px;
-        font-weight: 700;
-        line-height: 19.2px;
-        text-align: left;
-        color: $color-white;
+        @include font($family: $font-alt, $size: 16px, $weight: 700, $height: 19.2px, $color: $color-white);
         padding: 0 20px;
         .icon {
           transform: rotate(-90deg);
@@ -447,25 +363,13 @@
   padding: 0 0 96px 0;
   background-color: #F9F9F9;
   .title {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @include flex($align: center, $justify: space-between);
     padding: 83px 0 17px 0;
     h2 {
-      font-family: $font-alt;
-      font-size: 32px;
-      font-weight: 800;
-      line-height: 38.4px;
-      text-align: left;
-      color: $color-black;
+      @include font($family: $font-alt, $size: 32px, $weight: 800, $height: 38.4px);
     }
     .link {
-      font-family: $font-alt;
-      font-size: 16px;
-      font-weight: 700;
-      line-height: 19.2px;
-      text-align: left;
-      color: $color-red;
+      @include font($family: $font-alt, $size: 16px, $weight: 700, $height: 19.2px, $color: $color-red);
       .icon {
         transform: rotate(-90deg);
         width: 12px;
@@ -499,9 +403,7 @@
       margin-top: -55px;
       width: 50px;
       height: 50px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      @include flex($align: center, $justify: center);
       border-radius: 50%;
       padding: 0 11px;
       overflow: hidden;
@@ -529,7 +431,7 @@
       }
     }
     .slick-dots {
-      display: flex;
+      @include flex($align: center);
       width: calc(100% - 28px);
       margin: 0 auto;
       li {
@@ -559,12 +461,7 @@
 .featured-blog {
   padding: 149px 0 0 0;
   h2 {
-    font-family: $font-alt;
-    font-size: 32px;
-    font-weight: 800;
-    line-height: 38.4px;
-    text-align: left;
-    color: $color-black;
+    @include font($family: $font-alt, $size: 32px, $weight: 800, $height: 38.4px);
     padding: 0 0 18px 0;
   }
   .slide-box {
@@ -581,9 +478,7 @@
       margin-top: -55px;
       width: 50px;
       height: 50px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      @include flex($align: center, $justify: center);
       background-color: $color-white;
       border-radius: 50%;
       padding: 0 11px;
@@ -612,7 +507,7 @@
       }
     }
     .slick-dots {
-      display: flex;
+      @include flex($align: center);
       width: calc(100% - 28px);
       margin: 12px auto 0 auto;
       li {

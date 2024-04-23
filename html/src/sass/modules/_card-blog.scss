@@ -1,0 +1,88 @@
+/*======================================
+  Card blog
+======================================*/
+
+.card-blog {
+  display: block;
+  box-shadow: 0 10px 14px 0 rgba($color-black, 0.1);
+  border-radius: 8px;
+  background: #FFFFFF;
+  overflow: hidden;
+  @include animate($time: 0.3s);
+  .image {
+    width: 100%;
+    height: 117px;
+    position: relative;
+    .box {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .cat {
+      position: absolute;
+      bottom: -14px;
+      left: 21px;
+      @include font($family: $font-alt, $size: 12px, $weight: 700, $height: 14.4px, $color: $color-white);
+      padding: 6px 10px;
+      background: $color-black;
+      border-radius: 100px;
+    }
+  }
+  .content {
+    padding: 30px 20px 25px 21px;
+    h3 {
+      @include font($family: $font-alt, $size: 16px, $weight: 800, $height: 19.2px);
+      padding: 0 0 8px 0;
+    }
+    p {
+      @include font($size: 14px, $height: 19.6px, $color: rgba($color-black, 0.7));
+      padding: 0 0 21px 0;
+    }
+    .link {
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background: $color-red;
+      border: 1px solid $color-red;
+      @include flex($align: center, $justify: center);
+      @include animate($time: 0.3s);
+      padding: 0 0 0 1px;
+      .icon {
+        transform: rotate(-90deg);
+        width: 10px;
+        height: 24px;
+        stroke: $color-white;
+        stroke-width: 2px;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        @include animate($time: 0.3s);
+      }
+      &:hover {
+        background: $color-white;
+        .icon {
+          stroke: $color-red;
+        }
+      }
+    }
+  }
+  &:hover {
+    box-shadow: 0 10px 14px 0 rgba($color-black, 0.2);
+  }
+}
+
+@include breakpoint2($min:xl, $max:'') {}
+
+@include breakpoint2($min:lg, $max:xl) {}
+
+@include breakpoint2($min:md, $max:lg) {}
+
+@include breakpoint2($min:sm, $max:md) {}
+
+@include breakpoint2($min:xs, $max:sm) {}
+
+@include breakpoint2($min:'', $max:xs) {}

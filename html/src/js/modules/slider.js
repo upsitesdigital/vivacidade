@@ -15,6 +15,19 @@ export default function() {
     adaptiveHeight: true,
     centerPadding: 0
   });
+  const $blogslider = $('.slide-blog .slide');
+  $blogslider.slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    dots: false,
+    arrows: true,
+    prevArrow: $('.slide-blog .btn.btn-prev'),
+    nextArrow: $('.slide-blog .btn.btn-next'),
+    centerMode: false,
+    focusOnSelect: true,
+    adaptiveHeight: true,
+    centerPadding: 0
+  });
 
   const $featuredEvents = $('.featured-events .slide');
   $featuredEvents.slick({
@@ -78,6 +91,19 @@ export default function() {
     arrows: true,
     prevArrow: $('.featured-blog .btn.btn-prev'),
     nextArrow: $('.featured-blog .btn.btn-next'),
+    centerMode: false,
+    focusOnSelect: true,
+    adaptiveHeight: true,
+    centerPadding: 0
+  });
+  const $featuredBlogCat = $('.featured-blog-categories .slide');
+  $featuredBlogCat.slick({
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    dots: true,
+    arrows: true,
+    prevArrow: $('.featured-blog-categories .btn.btn-prev'),
+    nextArrow: $('.featured-blog-categories .btn.btn-next'),
     centerMode: false,
     focusOnSelect: true,
     adaptiveHeight: true,

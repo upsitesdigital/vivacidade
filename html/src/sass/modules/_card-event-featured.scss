@@ -26,12 +26,7 @@
       position: absolute;
       bottom: -13px;
       left: 39px;
-      font-family: $font-alt;
-      font-size: 14px;
-      font-weight: 700;
-      line-height: 16.8px;
-      text-align: left;
-      color: $color-white;
+      @include font($family: $font-alt, $size: 14px, $weight: 700, $height: 16.8px, $color: $color-white);
       padding: 10px 16px;
       background: $color-orange;
       border-radius: 100px;
@@ -44,12 +39,7 @@
       border-bottom: 1px solid #EAEAEA;
       padding: 0 0 15px 0;
       h3 {
-        font-family: $font-alt;
-        font-size: 18px;
-        font-weight: 800;
-        line-height: 21.6px;
-        text-align: left;
-        color: $color-black;
+        @include font($family: $font-alt, $size: 18px, $weight: 800, $height: 21.6px);
       }
       .link {
         width: 35px;
@@ -57,9 +47,7 @@
         border-radius: 50%;
         background: $color-red;
         border: 1px solid $color-red;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include flex($align: center, $justify: center);
         @include animate($time: 0.3s);
         .icon {
           transform: rotate(-90deg);
@@ -80,20 +68,11 @@
       }
     }
     .infos {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      @include flex($align: center, $justify: space-between);
       padding: 16px 0 0 0;
       span {
-        font-family: $font-main;
-        font-size: 14px;
-        font-weight: 700;
-        line-height: 16.8px;
-        text-align: left;
-        color: #767676;
-        display: flex;
-        align-items: center;
-        gap: 9px;
+        @include font($family: $font-alt, $size: 14px, $weight: 700, $height: 16.8px, $color: #767676);
+        @include flex($align: center, $gap: 9px);
         .flag {
           width: 20px;
           height: 20px;
