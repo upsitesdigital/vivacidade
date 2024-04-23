@@ -1,0 +1,224 @@
+/*======================================
+  Ticket list
+======================================*/
+
+.top-banner {
+  background-color: $color-orange;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  .grid {
+    @include columns( $quant: 1.2fr 1fr, $gutter: 0, $align: center, $template: '');
+    .text {
+      padding: 76px 0 61px 0;
+      //@include flex($align: start, $gap: 19px);
+      @include columns( $quant: auto 21px 1fr, $gutter: 17px, $align: start, $template: '');
+      .tag {
+        @include font($family: $font-alt, $size: 14px, $weight: 700, $height: 16.8px, $color: $color-white);
+        padding: 10px 16px;
+        background-color: $color-black;
+        border-radius: 30px;
+        margin: 3px 0 0 2px;
+      }
+      .icon {
+        width: 23px;
+        height: 43px;
+        margin: 0 -1px 0 1px;
+        stroke: $color-red;
+        stroke-width: 1.5px;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        transform: rotate(-90deg);
+      }
+      .description {
+        h1 {
+          @include font($family: $font-alt, $size: 36px, $weight: 800, $height: 43.2px);
+          padding: 0 0 17px 5px;
+        }
+        p {
+          @include font($size: 16px, $height: 25.6px, $color: rgba($color-black, 0.7));
+        }
+      }
+    }
+  }
+}
+
+.list-tickets {
+  .grid {
+    @include columns( $quant: 257px 1fr, $gutter: 27px, $align: start, $template: 'sidebar content');
+    padding: 109px 0 0 5px;
+    .sidebar {
+      width: 100%;
+      border: 1px solid #D7D7D7;
+      border-radius: 8px;
+      padding: 28px 18px 0 18px;
+      .box-filter {
+        border-bottom: 1px solid #EAEAEA;
+        padding: 0 13px 0 0;
+        h3 {
+          @include font($family: $font-alt, $size: 18px, $weight: 800, $height: 21.6px);
+          @include flex($align: center, $justify: space-between);
+          padding: 24px 0;
+          .icon {
+            width: 11px;
+            height: 20px;
+            margin: 0;
+            stroke: $color-red;
+            stroke-width: 2px;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+          }
+        }
+        .box {
+          ul {
+            li {
+              padding: 0 0 24px 0;
+              position: relative;
+              left: 0px;
+              visibility: visible;
+              opacity: 1;
+              height: auto;
+              @include animate($time: 0.3s);
+              label {
+                position: relative;
+                input {
+                  position: absolute;
+                  top: 0;
+                  left: -40px;
+                  opacity: 0;
+                  visibility: hidden;
+                }
+                .label {
+                  @include font($family: $font-alt, $size: 14px, $weight: 700, $height: 16.8px);
+                  @include columns( $quant: 15px 1fr, $gutter: 7px, $align: center, $template: '');
+                  .field {
+                    width: 15px;
+                    height: 15px;
+                    border: 1px solid #828282;
+                    border-radius: 2px;
+                    @include animate($time: 0.3s);
+                    .icon {
+                      width: 9px;
+                      height: 14px;
+                      fill: transparent;
+                      stroke: $color-white;
+                      stroke-width: 1.5px;
+                      stroke-linecap: round;
+                      stroke-linejoin: round;
+                      margin: 0 0 0 2px;
+                      visibility: hidden;
+                      opacity: 0;
+                      transform: scale(10);
+                      @include animate($time: 0.3s);
+                    }
+                  }
+                }
+                input:checked~.label .field {
+                  background-color: $color-red;
+                  border-color: $color-red;
+                }
+                input:checked~.label .field .icon {
+                  visibility: visible;
+                  opacity: 1;
+                  transform: scale(1);
+                }
+              }
+              &.hide {
+                position: relative;
+                left: -10px;
+                visibility: hidden;
+                opacity: 0;
+                height: 0;
+                padding: 0;
+              }
+            }
+          }
+        }
+        .more-options {
+          @include font($family: $font-alt, $size: 16px, $weight: 700, $height: 19.2px, $color: $color-red);
+          @include flex($align: center, $justify: start, $gap: 7px);
+          padding: 0 0 24px 0;
+          .icon {
+            width: 11px;
+            height: 20px;
+            margin: 0;
+            stroke: $color-red;
+            stroke-width: 2px;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+          }
+        }
+        &#search {
+          padding-bottom: 23px;
+          h3 {
+            padding-top: 0;
+            padding-bottom: 8px;
+          }
+          .box-input {
+            position: relative;
+            input {
+              width: 217px;
+              height: 42px;
+              border-radius: 4px;
+              border: 1px solid #D7D7D7;
+              padding: 0 38px 0 11px;
+              background: transparent;
+              @include font($family: $font-alt, $size: 14px, $weight: 600, $height: 22.4px, $color: $color-red);
+            }
+            .icon {
+              position: absolute;
+              top: 9px;
+              right: 1px;
+              width: 22px;
+              height: 22px;
+              fill: transparent;
+              stroke: $color-red;
+              stroke-width: 2px;
+              stroke-linecap: round;
+              stroke-linejoin: round;
+            }
+          }
+        }
+        &.last {
+          border-bottom: none;
+          padding: 0 13px 27px 0;
+        }
+      }
+    }
+    .content {
+      .grid-list {
+        @include columns( $quant: repeat(3, 1fr), $gutter: 27px, $align: start, $template: '');
+      }
+      .full-banner {
+        padding: 47px 0 48px 0;
+        text-align: center;
+      }
+      .center {
+        text-align: center;
+        padding: 70px 0 88px 0;
+      }
+      .load-more {
+        padding: 13px 41px;
+        border: 1px solid $color-red;
+        border-radius: 40px;
+        @include font($family: $font-alt, $size: 14px, $weight: 700, $height: 19.6px, $color: $color-red);
+        @include animate($time: 0.3s);
+        &:hover {
+          background: $color-red;
+          color: $color-white;
+        }
+      }
+    }
+  }
+}
+
+@include breakpoint2($min:xl, $max:'') {}
+
+@include breakpoint2($min:lg, $max:xl) {}
+
+@include breakpoint2($min:md, $max:lg) {}
+
+@include breakpoint2($min:sm, $max:md) {}
+
+@include breakpoint2($min:xs, $max:sm) {}
+
+@include breakpoint2($min:'', $max:xs) {}

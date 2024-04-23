@@ -1,0 +1,223 @@
+/*======================================
+  Card ticket
+======================================*/
+
+.card-ticket {
+  display: block;
+  box-shadow: 0 10px 14px 0 rgba($color-black, 0.1);
+  border-radius: 8px;
+  //background: #FFFFFF;
+  overflow: hidden;
+  @include animate($time: 0.3s);
+  .image {
+    width: 100%;
+    height: 117px;
+    position: relative;
+    .box {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .cat {
+      position: absolute;
+      bottom: -7px;
+      left: 19px;
+      font-family: $font-alt;
+      font-size: 11px;
+      font-weight: 700;
+      line-height: 13.2px;
+      text-align: left;
+      color: $color-white;
+      padding: 6px 10px;
+      background: #2C2A7F;
+      border-radius: 100px;
+    }
+  }
+  .content {
+    padding: 21px 20px 22px 20px;
+    .head {
+      border-bottom: 1px solid #EAEAEA;
+      h3 {
+        font-family: $font-alt;
+        font-size: 16px;
+        font-weight: 800;
+        line-height: 19.2px;
+        text-align: left;
+        color: $color-black;
+        padding: 0 0 11px 0;
+      }
+    }
+    .infos {
+      padding: 12px 0 0 0;
+      span {
+        font-family: $font-main;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 14.4px;
+        text-align: left;
+        color: $color-black;
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        padding: 0 0 8px 0;
+        .flag {
+          width: 20px;
+          height: 20px;
+          fill: transparent;
+          stroke: $color-black;
+          stroke-width: 1.5px;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+        }
+      }
+      .box {
+        height: 67px;
+        margin: 0 0 12px 0;
+        background: url(../img/box.svg) top left no-repeat;
+        @include font($size: 14px, $weight: 600, $height: 16.8px, $color: $color-red);
+        padding: 9px 25px;
+      }
+      .get-ticket {
+        padding: 10.5px 41px;
+        border: 1px solid $color-red;
+        border-radius: 40px;
+        display: block;
+        @include font($family: $font-alt, $size: 14px, $weight: 700, $height: 19.6px, $align: center, $color: $color-white);
+        @include animate($time: 0.3s);
+        background: $color-red;
+        &:hover {
+          background: $color-white;
+          color: $color-red;
+        }
+      }
+    }
+  }
+  &:hover {
+    box-shadow: 0 10px 14px 0 rgba($color-black, 0.2);
+  }
+}
+
+.modal-ticket {
+  @include animate($time: 0.3s);
+  opacity: 0;
+  visibility: hidden;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  @include flex($align: center, $justify: center);
+  .overlay {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-color: rgba($color-black, 0.85);
+  }
+  .content {
+    position: relative;
+    z-index: 101;
+    width: 426px;
+    height: 540px;
+    background: $color-white;
+    padding: 33px 60px 0 60px;
+    border-radius: 16px;
+    overflow: hidden;
+    &:before {
+      content: '';
+      width: 100%;
+      height: 122px;
+      background-color: $color-orange;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .image {
+      position: relative;
+      width: 100%;
+      height: 154px;
+      overflow: hidden;
+      border-radius: 8px;
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    h2 {
+      @include font($family: $font-alt, $size: 18px, $weight: 800, $height: 21.6px);
+      padding: 27px 0 2px 0;
+    }
+    .type {
+      @include font($family: $font-alt, $size: 14px, $weight: 600, $height: 16.8px);
+      display: block;
+      padding: 0 0 16px 0;
+    }
+    .box {
+      width: 100%;
+      height: 66px;
+      background: url(../img/box-modal.svg) top left no-repeat;
+      @include font($size: 14px, $weight: 600, $height: 16.8px, $color: $color-red);
+      padding: 9px 17px;
+      @include flex($align: center);
+    }
+    .form {
+      label {
+        padding: 24px 0 21px 0;
+        display: block;
+        .label {
+          @include font($family: $font-alt, $size: 14px, $weight: 600, $height: 16.8px);
+          display: block;
+          padding: 0 0 8px 0;
+        }
+        input {
+          width: 100%;
+          height: 48px;
+          background-color: #E9E9E9;
+          border: none;
+          border-radius: 4px;
+          padding: 2px 17px 0 17px;
+          @include font($family: $font-alt, $size: 16px, $height: 25.6px, $color: #515151);
+        }
+      }
+      .button {
+        padding: 10.5px 41px;
+        border: 1px solid $color-red;
+        border-radius: 40px;
+        display: block;
+        width: 100%;
+        @include font($family: $font-alt, $size: 14px, $weight: 700, $height: 19.6px, $align: center, $color: $color-white);
+        @include animate($time: 0.3s);
+        background: $color-red;
+        &:hover {
+          background: $color-white;
+          color: $color-red;
+        }
+      }
+    }
+  }
+  &.act {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@include breakpoint2($min:xl, $max:'') {}
+
+@include breakpoint2($min:lg, $max:xl) {}
+
+@include breakpoint2($min:md, $max:lg) {}
+
+@include breakpoint2($min:sm, $max:md) {}
+
+@include breakpoint2($min:xs, $max:sm) {}
+
+@include breakpoint2($min:'', $max:xs) {}

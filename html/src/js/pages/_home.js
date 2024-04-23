@@ -15,7 +15,7 @@ export default function() {
     return false;
   });
 
-  $(document).on('click', '.list-events .grid .sidebar .box-filter .more-options', function() {
+  $(document).on('click', '.sidebar .box-filter .more-options', function() {
     console.log('click');
     var $target = $(this).closest('.box-filter').find('.box li.extra-field').get();
     var time = 5;
@@ -32,6 +32,12 @@ export default function() {
       }, time);
       time += 100;
     });
+    return false;
+  });
+
+  $(document).on('click', '.card-ticket .content .infos .get-ticket,.modal-ticket .overlay', function() {
+    var $target = $('.modal-ticket');
+    $target.toggleClass('act');
     return false;
   });
 
