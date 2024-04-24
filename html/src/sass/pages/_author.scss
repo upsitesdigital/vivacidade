@@ -1,0 +1,119 @@
+/*======================================
+  Author
+======================================*/
+
+.author-head {
+  margin: 42px 0 0 0;
+  position: relative;
+  &:before {
+    content: '';
+    width: 100%;
+    height: 185px;
+    background: #F9F9F9 url(../img/bg-author.png) bottom center no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .container {
+    position: relative;
+  }
+  .grid {
+    @include columns( $quant: 208px 1fr, $gutter: 96px, $align: start, $template: '');
+    border-bottom: 1px solid #D2D2D2;
+    padding: 0 0 81px 0;
+    .avatar {
+      width: 208px;
+      height: 208px;
+      border: 4.86px solid #D2D2D2;
+      box-shadow: 0px 0px 0px 16px rgba($color-white, 1);
+      margin: 45px 0 0 -30px;
+      border-radius: 50%;
+      background-color: $color-white;
+      overflow: hidden;
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .content {
+      padding: 65px 0 0 0;
+      h1 {
+        @include font($family: $font-alt, $size: 36px, $weight: 800, $height: 43.2px);
+        padding: 0 0 13px 0;
+      }
+      .publications {
+        @include font($family: $font-alt, $size: 20px, $weight: 500, $height: 28px);
+        padding: 0 0 0 24px;
+        margin: 0 0 92px 0;
+        display: block;
+        position: relative;
+        &:before {
+          content: '';
+          width: 8px;
+          height: 8px;
+          background-color: $color-black;
+          position: absolute;
+          top: 50%;
+          left: 0;
+          margin: -3px 0 0 0;
+        }
+      }
+      p {
+        @include font($size: 18px, $height: 28.8px, $color: rgba($color-black, 0.7));
+      }
+    }
+  }
+}
+
+.full-banner {
+  padding: 40px 0;
+  text-align: center;
+}
+
+.most-viewed {
+  padding: 25px 0 0 0;
+  h4 {
+    @include font($family: $font-alt, $size: 24px, $weight: 800, $height: 28.8px);
+    padding: 0 0 31px 0;
+  }
+  .grid {
+    @include columns( $quant: repeat(4, 1fr), $gutter: 72px 28px, $align: start, $template: '');
+    padding: 0 0 107px 0;
+    border-bottom: 1px solid #D2D2D2;
+  }
+}
+
+.list-post-author {
+  padding: 64px 0;
+  .grid {
+    @include columns( $quant: repeat(4, 1fr), $gutter: 72px 28px, $align: start, $template: '');
+  }
+  .center {
+    text-align: center;
+    padding: 172px 0 30px 0;
+  }
+  .load-more {
+    padding: 13px 41px;
+    border: 1px solid $color-red;
+    border-radius: 40px;
+    @include font($family: $font-alt, $size: 14px, $weight: 700, $height: 19.6px, $color: $color-red);
+    @include animate($time: 0.3s);
+    &:hover {
+      background: $color-red;
+      color: $color-white;
+    }
+  }
+}
+
+@include breakpoint2($min:xl, $max:'') {}
+
+@include breakpoint2($min:lg, $max:xl) {}
+
+@include breakpoint2($min:md, $max:lg) {}
+
+@include breakpoint2($min:sm, $max:md) {}
+
+@include breakpoint2($min:xs, $max:sm) {}
+
+@include breakpoint2($min:'', $max:xs) {}
