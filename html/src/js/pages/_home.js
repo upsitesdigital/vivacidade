@@ -2,6 +2,20 @@
  * Home
  */
 export default function() {
+  var countChar = function(val, $quat, target) {
+    var len = val.length;
+    $('#' + target).text($quat - len);
+  };
+
+  $(document).on('keyup', '#msn-field', function() {
+    var $val = $(this).val();
+    var $quat = 300;
+    var $taget = 'count-field';
+    countChar($val, $quat, $taget);
+
+    return false;
+  });
+
   $(document).on('click', '.anchor', function() {
     var $target = $(this).attr('href');
     var $offset = $($target).position().top;
@@ -16,18 +30,15 @@ export default function() {
   });
 
   $(document).on('click', '.sidebar .box-filter .more-options', function() {
-    console.log('click');
     var $target = $(this).closest('.box-filter').find('.box li.extra-field').get();
     var time = 5;
-    console.log($(this).hasClass('act'));
     if ($(this).hasClass('act')) {
       $target.reverse();
     }
     $(this).toggleClass('act');
-    $.each($target, function(index) {
+    $.each($target, function() {
       var $this = $(this);
       setTimeout(function() {
-        console.log('hide');
         $this.toggleClass('hide');
       }, time);
       time += 100;
@@ -41,13 +52,8 @@ export default function() {
     return false;
   });
 
-  $.getJSON("https://api.ipify.org/?format=json", function(e) {
-    $.getJSON("//www.geoplugin.net/json.gp?ip=" + e.ip, function(e) {
-      //console.log(e);
-      console.log(e.geoplugin_city);
-      console.log(e.geoplugin_region);
-      console.log(e.geoplugin_regionCode);
-      console.log(e.geoplugin_regionName);
+  $.getJSON('https://api.ipify.org/?format=json', function(e) {
+    $.getJSON('//www.geoplugin.net/json.gp?ip=' + e.ip, function(e) {
       $('header .grid .location .box-location span').html(e.geoplugin_city);
     });
   });
