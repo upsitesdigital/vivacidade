@@ -1,0 +1,272 @@
+/*======================================
+  Register
+======================================*/
+
+.register {
+  padding: 0 0 108px 0;
+  .title {
+    padding: 65px 0 75px 0;
+    background: #F9F9F9 url(../img/bg-register.png) bottom center no-repeat;
+    // background-repeat: no-repeat;
+    // background-position: bottom center;
+    .grid {
+      @include columns( $quant: 1fr 1fr, $gutter: 0, $align: center, $template: '');
+      padding: 0;
+      .text {
+        //@include flex($align: start, $gap: 19px);
+        @include columns( $quant: auto 21px 1fr, $gutter: 17px, $align: start, $template: '');
+        .tag {
+          @include font($family: $font-alt, $size: 14px, $weight: 700, $height: 16.8px, $color: $color-white);
+          padding: 10px 16px;
+          background-color: $color-black;
+          border-radius: 30px;
+          margin: 3px 0 0 2px;
+        }
+        .icon {
+          width: 23px;
+          height: 43px;
+          margin: 0 -1px 0 1px;
+          stroke: $color-red;
+          stroke-width: 1.5px;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+          transform: rotate(-90deg);
+        }
+        .description {
+          h1 {
+            @include font($family: $font-alt, $size: 36px, $weight: 800, $height: 43.2px);
+            padding: 0 0 20px 5px;
+          }
+          p {
+            @include font($size: 18px, $height: 28.8px, $color: rgba($color-black, 0.7));
+            padding: 0 0 0 5px;
+          }
+        }
+      }
+      .box-list {
+        @include flex($align: center, $justify: end, $gap: 22px);
+        padding: 0 3px 0 0;
+        .box {
+          width: 142px;
+          height: 142px;
+          background: $color-orange;
+          border-radius: 16px;
+          position: relative;
+          @include flex($align: center, $justify: center);
+          .icon {
+            width: 53px;
+            height: 53px;
+            margin: 0;
+            stroke: $color-white;
+            stroke-width: 1.5px;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            fill: transparent;
+          }
+          .check {
+            position: absolute;
+            top: 8px;
+            right: 9px;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: $color-black;
+            @include flex($align: center, $justify: center);
+            .checked {
+              width: 13px;
+              height: 13px;
+              margin: 0;
+              stroke: $color-orange;
+              stroke-width: 1.5px;
+              stroke-linecap: round;
+              stroke-linejoin: round;
+              fill: transparent;
+            }
+          }
+        }
+      }
+    }
+  }
+  .grid {
+    @include columns( $quant: 355px 1fr, $gutter: 223px, $align: start, $template: '');
+    padding: 54px 0 0 0;
+    .sidebar {
+      h2 {
+        @include font($family: $font-alt, $size: 24px, $weight: 800, $height: 33.6px);
+        padding: 0 0 33px 0;
+      }
+      .type {
+        width: 100%;
+        height: 56px;
+        border-radius: 40px;
+        border: 2px solid red;
+        display: block;
+        @include font($family: $font-alt, $size: 18px, $weight: 600, $height: 25.2px);
+        @include flex($align: center, $justify: space-between);
+        padding: 0 14px 0 22px;
+        margin: 0 0 12px 0;
+        .icon {
+          width: 27px;
+          height: 27px;
+          transform: rotate(180deg);
+        }
+      }
+      .cat {
+        background-color: #E8E8E8;
+        width: 100%;
+        height: 56px;
+        border-radius: 40px;
+        @include font($family: $font-alt, $size: 18px, $weight: 600, $height: 25.2px, $color: #828282);
+        @include flex($align: center, $justify: space-between);
+        padding: 0 25px;
+      }
+    }
+    .box-form {
+      h2 {
+        @include font($family: $font-alt, $size: 24px, $weight: 800, $height: 33.6px);
+        padding: 6px 0 31px 2px;
+      }
+      .form {
+        label {
+          padding: 0 0 16px 0;
+          display: block;
+          input {
+            width: 100%;
+            height: 52px;
+            border: 1px solid #D7D7D7;
+            border-radius: 4px;
+            @include font($family: $font-alt, $size: 16px, $height: 25.6px);
+            padding: 0 14px;
+            background: transparent;
+          }
+          select {
+            width: 100%;
+            height: 52px;
+            border: 1px solid #D7D7D7;
+            border-radius: 4px;
+            @include font($family: $font-alt, $size: 16px, $height: 25.6px);
+            padding: 0 44px 0 14px;
+            background: transparent;
+            appearance: none;
+          }
+          textarea {
+            width: 100%;
+            height: 172px;
+            border: 1px solid #D7D7D7;
+            border-radius: 4px;
+            @include font($family: $font-alt, $size: 16px, $height: 25.6px);
+            padding: 12px 14px;
+            background: transparent;
+            resize: none;
+          }
+          .count {
+            @include font($family: $font-alt, $size: 12px, $weight: 500, $height: 19.2px, $color: #515151);
+            padding: 10px 0 0 0;
+          }
+          .info {
+            @include font($family: $font-alt, $size: 12px, $weight: 500, $height: 19.2px, $color: #515151);
+            padding: 10px 0 0 0;
+            display: block;
+          }
+          &.select {
+            position: relative;
+            .icon {
+              width: 13px;
+              height: 20px;
+              margin: 0 -3px 0 3px;
+              stroke: $color-red;
+              stroke-width: 2px;
+              stroke-linecap: round;
+              stroke-linejoin: round;
+              position: absolute;
+              top: 50%;
+              right: 23px;
+              margin: -16px 0 0 0;
+            }
+          }
+          &.input-icon {
+            position: relative;
+            .icon {
+              width: 20px;
+              height: 20px;
+              margin: 0;
+              fill: transparent;
+              stroke: $color-red;
+              stroke-width: 2px;
+              stroke-linecap: round;
+              stroke-linejoin: round;
+              position: absolute;
+              top: 50%;
+              right: 22px;
+              margin: -21px 0 0 0;
+            }
+          }
+          &.input-file {
+            padding: 0 0 13px 0;
+            .box-input {
+              overflow: hidden;
+              position: relative;
+              width: 100%;
+              height: 52px;
+              border: 1px solid #D7D7D7;
+              border-radius: 4px;
+              @include font($family: $font-alt, $size: 16px, $height: 25.6px);
+              padding: 0 21px 2px 14px;
+              @include flex($align: center, $justify: space-between);
+              .icon {
+                width: 20px;
+                height: 20px;
+                stroke: $color-red;
+                stroke-width: 2px;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+                fill: transparent;
+              }
+              input[type="file"] {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 200%;
+                height: 200%;
+                opacity: 0;
+              }
+            }
+          }
+          &.textarea {
+            padding: 0 0 13px 0;
+          }
+        }
+        .grid-date {
+          @include columns( $quant: 1fr 1fr, $gutter: 28px, $align: start, $template: '');
+        }
+        .submit {
+          padding: 10.5px 78px;
+          border: 1px solid $color-red;
+          border-radius: 40px;
+          display: block;
+          @include font($family: $font-alt, $size: 14px, $weight: 700, $height: 19.6px, $align: center, $color: $color-white);
+          @include animate($time: 0.3s);
+          background: $color-red;
+          margin: 24px 0 0 0;
+          cursor: pointer;
+          &:hover {
+            background: $color-white;
+            color: $color-red;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include breakpoint2($min:xl, $max:'') {}
+
+@include breakpoint2($min:lg, $max:xl) {}
+
+@include breakpoint2($min:md, $max:lg) {}
+
+@include breakpoint2($min:sm, $max:md) {}
+
+@include breakpoint2($min:xs, $max:sm) {}
+
+@include breakpoint2($min:'', $max:xs) {}

@@ -2,6 +2,9 @@
  * Home
  */
 export default function() {
+  $('.date').mask('00/00/0000');
+  $('.phone').mask('(00) 0 0000-0000');
+
   var countChar = function(val, $quat, target) {
     var len = val.length;
     $('#' + target).text($quat - len);
@@ -49,6 +52,16 @@ export default function() {
   $(document).on('click', '.card-ticket .content .infos .get-ticket,.modal-ticket .overlay', function() {
     var $target = $('.modal-ticket');
     $target.toggleClass('act');
+    return false;
+  });
+
+  $(document).on('change', '.box-input input[type="file"]', function() {
+    var name = $(this).prop('files');
+    if (name.length >= 2) {
+      $(this).closest('.box-input').find('.file').html(name.length + ' arquivos');
+    } else {
+      $(this).closest('.box-input').find('.file').html(name[0].name);
+    }
     return false;
   });
 
