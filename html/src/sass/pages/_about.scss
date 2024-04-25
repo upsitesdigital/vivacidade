@@ -2,9 +2,111 @@
   About
 ======================================*/
 
+.about {
+  padding: 0 0 85px 0;
+  .title {
+    padding: 77px 0 76px 0;
+    background: #F9F9F9 url(../images/bg-about.png) bottom center no-repeat;
+    .grid {
+      @include columns( $quant: 1fr 1fr, $gutter: 0, $align: center, $template: '');
+      .text {
+        .tag {
+          @include font($family: $font-alt, $size: 14px, $weight: 700, $height: 16.8px, $color: $color-white);
+          padding: 10px 16px;
+          background-color: $color-black;
+          border-radius: 30px;
+          margin: 0 0 0 0;
+          display: inline-block;
+        }
+        h1 {
+          @include font($family: $font-alt, $size: 56px, $weight: 800, $height: 67.2px);
+          padding: 23px 0 22px 1px;
+        }
+        p {
+          @include font($size: 18px, $height: 25.2px, $color: rgba($color-black, 0.7));
+          padding: 0 16px 0 4px;
+        }
+      }
+      .image {}
+    }
+  }
+  .grid-content {
+    @include columns( $quant: 1.15fr 1fr, $gutter: 28px, $align: start, $template: '');
+    .text {
+      padding: 117px 0 0 6px;
+      p {
+        @include font($size: 16px, $height: 25.6px, $color: #6F6F6F);
+        padding: 0 16px 28px 4px;
+      }
+    }
+    .image {
+      padding: 99px 5px 0 0;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+  .grid-content-bottom {
+    @include columns( $quant: 1.4fr 1fr, $gutter: 64px, $align: start, $template: '');
+    .text {
+      padding: 56px 0 0 6px;
+      ul {
+        padding: 0 0 37px 0;
+        margin: 0 0 0 -4px;
+        li {
+          position: relative;
+          @include font($size: 16px, $weight: 700, $height: 19.2px, $color: $color-red);
+          padding: 0 0 0 20px;
+          &:before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background-color: $color-red;
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            margin-top: -4px;
+          }
+        }
+      }
+      .link-pdf {
+        padding: 11px 22px;
+        border: 1px solid $color-red;
+        border-radius: 40px;
+        display: inline-block;
+        @include font($family: $font-alt, $size: 16px, $weight: 700, $height: 19.6px, $align: center, $color: $color-white);
+        @include animate($time: 0.3s);
+        background: $color-red;
+        margin: 0 0 0 -6px;
+        cursor: pointer;
+        &:hover {
+          background: $color-white;
+          color: $color-red;
+        }
+      }
+    }
+    .image {
+      padding: 42px 5px 0 0;
+      p {
+        @include font($size: 16px, $weight: 800, $height: 25.6px, $color: $color-black);
+        a {
+          color: $color-red;
+        }
+      }
+    }
+  }
+}
+
 @include breakpoint2($min:xl, $max:'') {}
+
 @include breakpoint2($min:lg, $max:xl) {}
+
 @include breakpoint2($min:md, $max:lg) {}
+
 @include breakpoint2($min:sm, $max:md) {}
+
 @include breakpoint2($min:xs, $max:sm) {}
+
 @include breakpoint2($min:'', $max:xs) {}
