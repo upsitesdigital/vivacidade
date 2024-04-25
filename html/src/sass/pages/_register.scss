@@ -213,6 +213,11 @@
               @include font($family: $font-alt, $size: 16px, $height: 25.6px);
               padding: 0 21px 2px 14px;
               @include flex($align: center, $justify: space-between);
+              .file {
+                max-width: 490px;
+                overflow: hidden;
+                white-space: nowrap;
+              }
               .icon {
                 width: 20px;
                 height: 20px;
