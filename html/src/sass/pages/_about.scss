@@ -5,10 +5,10 @@
 .about {
   padding: 0 0 85px 0;
   .title {
-    padding: 77px 0 76px 0;
+    padding: 77px 0 0 0;
     background: #F9F9F9 url(../images/bg-about.png) bottom center no-repeat;
     .grid {
-      @include columns( $quant: 1fr 1fr, $gutter: 0, $align: center, $template: '');
+      @include columns( $quant: 1fr 1fr, $gutter: 0, $align: start, $template: '');
       .text {
         .tag {
           @include font($family: $font-alt, $size: 14px, $weight: 700, $height: 16.8px, $color: $color-white);
@@ -27,7 +27,15 @@
           padding: 0 16px 0 4px;
         }
       }
-      .image {}
+      .image {
+        text-align: right;
+        padding: 0 0 0 54px;
+        img {
+          margin: 0 -23px 0 0;
+          width: 100%;
+          height: auto;
+        }
+      }
     }
   }
   .grid-content {
