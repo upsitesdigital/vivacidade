@@ -1,0 +1,34 @@
+// Config
+@import "core/settings";
+@import "core/utils";
+// Vendor
+@import "slick-carousel/slick/slick.scss";
+// Defaults
+@import "core/global";
+@import "core/grid";
+@import "core/fonts";
+// Structural
+@import "core/structure";
+// Modules
+@import "modules/card-event-featured";
+@import "modules/card-event";
+@import "modules/card-blog-featured";
+@import "modules/card-ticket";
+@import "modules/card-blog";
+// @import "modules/sidebar";
+// @import "modules/breadcrumb";
+// @import "modules/slider";
+// @import "modules/buttons";
+// @import "modules/forms";
+// Pages
+@import "pages/home";
+@import "pages/list-events";
+@import "pages/internal-event";
+@import "pages/list-tickets";
+@import "pages/blog";
+@import "pages/categories";
+@import "pages/internal-blog";
+@import "pages/author";
+@import "pages/contact";
+@import "pages/register";
+@import "pages/about";
