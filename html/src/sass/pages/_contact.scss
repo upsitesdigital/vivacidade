@@ -113,6 +113,22 @@
         letter-spacing: 0.15px;
         a {
           @include font($family: $font-alt, $size: 14px, $weight: 800, $height: 19.6px, $color: $color-red);
+          position: relative;
+          &::after {
+            @include animate($time: 0.3s);
+            content: '';
+            width: 0%;
+            height: 2px;
+            background-color: $color-red;
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+          }
+          &:hover {
+            &::after {
+              width: 70%;
+            }
+          }
         }
       }
       hr {

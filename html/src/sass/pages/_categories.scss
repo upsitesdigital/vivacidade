@@ -34,6 +34,12 @@
           stroke-linecap: round;
           stroke-linejoin: round;
           transform: rotate(90deg);
+          @include animate($time: 0.3s);
+        }
+        &:hover {
+          .icon {
+            margin: 0 5px 0 -5px;
+          }
         }
       }
       h1 {
