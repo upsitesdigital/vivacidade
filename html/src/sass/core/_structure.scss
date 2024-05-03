@@ -85,7 +85,7 @@ header {
               position: absolute;
               top: 70%;
               left: 100%;
-              margin: 0 0 0 -107px;
+              margin: 0 0 0 -110px;
               padding: 16px 24px;
               z-index: 11;
               width: 214px;
@@ -133,7 +133,7 @@ header {
                 width: 70%;
               }
               .submenu {
-                top: 100%;
+                top: calc(100% - 10px);
                 opacity: 1;
                 visibility: visible;
               }
