@@ -5,6 +5,8 @@ export default function() {
   $('.date').mask('00/00/0000');
   $('.phone').mask('(00) 0 0000-0000');
 
+  Fancybox.bind("[data-fancybox]");
+
   var countChar = function(val, $quat, target) {
     var len = val.length;
     $('#' + target).text($quat - len);
