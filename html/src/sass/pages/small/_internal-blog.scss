@@ -1,0 +1,226 @@
+/*======================================
+  Blog internal
+======================================*/
+
+@include breakpoint2($min:sm, $max:lg) {
+  .internal-blog {
+    &:before {
+      height: get-vw-lg(564px);
+    }
+    article {
+      padding: get-vw-lg(84px) get-vw-lg(99px) get-vw-lg(95px) get-vw-lg(99px);
+      .head {
+        .top {
+          @include flex($align: center, $justify: start, $gap: get-vw-lg(32px));
+          padding: 0 0 get-vw-lg(24px) 0;
+          .back {
+            @include flex($align: center, $justify: start, $gap: get-vw-lg(4px));
+            @include font($family: $font-alt, $size: get-vw-lg(12px), $weight: 700, $height: get-vw-lg(14.4px), $color: $color-red);
+            .icon {
+              width: get-vw-lg(8px);
+              height: get-vw-lg(14px);
+              stroke-width: get-vw-lg(3px);
+            }
+            &:hover {
+              .icon {
+                margin: 0 get-vw-lg(5px) 0 get-vw-lg(-5px);
+              }
+            }
+          }
+          .cat {
+            @include font($family: $font-alt, $size: get-vw-lg(11px), $weight: 700, $height: get-vw-lg(13.2px), $color: $color-white);
+            padding: get-vw-lg(6px) get-vw-lg(10px);
+            border-radius: get-vw-lg(30px);
+          }
+          .date {
+            @include font($size: get-vw-lg(12px), $height: get-vw-lg(16.8px));
+          }
+        }
+        h1 {
+          @include font($family: $font-alt, $size: get-vw-lg(36px), $weight: 800, $height: get-vw-lg(43.2px));
+          padding: 0 0 get-vw-lg(25px) 0;
+        }
+        p {
+          @include font($size: get-vw-lg(18px), $height: get-vw-lg(28.8px), $color: rgba($color-black, 0.7));
+          padding: 0 0 get-vw-lg(22px) 0;
+        }
+        .bottom {
+          padding: get-vw-lg(16px) 0 get-vw-lg(36px) 0;
+          .author {
+            @include flex($align: center, $justify: start, $gap: get-vw-lg(17px));
+            .avatar {
+              width: get-vw-lg(31.5px);
+              height: get-vw-lg(31.5px);
+            }
+            .name {
+              @include font($size: get-vw-lg(14px), $height: get-vw-lg(19.6px));
+            }
+          }
+          .share {
+            @include flex($align: center, $gap: get-vw-lg(26px));
+            h4 {
+              @include font($size: get-vw-lg(14px), $weight: 700, $height: get-vw-lg(19.6px), $color: $color-black);
+            }
+            ul {
+              @include flex($align: center, $gap: get-vw-lg(18px));
+              li {
+                a {
+                  .icon {
+                    width: get-vw-lg(22.5px);
+                    height: get-vw-lg(22.5px);
+                    &.stroke {
+                      stroke-width: get-vw-lg(1.5px);
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .image {
+        height: get-vw-lg(420px);
+        border-radius: get-vw-lg(8px);
+      }
+      .box-newsletter {
+        border-radius: get-vw-lg(8px);
+        height: get-vw-lg(89px);
+        margin: get-vw-lg(21px) 0 0 0;
+        padding: 0 get-vw-lg(36px) 0 get-vw-lg(27px);
+        @include columns( $quant: get-vw-lg(264px) 1fr, $gutter: 0, $align: center, $template: '');
+        h3 {
+          @include font($family: $font-alt, $size: get-vw-lg(16px), $weight: 700, $height: get-vw-lg(22.4px), $color: $color-white);
+          @include flex($align: center, $gap: get-vw-lg(10px));
+          .icon {
+            width: get-vw-lg(30px);
+            height: get-vw-lg(30px);
+            &.stroke {
+              stroke-width: get-vw-lg(1.5px);
+            }
+          }
+        }
+        .form {
+          @include columns( $quant: get-vw-lg(240px) get-vw-lg(245px) 1fr, $gutter: get-vw-lg(10px), $align: center, $template: '');
+          input {
+            height: get-vw-lg(40px);
+            border-radius: get-vw-lg(40px);
+            padding: 0 get-vw-lg(25px);
+            @include font($family: $font-alt, $size: get-vw-lg(14px), $height: get-vw-lg(19.6px), $color: #747474);
+            &[type="submit"] {
+              @include font($family: $font-alt, $size: get-vw-lg(14px), $weight: 700, $align: center, $height: get-vw-lg(19.6px), $color: $color-white);
+            }
+          }
+        }
+      }
+      .grid {
+        @include columns( $quant: get-vw-lg(195px) 1fr, $gutter: get-vw-lg(94px), $align: stretch, $template: '');
+        padding: get-vw-lg(55px) 0 0 0;
+        .sidebar {
+          .box {
+            top: get-vw-lg(10px);
+            h3 {
+              @include font($family: $font-alt, $size: get-vw-lg(16px), $weight: 800, $height: get-vw-lg(22.4px));
+              letter-spacing: get-vw-lg(0.6px);
+              padding: 0 0 get-vw-lg(21px) 0;
+            }
+            ul {
+              padding: get-vw-lg(17px) 0 0 0;
+              li {
+                padding: get-vw-lg(8px) 0;
+                a {
+                  @include font($family: $font-alt, $size: get-vw-lg(16px), $weight: 500, $height: get-vw-lg(25.6px), $color: rgba(#6F6F6F, 0.7));
+                }
+                &.act {
+                  a {
+                    @include font($family: $font-alt, $size: get-vw-lg(16px), $weight: 500, $height: get-vw-lg(25.6px), $color: #363636);
+                  }
+                }
+              }
+            }
+          }
+        }
+        .content {
+          .post {
+            padding: 0 0 get-vw-lg(28px) 0;
+            p {
+              @include font($size: get-vw-lg(16px), $height: get-vw-lg(25.6px), $color: #6F6F6F);
+              padding: 0 0 get-vw-lg(27.7px) 0;
+            }
+          }
+          .service {
+            padding: get-vw-lg(57px) 0 get-vw-lg(35px) 0;
+            margin: 0 0 get-vw-lg(64px) 0;
+            h3 {
+              @include font($family: $font-alt, $size: get-vw-lg(24px), $weight: 800, $height: get-vw-lg(28.8px));
+              padding: 0 0 get-vw-lg(31px) 0;
+            }
+            ul {
+              li {
+                padding: 0 0 get-vw-lg(19px) 0;
+                @include font($size: get-vw-lg(16px), $weight: 400, $height: get-vw-lg(19.2px), $color: #6F6F6F);
+                strong {
+                  @include font($size: get-vw-lg(16px), $weight: 700, $height: get-vw-lg(19.2px));
+                }
+              }
+            }
+          }
+          .author {
+            height: get-vw-lg(322px);
+            @include columns( $quant: get-vw-lg(216px) 1fr, $gutter: get-vw-lg(53px), $align: start, $template: '');
+            border-radius: get-vw-lg(8px);
+            &:before {
+              top: get-vw-lg(109px);
+              left: get-vw-lg(-41px);
+              @include font($family: $font-alt, $size: get-vw-lg(82.64px), $weight: 800, $height: get-vw-lg(99.16px), $color: #DCDCDC);
+            }
+            .avatar {
+              width: get-vw-lg(136px);
+              height: get-vw-lg(136px);
+              border: get-vw-lg(2.68px) solid $color-orange;
+              margin: get-vw-lg(91px) 0 0 get-vw-lg(80px);
+            }
+            .content {
+              padding: get-vw-lg(59px) get-vw-lg(61px) 0 0;
+              h4 {
+                @include font($family: $font-alt, $size: get-vw-lg(18px), $weight: 800, $height: get-vw-lg(21.6px));
+                padding: 0 0 get-vw-lg(17px) 0;
+              }
+              .publications {
+                @include font($family: $font-alt, $size: get-vw-lg(14px), $weight: 500, $height: get-vw-lg(19.6px));
+                padding: 0 0 0 get-vw-lg(20px);
+                margin: 0 0 get-vw-lg(16px) 0;
+                &:before {
+                  width: get-vw-lg(4px);
+                  height: get-vw-lg(4px);
+                  margin: get-vw-lg(-3px) 0 0 0;
+                }
+              }
+              p {
+                @include font($size: get-vw-lg(16px), $height: get-vw-lg(25.6px));
+              }
+            }
+            .flag {
+              width: get-vw-lg(45px);
+              height: get-vw-lg(63px);
+              top: get-vw-lg(-21px);
+              right: get-vw-lg(45px);
+            }
+          }
+        }
+      }
+    }
+  }
+  .related-posts {
+    padding: get-vw-lg(90px) 0 0 0;
+    h4 {
+      @include font($family: $font-alt, $size: get-vw-lg(28px), $weight: 800, $height: get-vw-lg(39.2px));
+      padding: 0 0 get-vw-lg(23px) 0;
+    }
+    .grid {
+      @include columns( $quant: repeat(4, 1fr), $gutter: get-vw-lg(72px) get-vw-lg(28px), $align: start, $template: '');
+    }
+  }
+  .full-banner {
+    padding: get-vw-lg(111px) 0 get-vw-lg(71px) 0;
+  }
+}

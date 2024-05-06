@@ -219,6 +219,168 @@ gulp.task('author', function() {
 });
 
 /**
+ * Sass small
+ */
+gulp.task('home-small', function() {
+  return gulp.src(['./src/sass/home-small.scss'])
+    .pipe($.sourcemaps.init())
+    .pipe(
+      $.sass({
+        includePaths: ['./node_modules/'],
+        outputStyle: 'expanded'
+      })
+      .on('error', $.sass.logError)
+    )
+    .pipe($.sourcemaps.write())
+    .pipe(gulp.dest('./assets/css/'))
+    .pipe(browserSync.stream());
+});
+gulp.task('about-small', function() {
+  return gulp.src(['./src/sass/about-small.scss'])
+    .pipe($.sourcemaps.init())
+    .pipe(
+      $.sass({
+        includePaths: ['./node_modules/'],
+        outputStyle: 'expanded'
+      })
+      .on('error', $.sass.logError)
+    )
+    .pipe($.sourcemaps.write())
+    .pipe(gulp.dest('./assets/css/'))
+    .pipe(browserSync.stream());
+});
+gulp.task('list-events-small', function() {
+  return gulp.src(['./src/sass/list-events-small.scss'])
+    .pipe($.sourcemaps.init())
+    .pipe(
+      $.sass({
+        includePaths: ['./node_modules/'],
+        outputStyle: 'expanded'
+      })
+      .on('error', $.sass.logError)
+    )
+    .pipe($.sourcemaps.write())
+    .pipe(gulp.dest('./assets/css/'))
+    .pipe(browserSync.stream());
+});
+gulp.task('internal-event-small', function() {
+  return gulp.src(['./src/sass/internal-event-small.scss'])
+    .pipe($.sourcemaps.init())
+    .pipe(
+      $.sass({
+        includePaths: ['./node_modules/'],
+        outputStyle: 'expanded'
+      })
+      .on('error', $.sass.logError)
+    )
+    .pipe($.sourcemaps.write())
+    .pipe(gulp.dest('./assets/css/'))
+    .pipe(browserSync.stream());
+});
+gulp.task('list-tickets-small', function() {
+  return gulp.src(['./src/sass/list-tickets-small.scss'])
+    .pipe($.sourcemaps.init())
+    .pipe(
+      $.sass({
+        includePaths: ['./node_modules/'],
+        outputStyle: 'expanded'
+      })
+      .on('error', $.sass.logError)
+    )
+    .pipe($.sourcemaps.write())
+    .pipe(gulp.dest('./assets/css/'))
+    .pipe(browserSync.stream());
+});
+gulp.task('register-small', function() {
+  return gulp.src(['./src/sass/register-small.scss'])
+    .pipe($.sourcemaps.init())
+    .pipe(
+      $.sass({
+        includePaths: ['./node_modules/'],
+        outputStyle: 'expanded'
+      })
+      .on('error', $.sass.logError)
+    )
+    .pipe($.sourcemaps.write())
+    .pipe(gulp.dest('./assets/css/'))
+    .pipe(browserSync.stream());
+});
+gulp.task('contact-small', function() {
+  return gulp.src(['./src/sass/contact-small.scss'])
+    .pipe($.sourcemaps.init())
+    .pipe(
+      $.sass({
+        includePaths: ['./node_modules/'],
+        outputStyle: 'expanded'
+      })
+      .on('error', $.sass.logError)
+    )
+    .pipe($.sourcemaps.write())
+    .pipe(gulp.dest('./assets/css/'))
+    .pipe(browserSync.stream());
+});
+gulp.task('blog-small', function() {
+  return gulp.src(['./src/sass/blog-small.scss'])
+    .pipe($.sourcemaps.init())
+    .pipe(
+      $.sass({
+        includePaths: ['./node_modules/'],
+        outputStyle: 'expanded'
+      })
+      .on('error', $.sass.logError)
+    )
+    .pipe($.sourcemaps.write())
+    .pipe(gulp.dest('./assets/css/'))
+    .pipe(browserSync.stream());
+});
+gulp.task('categories-small', function() {
+  return gulp.src(['./src/sass/categories-small.scss'])
+    .pipe($.sourcemaps.init())
+    .pipe(
+      $.sass({
+        includePaths: ['./node_modules/'],
+        outputStyle: 'expanded'
+      })
+      .on('error', $.sass.logError)
+    )
+    .pipe($.sourcemaps.write())
+    .pipe(gulp.dest('./assets/css/'))
+    .pipe(browserSync.stream());
+});
+gulp.task('internal-post-small', function() {
+  return gulp.src(['./src/sass/internal-post-small.scss'])
+    .pipe($.sourcemaps.init())
+    .pipe(
+      $.sass({
+        includePaths: ['./node_modules/'],
+        outputStyle: 'expanded'
+      })
+      .on('error', $.sass.logError)
+    )
+    .pipe($.sourcemaps.write())
+    .pipe(gulp.dest('./assets/css/'))
+    .pipe(browserSync.stream());
+});
+gulp.task('author-small', function() {
+  return gulp.src(['./src/sass/author-small.scss'])
+    .pipe($.sourcemaps.init())
+    .pipe(
+      $.sass({
+        includePaths: ['./node_modules/'],
+        outputStyle: 'expanded'
+      })
+      .on('error', $.sass.logError)
+    )
+    .pipe($.sourcemaps.write())
+    .pipe(gulp.dest('./assets/css/'))
+    .pipe(browserSync.stream());
+});
+
+
+
+
+
+/**
  * Sass min
  */
 gulp.task('sass:release', ['sass'], function() {
@@ -307,6 +469,10 @@ gulp.task('author:release', ['author'], function() {
 });
 
 
+
+
+
+
 gulp.task('js:release', function() {
   gulp.src(['./assets/js/bundle.js'])
     .pipe(uglify())
@@ -357,7 +523,33 @@ gulp.task('serve', function() {
 /**
  * Build
  */
-gulp.task('build', ['sass', 'home', 'about', 'list-events', 'internal-event', 'list-tickets', 'register', 'contact', 'blog', 'categories', 'internal-post', 'author', 'scripts', 'svg2png'], function() {
+gulp.task('build', [
+  'sass',
+  'home',
+  'about',
+  'list-events',
+  'internal-event',
+  'list-tickets',
+  'register',
+  'contact',
+  'blog',
+  'categories',
+  'internal-post',
+  'author',
+  'home-small',
+  'about-small',
+  'list-events-small',
+  'internal-event-small',
+  'list-tickets-small',
+  'register-small',
+  'contact-small',
+  'blog-small',
+  'categories-small',
+  'internal-post-small',
+  'author-small',
+  'scripts',
+  'svg2png'
+], function() {
   $.util.log($.util.colors.green('Build is finished'));
 });
 
@@ -375,7 +567,32 @@ gulp.task('watch', ['serve'], function() {
   gulp.watch('./*.html', { cwd: './' }).on('change', browserSync.reload);
 
   /* Watch styles */
-  gulp.watch(['**/*.scss'], { cwd: './src/sass/' }, ['sass', 'home', 'about', 'list-events', 'internal-event', 'list-tickets', 'register', 'contact', 'blog', 'categories', 'internal-post', 'author']).on('change', browserSync.reload);
+  gulp.watch(['**/*.scss'], { cwd: './src/sass/' }, [
+    'sass',
+    'home',
+    'about',
+    'list-events',
+    'internal-event',
+    'list-tickets',
+    'register',
+    'contact',
+    'blog',
+    'categories',
+    'internal-post',
+    'author',
+    'home-small',
+    'about-small',
+    'list-events-small',
+    'internal-event-small',
+    'list-tickets-small',
+    'register-small',
+    'contact-small',
+    'blog-small',
+    'categories-small',
+    'internal-post-small',
+    'author-small'
+
+  ]).on('change', browserSync.reload);
 
   /* Watch SVG */
   gulp.watch(['*.svg'], { cwd: './src/img/icons/' }, ['svgicons']).on('change', browserSync.reload);

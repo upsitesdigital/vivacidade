@@ -1,0 +1,60 @@
+/*======================================
+  Card event
+======================================*/
+
+@include breakpoint2($min:sm, $max:lg) {
+  .card-event {
+    box-shadow: 0 get-vw-lg(10px) get-vw-lg(14px) 0 rgba($color-black, 0.1);
+    border-radius: get-vw-lg(8px);
+    .image {
+      height: get-vw-lg(117px);
+      .cat {
+        bottom: get-vw-lg(-7px);
+        left: get-vw-lg(19px);
+        @include font($family: $font-alt, $size: get-vw-lg(11px), $weight: 700, $height: get-vw-lg(13.2px), $color: $color-white);
+        padding: get-vw-lg(6px) get-vw-lg(10px);
+        border-radius: get-vw-lg(100px);
+      }
+    }
+    .content {
+      padding: get-vw-lg(21px) get-vw-lg(20px) get-vw-lg(10px) get-vw-lg(20px);
+      .head {
+        padding: 0 0 get-vw-lg(11px) 0;
+        h3 {
+          @include font($family: $font-alt, $size: get-vw-lg(16px), $weight: 800, $height: get-vw-lg(19.2px));
+          padding: 0 0 get-vw-lg(9px) 0;
+        }
+        p {
+          @include font($family: $font-alt, $size: get-vw-lg(12px), $height: get-vw-lg(16.8px), $color: rgba($color-black, 0.7));
+        }
+      }
+      .infos {
+        padding: get-vw-lg(12px) 0 0 0;
+        span {
+          @include font($family: $font-alt, $size: get-vw-lg(12px), $weight: 700, $height: get-vw-lg(14.4px));
+          @include flex($align: center, $gap: get-vw-lg(9px));
+          padding: 0 0 get-vw-lg(8px) 0;
+          .flag {
+            width: get-vw-lg(20px);
+            height: get-vw-lg(20px);
+            stroke-width: get-vw-lg(1.5px);
+          }
+          .calendar {
+            width: get-vw-lg(20px);
+            height: get-vw-lg(20px);
+            stroke-width: get-vw-lg(1.5px);
+          }
+          .arrow {
+            width: get-vw-lg(12px);
+            height: get-vw-lg(20px);
+            margin: 0 get-vw-lg(3px);
+            stroke-width: get-vw-lg(1.5px);
+          }
+        }
+      }
+    }
+    &:hover {
+      box-shadow: 0 get-vw-lg(10px) get-vw-lg(14px) 0 rgba($color-black, 0.2);
+    }
+  }
+}

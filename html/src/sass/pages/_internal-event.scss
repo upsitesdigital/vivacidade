@@ -390,9 +390,7 @@
         margin-top: -25px;
         width: 50px;
         height: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include flex($align: center, $justify: center);
         border-radius: 50%;
         padding: 0 11px;
         overflow: hidden;
@@ -445,25 +443,13 @@
   padding: 0 0 39px 0;
   .title {
     border-top: 1px solid #E8E8E8;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @include flex($align: center, $justify: space-between);
     padding: 70px 0 17px 0;
     h2 {
-      font-family: $font-alt;
-      font-size: 32px;
-      font-weight: 800;
-      line-height: 38.4px;
-      text-align: left;
-      color: $color-black;
+      @include font($family: $font-alt, $size: 32px, $weight: 800, $height: 38.4px);
     }
     .link {
-      font-family: $font-alt;
-      font-size: 16px;
-      font-weight: 700;
-      line-height: 19.2px;
-      text-align: left;
-      color: $color-red;
+      @include font($family: $font-alt, $size: 16px, $weight: 700, $height: 19.2px, $color: $color-red);
       .icon {
         transform: rotate(-90deg);
         width: 12px;
@@ -497,9 +483,7 @@
       margin-top: -55px;
       width: 50px;
       height: 50px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      @include flex($align: center, $justify: center);
       border-radius: 50%;
       padding: 0 11px;
       overflow: hidden;
@@ -557,6 +541,10 @@
 .full-banner {
   padding: 68px 0 140px 0;
   text-align: center;
+  img {
+    width: 100%;
+    height: auto;
+  }
 }
 
 @include breakpoint2($min:xl, $max:'') {}

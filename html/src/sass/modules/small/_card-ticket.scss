@@ -1,0 +1,104 @@
+/*======================================
+  Card ticket
+======================================*/
+
+@include breakpoint2($min:sm, $max:lg) {
+  .card-ticket {
+    box-shadow: 0 get-vw-lg(10px) get-vw-lg(14px) 0 rgba($color-black, 0.1);
+    border-radius: get-vw-lg(8px);
+    .image {
+      height: get-vw-lg(117px);
+      .cat {
+        bottom: get-vw-lg(-7px);
+        left: get-vw-lg(19px);
+        @include font($family: $font-alt, $size: get-vw-lg(11px), $weight: 700, $height: get-vw-lg(13.2px), $color: $color-white);
+        padding: get-vw-lg(6px) get-vw-lg(10px);
+        border-radius: get-vw-lg(100px);
+      }
+    }
+    .content {
+      padding: get-vw-lg(21px) get-vw-lg(20px) get-vw-lg(22px) get-vw-lg(20px);
+      .head {
+        h3 {
+          @include font($family: $font-alt, $size: get-vw-lg(16px), $weight: 800, $height: get-vw-lg(19.2px));
+          padding: 0 0 get-vw-lg(11px) 0;
+        }
+      }
+      .infos {
+        padding: get-vw-lg(12px) 0 0 0;
+        span {
+          @include font($family: $font-alt, $size: get-vw-lg(12px), $weight: 700, $height: get-vw-lg(14.4px));
+          @include flex($align: center, $gap: get-vw-lg(9px));
+          padding: 0 0 get-vw-lg(8px) 0;
+          .flag {
+            width: get-vw-lg(20px);
+            height: get-vw-lg(20px);
+            stroke-width: get-vw-lg(1.5px);
+          }
+        }
+        .box {
+          height: get-vw-lg(67px);
+          margin: 0 0 get-vw-lg(12px) 0;
+          @include font($size: get-vw-lg(14px), $weight: 600, $height: get-vw-lg(16.8px), $color: $color-red);
+          padding: get-vw-lg(9px) get-vw-lg(25px);
+        }
+        .get-ticket {
+          padding: get-vw-lg(10.5px) get-vw-lg(41px);
+          border-radius: get-vw-lg(40px);
+          @include font($family: $font-alt, $size: get-vw-lg(14px), $weight: 700, $height: get-vw-lg(19.6px), $align: center, $color: $color-white);
+        }
+      }
+    }
+    &:hover {
+      box-shadow: 0 get-vw-lg(10px) get-vw-lg(14px) 0 rgba($color-black, 0.2);
+    }
+  }
+  .modal-ticket {
+    .content {
+      width: get-vw-lg(426px);
+      height: get-vw-lg(540px);
+      padding: get-vw-lg(33px) get-vw-lg(60px) 0 get-vw-lg(60px);
+      border-radius: get-vw-lg(16px);
+      &:before {
+        height: get-vw-lg(122px);
+      }
+      .image {
+        height: get-vw-lg(154px);
+        border-radius: get-vw-lg(8px);
+      }
+      h2 {
+        @include font($family: $font-alt, $size: get-vw-lg(18px), $weight: 800, $height: get-vw-lg(21.6px));
+        padding: get-vw-lg(27px) 0 get-vw-lg(2px) 0;
+      }
+      .type {
+        @include font($family: $font-alt, $size: get-vw-lg(14px), $weight: 600, $height: get-vw-lg(16.8px));
+        padding: 0 0 get-vw-lg(16px) 0;
+      }
+      .box {
+        height: get-vw-lg(66px);
+        @include font($size: get-vw-lg(14px), $weight: 600, $height: get-vw-lg(16.8px), $color: $color-red);
+        padding: get-vw-lg(9px) get-vw-lg(17px);
+      }
+      .form {
+        label {
+          padding: get-vw-lg(24px) 0 get-vw-lg(21px) 0;
+          .label {
+            @include font($family: $font-alt, $size: get-vw-lg(14px), $weight: 600, $height: get-vw-lg(16.8px));
+            padding: 0 0 get-vw-lg(8px) 0;
+          }
+          input {
+            height: get-vw-lg(48px);
+            border-radius: get-vw-lg(4px);
+            padding: get-vw-lg(2px) get-vw-lg(17px) 0 get-vw-lg(17px);
+            @include font($family: $font-alt, $size: get-vw-lg(16px), $height: get-vw-lg(25.6px), $color: #515151);
+          }
+        }
+        .button {
+          padding: get-vw-lg(10.5px) get-vw-lg(41px);
+          border-radius: get-vw-lg(40px);
+          @include font($family: $font-alt, $size: get-vw-lg(14px), $weight: 700, $height: get-vw-lg(19.6px), $align: center, $color: $color-white);
+        }
+      }
+    }
+  }
+}

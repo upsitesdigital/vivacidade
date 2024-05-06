@@ -1,0 +1,354 @@
+/*======================================
+  Home
+======================================*/
+
+@include breakpoint2($min:sm, $max:lg) {
+  .slide-full {
+    .btn {
+      margin-top: get-vw-lg(-14px);
+      width: get-vw-lg(28px);
+      height: get-vw-lg(28px);
+      &.btn-prev {
+        left: get-vw-lg(-74px);
+        &:hover {
+          .icon {
+            margin-left: get-vw-lg(-5px);
+          }
+        }
+      }
+      &.btn-next {
+        right: get-vw-lg(-71px);
+        &:hover {
+          .icon {
+            margin-right: get-vw-lg(-5px);
+          }
+        }
+      }
+    }
+    .slide {
+      border-radius: get-vw-lg(8px);
+      .item {
+        height: get-vw-lg(434px);
+        .content {
+          width: get-vw-calc(lg, 100%, '-', 88px);
+          bottom: get-vw-lg(39px);
+          left: get-vw-lg(44px);
+          padding: get-vw-lg(32px) 0 0 0;
+          .left {
+            h2 {
+              @include font($family: $font-alt, $size: get-vw-lg(20px), $weight: 800, $height: get-vw-lg(24px), $color: $color-white);
+              padding: 0 0 get-vw-lg(8px) 0;
+            }
+            .link {
+              @include font($family: $font-alt, $size: get-vw-lg(16px), $weight: 700, $height: get-vw-lg(19.2px), $color: $color-red);
+              .icon {
+                width: get-vw-lg(12px);
+                height: get-vw-lg(10px);
+                margin: 0 0 0 get-vw-lg(2px);
+                stroke-width: get-vw-lg(2px);
+              }
+              &:hover {
+                .icon {
+                  margin: 0 0 0 get-vw-lg(7px);
+                }
+              }
+            }
+          }
+          .right {
+            padding: 0 get-vw-lg(12px) get-vw-lg(4px) 0;
+            span {
+              @include font($family: $font-alt, $size: get-vw-lg(14px), $weight: 700, $height: get-vw-lg(16.8px), $color: $color-white);
+              @include flex($align: center, $gap: get-vw-lg(9px));
+              .flag {
+                width: get-vw-lg(20px);
+                height: get-vw-lg(20px);
+                stroke-width: get-vw-lg(1.5px);
+              }
+              .calendar {
+                width: get-vw-lg(20px);
+                height: get-vw-lg(20px);
+                stroke-width: get-vw-lg(1.5px);
+              }
+              &.first {
+                padding-right: get-vw-lg(33px);
+              }
+              &.last {
+                padding-left: get-vw-lg(30px);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .search {
+    padding: get-vw-lg(54px) 0 0 get-vw-lg(6px);
+    .grid {
+      padding: 0 0 get-vw-lg(51px) 0;
+      @include columns( $quant: 1fr 1.2fr, $gutter: get-vw-lg(110px), $align: start, $template: '');
+      .text {
+        padding: get-vw-lg(40px) 0 0 0;
+        .subtitle {
+          @include font($size: get-vw-lg(16px), $height: get-vw-lg(22.4px));
+          padding: 0 0 get-vw-lg(8px) 0;
+        }
+        h2 {
+          @include font($family: $font-alt, $size: get-vw-lg(56px), $weight: 800, $height: get-vw-lg(67.2px));
+          padding: 0 0 get-vw-lg(24px) 0;
+        }
+        p {
+          @include font($size: get-vw-lg(18px), $height: get-vw-lg(25.2px), $color: rgba($color-black, 0.6));
+        }
+      }
+      .form {
+        .box-search {
+          @include columns( $quant: 1fr get-vw-lg(60px), $gutter: get-vw-lg(20px), $align: center, $template: '');
+          height: get-vw-lg(66px);
+          border-radius: get-vw-lg(60px);
+          padding: 0 get-vw-lg(9px) 0 get-vw-lg(40px);
+          input {
+            @include font($family: $font-alt, $size: get-vw-lg(18px), $weight: 500, $height: get-vw-lg(25.2px), $color: rgba($color-black, 0.5));
+          }
+          button {
+            width: get-vw-lg(60px);
+            height: get-vw-lg(53px);
+            border-radius: get-vw-lg(60px);
+            .icon {
+              width: get-vw-lg(24px);
+              height: get-vw-lg(24px);
+              stroke-width: get-vw-lg(2px);
+            }
+          }
+        }
+      }
+      .between {
+        width: get-vw-lg(101px);
+        height: get-vw-lg(56px);
+        margin: get-vw-lg(16px) 0 0 get-vw-lg(-123px);
+      }
+    }
+  }
+  .list-cat {
+    padding: get-vw-lg(63px) 0 0 0;
+    h2 {
+      @include font($family: $font-alt, $size: get-vw-lg(24px), $weight: 800, $height: get-vw-lg(28.8px));
+      padding: 0 0 get-vw-lg(24px) 0;
+    }
+    .grid {
+      @include columns( $quant: repeat(6, 1fr), $gutter: get-vw-lg(30px), $align: center, $template: '');
+      .item {
+        border-radius: get-vw-lg(8px);
+        border: get-vw-lg(2px) solid #E6E6E6;
+        padding: get-vw-lg(16px) get-vw-lg(26px) get-vw-lg(22px) get-vw-lg(19px);
+        .icon {
+          width: get-vw-lg(24px);
+          height: get-vw-lg(24px);
+          margin: 0 0 get-vw-lg(20px) 0;
+        }
+        h3 {
+          @include font($family: $font-alt, $size: get-vw-lg(16px), $weight: 700, $height: get-vw-lg(19.2px));
+        }
+      }
+    }
+  }
+  .featured-events {
+    padding: get-vw-lg(81px) 0 0 0;
+    &::before {
+      height: get-vw-calc(lg, 100%, '-', 322px);
+    }
+    .title {
+      padding: 0 0 get-vw-lg(18px) 0;
+      h2 {
+        @include font($family: $font-alt, $size: get-vw-lg(32px), $weight: 800, $height: get-vw-lg(38.4px));
+      }
+      .location {
+        @include font($family: $font-alt, $size: get-vw-lg(16px), $weight: 700, $height: get-vw-lg(19.2px));
+      }
+    }
+    .slide-box {
+      .slide {
+        margin: 0 get-vw-lg(-14px);
+        .item {
+          padding: get-vw-lg(14px) get-vw-lg(14px) get-vw-lg(25px) get-vw-lg(14px);
+        }
+      }
+      .btn {
+        margin-top: get-vw-lg(-55px);
+        width: get-vw-lg(50px);
+        height: get-vw-lg(50px);
+        padding: 0 get-vw-lg(11px);
+        &.btn-prev {
+          left: get-vw-lg(-94px);
+          &:hover {
+            .icon {
+              margin-left: get-vw-lg(-5px);
+            }
+          }
+        }
+        &.btn-next {
+          right: get-vw-lg(-91px);
+          &:hover {
+            .icon {
+              margin-right: get-vw-lg(-5px);
+            }
+          }
+        }
+      }
+    }
+  }
+  .featured-banner {
+    padding: get-vw-lg(66px) 0 0 0;
+    .box {
+      @include columns( $quant: get-vw-lg(385px) 1fr get-vw-lg(279px), $gutter: get-vw-lg(10px), $align: start, $template: 'logo menu location');
+      border-radius: get-vw-lg(8px);
+      h2 {
+        padding: get-vw-lg(50px) 0 0 get-vw-lg(55px);
+        @include font($family: $font-alt, $size: get-vw-lg(32px), $weight: 800, $height: get-vw-lg(38.4px));
+      }
+      .image {
+        padding: 0 get-vw-lg(55px) 0 get-vw-lg(25px);
+        img {
+          margin: get-vw-lg(-16px) 0 0 get-vw-lg(0px);
+        }
+      }
+      .text {
+        padding: get-vw-lg(45px) 0 0 0;
+        p {
+          @include font($family: $font-alt, $size: get-vw-lg(18px), $weight: 600, $height: get-vw-lg(21.6px));
+          padding: 0 0 get-vw-lg(13px) 0;
+        }
+        .link {
+          height: get-vw-lg(43px);
+          border-radius: get-vw-lg(43px);
+          @include font($family: $font-alt, $size: get-vw-lg(16px), $weight: 700, $height: get-vw-lg(19.2px), $color: $color-white);
+          padding: 0 get-vw-lg(20px);
+          .icon {
+            transform: rotate(-90deg);
+            width: get-vw-lg(12px);
+            height: get-vw-lg(24px);
+            stroke-width: get-vw-lg(2px);
+            margin: 0 0 0 get-vw-lg(5px);
+          }
+          &:hover {
+            .icon {
+              margin: 0 get-vw-lg(-5px) 0 get-vw-lg(10px);
+            }
+          }
+        }
+      }
+    }
+  }
+  .cat-events {
+    padding: 0 0 get-vw-lg(96px) 0;
+    .title {
+      padding: get-vw-lg(83px) 0 get-vw-lg(17px) 0;
+      h2 {
+        @include font($family: $font-alt, $size: get-vw-lg(32px), $weight: 800, $height: get-vw-lg(38.4px));
+      }
+      .link {
+        @include font($family: $font-alt, $size: get-vw-lg(16px), $weight: 700, $height: get-vw-lg(19.2px), $color: $color-red);
+        .icon {
+          width: get-vw-lg(12px);
+          height: get-vw-lg(10px);
+          stroke-width: get-vw-lg(2px);
+          margin: 0 0 0 get-vw-lg(5px);
+        }
+        &:hover {
+          .icon {
+            margin: 0 get-vw-lg(-5px) 0 get-vw-lg(10px);
+          }
+        }
+      }
+    }
+    .slide-box {
+      padding: 0 0 get-vw-lg(44px) 0;
+      .slide {
+        margin: 0 get-vw-lg(-14px);
+        .item {
+          padding: get-vw-lg(14px) get-vw-lg(14px) get-vw-lg(25px) get-vw-lg(14px);
+        }
+      }
+      .btn {
+        margin-top: get-vw-lg(-55px);
+        width: get-vw-lg(50px);
+        height: get-vw-lg(50px);
+        padding: 0 get-vw-lg(11px);
+        &.btn-prev {
+          left: get-vw-lg(-94px);
+          &:hover {
+            .icon {
+              margin-left: get-vw-lg(-5px);
+            }
+          }
+        }
+        &.btn-next {
+          right: get-vw-lg(-91px);
+          &:hover {
+            .icon {
+              margin-right: get-vw-lg(-5px);
+            }
+          }
+        }
+      }
+      .slick-dots {
+        width: get-vw-calc(lg, 100%, '-', 28px);
+        li {
+          height: get-vw-lg(2px);
+          button {
+            height: get-vw-lg(2px);
+          }
+        }
+      }
+    }
+  }
+  .featured-blog {
+    padding: get-vw-lg(149px) 0 0 0;
+    h2 {
+      @include font($family: $font-alt, $size: get-vw-lg(32px), $weight: 800, $height: get-vw-lg(38.4px));
+      padding: 0 0 get-vw-lg(18px) 0;
+    }
+    .slide-box {
+      .slide {
+        margin: 0 get-vw-lg(-14px);
+        .item {
+          padding: get-vw-lg(14px) get-vw-lg(14px) get-vw-lg(25px) get-vw-lg(14px);
+        }
+      }
+      .btn {
+        margin-top: get-vw-lg(-55px);
+        width: get-vw-lg(50px);
+        height: get-vw-lg(50px);
+        padding: 0 get-vw-lg(11px);
+        &.btn-prev {
+          left: get-vw-lg(-94px);
+          &:hover {
+            .icon {
+              margin-left: get-vw-lg(-5px);
+            }
+          }
+        }
+        &.btn-next {
+          right: get-vw-lg(-91px);
+          &:hover {
+            .icon {
+              margin-right: get-vw-lg(-5px);
+            }
+          }
+        }
+      }
+      .slick-dots {
+        width: get-vw-calc(lg, 100%, '-', 28px);
+        margin: get-vw-lg(12px) auto 0 auto;
+        li {
+          height: get-vw-lg(2px);
+          button {
+            height: get-vw-lg(2px);
+          }
+        }
+      }
+    }
+  }
+  .full-banner {
+    padding: get-vw-lg(68px) 0 get-vw-lg(63px) 0;
+  }
+}

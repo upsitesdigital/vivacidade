@@ -77,6 +77,14 @@
   background: rgba($color, $opacity);
 }
 
+// Calculate vw from a value
+@function get-vw-calc($breakpoint, $index, $type, $target) {
+  $break: map-get($breakpoints, $breakpoint) / 1px;
+  $vw-context: ($break * 0.01) * 1px;
+  $val: ($target / $vw-context) * 1vw;
+  @return calc(#{$index} #{$type} #{$val});
+}
+
 // Mixin for cross-browser inline-block
 @mixin inline-block($align: 'top') {
   display: inline-block;

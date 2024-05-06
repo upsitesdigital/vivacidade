@@ -1,0 +1,65 @@
+/*======================================
+  Card event
+======================================*/
+
+@include breakpoint2($min:sm, $max:lg) {
+  .card-event-featured {
+    box-shadow: 0 get-vw-lg(10px) get-vw-lg(14px) 0 rgba($color-black, 0.1);
+    border-radius: get-vw-lg(8px);
+    .image {
+      height: get-vw-lg(238px);
+      .cat {
+        bottom: get-vw-lg(-13px);
+        left: get-vw-lg(39px);
+        @include font($family: $font-alt, $size: get-vw-lg(14px), $weight: 700, $height: get-vw-lg(16.8px), $color: $color-white);
+        padding: get-vw-lg(10px) get-vw-lg(16px);
+        border-radius: get-vw-lg(100px);
+      }
+    }
+    .content {
+      padding: get-vw-lg(32px) get-vw-lg(34px) get-vw-lg(26px) get-vw-lg(40px);
+      .head {
+        @include columns( $quant: 1fr get-vw-lg(35px), $gutter: get-vw-lg(105px), $align: center, $template: '');
+        padding: 0 0 get-vw-lg(15px) 0;
+        h3 {
+          @include font($family: $font-alt, $size: get-vw-lg(18px), $weight: 800, $height: get-vw-lg(21.6px));
+        }
+        .link {
+          width: get-vw-lg(35px);
+          height: get-vw-lg(35px);
+          .icon {
+            width: get-vw-lg(15px);
+            height: get-vw-lg(24px);
+            stroke-width: get-vw-lg(2px);
+          }
+        }
+      }
+      .infos {
+        padding: get-vw-lg(16px) 0 0 0;
+        span {
+          @include font($family: $font-alt, $size: get-vw-lg(14px), $weight: 700, $height: get-vw-lg(16.8px), $color: #767676);
+          @include flex($align: center, $gap: get-vw-lg(9px));
+          .flag {
+            width: get-vw-lg(20px);
+            height: get-vw-lg(20px);
+            stroke-width: get-vw-lg(1.5px);
+          }
+          .calendar {
+            width: get-vw-lg(20px);
+            height: get-vw-lg(20px);
+            stroke-width: get-vw-lg(1.5px);
+          }
+          .arrow {
+            width: get-vw-lg(12px);
+            height: get-vw-lg(20px);
+            margin: 0 get-vw-lg(3px);
+            stroke-width: get-vw-lg(1.5px);
+          }
+        }
+      }
+    }
+    &:hover {
+      box-shadow: 0 get-vw-lg(10px) get-vw-lg(14px) 0 rgba($color-black, 0.2);
+    }
+  }
+}

@@ -265,7 +265,9 @@ header {
 
 // end header
 // main
-main {}
+main {
+  overflow: hidden;
+}
 
 @include breakpoint2($min:xl, $max:'') {}
 
@@ -361,8 +363,7 @@ footer {
         }
       }
       .social-midia {
-        display: flex;
-        align-items: center;
+        @include flex($align: center);
         padding: 32px 0;
         gap: 16px;
         li {
@@ -405,9 +406,7 @@ footer {
     padding: 19px 0;
     background: #D97306;
     .box {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      @include flex($align: center, $justify: space-between);
       a,
       p {
         @include font($size: 14px, $weight: 400, $height: 22.4px, $color: $color-white);

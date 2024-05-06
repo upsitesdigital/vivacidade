@@ -1,0 +1,255 @@
+/*======================================
+  Main structure
+======================================*/
+
+@include breakpoint2($min:sm, $max:lg) {
+  header {
+    .grid {
+      padding: get-vw-lg(7px) 0 0 0;
+      @include columns( $quant: get-vw-lg(174px) 1fr get-vw-lg(177px), $gutter: get-vw-lg(10px), $align: center, $template: 'logo menu location');
+      .logo {}
+      .menu {
+        nav {
+          padding: 0 0 0 get-vw-lg(32px);
+          ul {
+            @include flex($align: center, $gap: get-vw-lg(44.1px));
+            li {
+              padding: get-vw-lg(38px) 0;
+              &::after {
+                height: get-vw-lg(3px);
+              }
+              a {
+                @include font($family: $font-alt, $size: get-vw-lg(14px), $weight: 600, $height: get-vw-lg(20px), $color: #030303);
+                @include flex($align: center, $gap: get-vw-lg(3px));
+              }
+              &.has-child {
+                a {
+                  .icon {
+                    width: get-vw-lg(13px);
+                    height: get-vw-lg(20px);
+                    margin: 0 get-vw-lg(-3px) 0 get-vw-lg(3px);
+                    stroke-width: get-vw-lg(2px);
+                  }
+                }
+              }
+              &.ticket {
+                a {
+                  .icon {
+                    width: get-vw-lg(20px);
+                    height: get-vw-lg(20px);
+                    stroke-width: get-vw-lg(1.5px);
+                    margin: 0 0 0 get-vw-lg(3px);
+                  }
+                }
+              }
+              .submenu {
+                margin: 0 0 0 get-vw-lg(-110px);
+                padding: get-vw-lg(16px) get-vw-lg(24px);
+                width: get-vw-lg(214px);
+                border-radius: get-vw-lg(8px);
+                box-shadow: 0 0 get-vw-lg(60px) 0 #0000001A;
+                &:before {
+                  width: get-vw-lg(28px);
+                  height: get-vw-lg(25px);
+                  top: get-vw-lg(-15px);
+                  margin: 0 0 0 get-vw-lg(-14px);
+                }
+                li {
+                  padding: get-vw-lg(8px) 0;
+                  &::after {
+                    height: get-vw-lg(2px);
+                  }
+                  a {
+                    @include font($family: $font-alt, $size: get-vw-lg(16px), $weight: 700, $height: get-vw-lg(19.2px));
+                    @include columns( $quant: get-vw-lg(24px) 1fr, $gutter: get-vw-lg(23px), $align: center, $template: '');
+                    span {
+                      width: get-vw-lg(24px);
+                      height: get-vw-lg(24px);
+                    }
+                  }
+                }
+              }
+              &:hover {
+                .submenu {
+                  top: calc(100% - 0.83333vw);
+                }
+              }
+            }
+          }
+        }
+        .search {
+          width: get-vw-lg(22px);
+          height: get-vw-lg(22px);
+          margin: 0 get-vw-lg(33px) 0 0;
+          .icon {
+            width: get-vw-lg(22px);
+            height: get-vw-lg(22px);
+            stroke-width: get-vw-lg(2px);
+          }
+        }
+        .box-search {
+          height: get-vw-lg(74px);
+          padding: get-vw-lg(10px) get-vw-lg(20px);
+          input {
+            @include font($family: $font-alt, $size: get-vw-lg(18px), $weight: 500, $height: get-vw-lg(50px), $color: $color-white);
+          }
+          .close {
+            right: get-vw-lg(20px);
+            margin: get-vw-lg(-15px) 0 0 0;
+            .icon {
+              width: get-vw-lg(30px);
+              height: get-vw-lg(30px);
+            }
+          }
+        }
+      }
+      .location {
+        .box-location {
+          height: get-vw-lg(40px);
+          border-radius: get-vw-lg(8px);
+          @include columns( $quant: get-vw-lg(45px) 1fr get-vw-lg(32px), $gutter: 0, $align: center, $template: '');
+          .flag {
+            width: get-vw-lg(20px);
+            height: get-vw-lg(20px);
+            margin: 0 0 0 get-vw-lg(15px);
+            stroke-width: get-vw-lg(1.5px);
+          }
+          span {
+            @include font($family: $font-alt, $size: get-vw-lg(12px), $weight: 700, $height: get-vw-lg(14.4px), $color: #030303);
+          }
+          .icon {
+            width: get-vw-lg(13px);
+            height: get-vw-lg(20px);
+            margin: 0 0 0 get-vw-lg(4px);
+            stroke-width: get-vw-lg(2px);
+          }
+        }
+      }
+    }
+  }
+}
+
+// end header
+// main
+main {}
+
+@include breakpoint2($min:xl, $max:'') {}
+
+@include breakpoint2($min:lg, $max:xl) {}
+
+@include breakpoint2($min:md, $max:lg) {}
+
+@include breakpoint2($min:sm, $max:md) {}
+
+@include breakpoint2($min:xs, $max:sm) {}
+
+@include breakpoint2($min:'', $max:xs) {}
+
+// end main
+// footer
+@include breakpoint2($min:sm, $max:lg) {
+  footer {
+    margin: get-vw-lg(111px) 0 0 0;
+    .box-newsletter {
+      height: get-vw-lg(214px);
+      top: get-vw-lg(-75px);
+      @include columns( $quant: get-vw-lg(275px) get-vw-lg(244px) 1fr, $gutter: get-vw-lg(37px), $align: start, $template: 'image title form');
+      border-radius: get-vw-lg(16px);
+      .image {
+        padding: 0 0 0 get-vw-lg(40px);
+        img {
+          margin: get-vw-lg(-36px) 0 0 0;
+        }
+      }
+      .title {
+        padding: get-vw-lg(60px) 0 0 0;
+        h4 {
+          @include font($family: $font-alt, $size: get-vw-lg(32px), $weight: 800, $height: get-vw-lg(38.4px));
+          padding: 0 0 get-vw-lg(16px) 0;
+        }
+        p {
+          @include font($family: $font-alt, $size: get-vw-lg(16px), $weight: 500, $height: get-vw-lg(22.4px), $color: #626262);
+        }
+      }
+      .form {
+        padding: get-vw-lg(76px) get-vw-lg(38px) 0 0;
+        .grid-form {
+          @include columns( $quant: 1fr get-vw-lg(96px), $gutter: get-vw-lg(7px), $align: end, $template: '');
+          label {
+            .label {
+              @include font($family: $font-alt, $size: get-vw-lg(14px), $weight: 700, $height: get-vw-lg(19.6px));
+              padding: 0 0 get-vw-lg(17px) get-vw-lg(27px);
+            }
+            input {
+              height: get-vw-lg(48px);
+              border-radius: get-vw-lg(60px);
+              padding: 0 0 0 get-vw-lg(26px);
+              @include font($family: $font-alt, $size: get-vw-lg(14px), $weight: 400, $height: get-vw-lg(19.6px), $color: #ADADAD);
+            }
+          }
+          .submit {
+            input {
+              width: get-vw-lg(96px);
+              height: get-vw-lg(46px);
+              border-radius: get-vw-lg(60px);
+              @include font($family: $font-alt, $size: get-vw-lg(14px), $weight: 700, $height: 100%, $align: center, $color: $color-white);
+            }
+          }
+        }
+      }
+    }
+    .grid {
+      margin: get-vw-lg(-18px) 0 0 0;
+      padding: 0 0 get-vw-lg(72px) 0;
+      @include columns( $quant: 41% 22.8% 14.4% 12.8% 9%, $gutter: 0, $align: start, $template: '');
+      .item {
+        .logo {}
+        .social-midia {
+          padding: get-vw-lg(32px) 0;
+          gap: get-vw-lg(16px);
+        }
+        h5 {
+          @include font($family: $font-alt, $size: get-vw-lg(14px), $weight: 600, $height: get-vw-lg(16.8px));
+          padding: get-vw-lg(6px) 0 get-vw-lg(16px) 0;
+        }
+        p {
+          @include font($size: get-vw-lg(14px), $height: get-vw-lg(22.4px));
+        }
+        .list {
+          margin: get-vw-lg(-1px) 0 0 0;
+          li {
+            padding: get-vw-lg(7px) 0 get-vw-lg(8px) 0;
+            a {
+              @include font($family: $font-alt, $size: get-vw-lg(14px), $weight: 400, $height: get-vw-lg(16.8px));
+            }
+          }
+          &.small {
+            li {
+              padding: get-vw-lg(5px) 0;
+            }
+          }
+        }
+      }
+    }
+    .bar-copyright {
+      padding: get-vw-lg(19px) 0;
+      .box {
+        a,
+        p {
+          @include font($size: get-vw-lg(14px), $weight: 400, $height: get-vw-lg(22.4px), $color: $color-white);
+        }
+        a {
+          &.upsites {
+            span {
+              &:hover {
+                top: get-vw-lg(-2px);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// end footer

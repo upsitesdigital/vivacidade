@@ -1,0 +1,110 @@
+/*======================================
+  Blog
+======================================*/
+
+@include breakpoint2($min:sm, $max:lg) {
+  .slide-blog {
+    padding: 0 0 get-vw-lg(74px) 0;
+    .title {
+      padding: get-vw-lg(54px) 0 get-vw-lg(38px) 0;
+      h1 {
+        @include font($family: $font-alt, $size: get-vw-lg(28px), $weight: 800, $height: get-vw-lg(33.6px));
+      }
+      .filter-category {
+        label {
+          @include flex($align: center, $justify: end, $gap: get-vw-lg(22px));
+          .label {
+            @include font($family: $font-alt, $size: get-vw-lg(12px), $weight: 600, $height: get-vw-lg(14.4px), $color: #030303);
+          }
+          .field {
+            select {
+              width: get-vw-lg(176px);
+              height: get-vw-lg(41px);
+              border-radius: get-vw-lg(8px);
+              padding: 0 get-vw-lg(48px) 0 get-vw-lg(16px);
+              @include font($family: $font-alt, $size: get-vw-lg(14px), $weight: 700, $height: get-vw-lg(16.8px), $color: #030303);
+            }
+            .icon {
+              width: get-vw-lg(12px);
+              height: get-vw-lg(41px);
+              stroke-width: get-vw-lg(2px);
+              right: get-vw-lg(15px);
+            }
+          }
+        }
+      }
+    }
+    .box-slide {
+      .slide {
+        border-radius: get-vw-lg(8px);
+        .item {
+          .image {
+            height: get-vw-lg(403px);
+          }
+          .content {
+            padding: 0 0 get-vw-lg(66px) get-vw-lg(64px);
+            .flex {
+              @include flex($align: center, $gap: get-vw-lg(24px));
+              padding: 0 0 get-vw-lg(25px) 0;
+              .cat {
+                @include font($family: $font-alt, $size: get-vw-lg(11px), $weight: 700, $height: get-vw-lg(13.2px), $color: $color-white);
+                padding: get-vw-lg(6px) get-vw-lg(10px);
+                border-radius: get-vw-lg(30px);
+              }
+              .date {
+                @include font($size: get-vw-lg(14px), $height: get-vw-lg(19.6px), $color: $color-white);
+              }
+            }
+            h2 {
+              @include font($family: $font-alt, $size: get-vw-lg(28px), $weight: 700, $height: get-vw-lg(36.4px), $color: $color-white);
+            }
+          }
+        }
+      }
+      .btn {
+        margin-top: get-vw-lg(-50px);
+        width: get-vw-lg(50px);
+        height: get-vw-lg(50px);
+        padding: 0 get-vw-lg(11px);
+        box-shadow: 0 get-vw-lg(13.89px) get-vw-lg(41.67px) 0 #0000001A;
+        &.btn-prev {
+          left: get-vw-lg(-94px);
+          &:hover {
+            .icon {
+              margin-left: get-vw-lg(-5px);
+            }
+          }
+        }
+        &.btn-next {
+          right: get-vw-lg(-91px);
+          &:hover {
+            .icon {
+              margin-right: get-vw-lg(-5px);
+            }
+          }
+        }
+      }
+    }
+  }
+  .last-news {
+    padding: get-vw-lg(80px) 0;
+    h2 {
+      @include font($family: $font-alt, $size: get-vw-lg(32px), $weight: 800, $height: get-vw-lg(38.4px));
+      padding: 0 0 get-vw-lg(63px) 0;
+    }
+    .grid {
+      @include columns( $quant: repeat(4, 1fr), $gutter: get-vw-lg(72px) get-vw-lg(28px), $align: start, $template: '');
+    }
+    .full-banner {
+      padding: get-vw-lg(47px) 0 get-vw-lg(48px) 0;
+    }
+    .center {
+      padding: get-vw-lg(121px) 0 get-vw-lg(30px) 0;
+    }
+    .load-more {
+      padding: get-vw-lg(13px) get-vw-lg(41px);
+      border-radius: get-vw-lg(40px);
+      @include font($family: $font-alt, $size: get-vw-lg(14px), $weight: 700, $height: get-vw-lg(19.6px), $color: $color-red);
+    }
+  }
+}

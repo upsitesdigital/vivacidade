@@ -335,6 +335,10 @@
 .full-banner {
   padding: 111px 0 71px 0;
   text-align: center;
+  img {
+    width: 100%;
+    height: auto;
+  }
 }
 
 @include breakpoint2($min:xl, $max:'') {}

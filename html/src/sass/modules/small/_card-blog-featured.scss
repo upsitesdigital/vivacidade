@@ -1,0 +1,35 @@
+/*======================================
+  Card event
+======================================*/
+
+@include breakpoint2($min:sm, $max:lg) {
+  .card-blog-featured {
+    box-shadow: 0 get-vw-lg(10px) get-vw-lg(14px) 0 rgba($color-black, 0.1);
+    border-radius: get-vw-lg(8px);
+    .image {
+      height: get-vw-lg(238px);
+    }
+    .content {
+      padding: get-vw-lg(32px) get-vw-lg(34px) get-vw-lg(33px) get-vw-lg(40px);
+      .head {
+        @include columns( $quant: 1fr get-vw-lg(35px), $gutter: get-vw-lg(105px), $align: center, $template: '');
+        padding: 0 0 get-vw-lg(15px) 0;
+        h3 {
+          @include font($family: $font-alt, $size: get-vw-lg(18px), $weight: 800, $height: get-vw-lg(21.6px));
+        }
+        .link {
+          width: get-vw-lg(35px);
+          height: get-vw-lg(35px);
+          .icon {
+            width: get-vw-lg(15px);
+            height: get-vw-lg(24px);
+            stroke-width: get-vw-lg(2px);
+          }
+        }
+      }
+    }
+    &:hover {
+      box-shadow: 0 get-vw-lg(10px) get-vw-lg(14px) 0 rgba($color-black, 0.2);
+    }
+  }
+}

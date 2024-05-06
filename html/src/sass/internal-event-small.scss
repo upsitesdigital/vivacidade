@@ -1,0 +1,15 @@
+// Config
+@import "core/settings";
+@import "core/utils";
+// Vendor
+@import "slick-carousel/slick/slick.scss";
+// Defaults
+@import "core/global";
+@import "core/grid";
+@import "core/fonts";
+// Structural
+@import "core/small/structure";
+// Modules
+@import "modules/small/card-event";
+// Pages
+@import "pages/small/internal-event";
