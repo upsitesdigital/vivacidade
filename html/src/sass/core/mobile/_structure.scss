@@ -64,6 +64,10 @@ body {
   }
 }
 
+.menu-open #open-menu {
+  position: fixed;
+}
+
 // header
 header {
   .grid {
@@ -90,17 +94,27 @@ header {
       @include flex($align: center, $justify: end);
       position: relative;
       nav {
-        display: none;
-        padding: 0 0 0 get-vw-sm(32px);
+        @include animate($time: 0.3s);
+        opacity: 0;
+        visibility: hidden;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        width: 100%;
+        height: 100vh;
+        padding: get-vw-sm(151px) get-vw-sm(59px) 0 get-vw-sm(53px);
+        background: $color-white;
+        overflow: auto;
         ul {
-          @include flex($align: center, $gap: get-vw-sm(44.1px));
           li {
-            padding: get-vw-sm(38px) 0;
+            padding: get-vw-sm(47px) 0;
             position: relative;
+            border-bottom: 1px solid #DFDFDF;
             &::after {
               content: '';
               width: 0;
-              height: get-vw-sm(3px);
+              height: 3px;
               background-color: $color-red;
               position: absolute;
               bottom: 0;
@@ -108,15 +122,15 @@ header {
               @include animate($time: 0.3s);
             }
             a {
-              @include font($family: $font-alt, $size: get-vw-sm(14px), $weight: 600, $height: get-vw-sm(20px), $color: #030303);
-              @include flex($align: center, $gap: get-vw-sm(3px));
+              @include font($family: $font-alt, $size: get-vw-sm(41px), $weight: 600, $height: 120%, $color: #030303);
+              @include flex($align: center, $gap: get-vw-sm(3px), $justify: space-between);
             }
             &.has-child {
               a {
                 .icon {
-                  width: get-vw-sm(13px);
+                  width: get-vw-sm(23px);
                   height: get-vw-sm(20px);
-                  margin: 0 get-vw-sm(-3px) 0 get-vw-sm(3px);
+                  margin: 0 get-vw-sm(-11px) 0 get-vw-sm(3px);
                   stroke: $color-red;
                   stroke-width: get-vw-sm(2px);
                   stroke-linecap: round;
@@ -127,14 +141,14 @@ header {
             &.ticket {
               a {
                 .icon {
-                  width: get-vw-sm(20px);
-                  height: get-vw-sm(20px);
+                  width: get-vw-sm(40px);
+                  height: get-vw-sm(40px);
                   fill: transparent;
                   stroke: $color-red;
-                  stroke-width: get-vw-sm(1.5px);
+                  stroke-width: 1.5px;
                   stroke-linecap: round;
                   stroke-linejoin: round;
-                  margin: 0 0 0 get-vw-sm(3px);
+                  margin: 0 get-vw-sm(-5px) 0 0;
                 }
               }
             }
@@ -144,42 +158,24 @@ header {
               }
             }
             .submenu {
-              position: absolute;
-              top: 70%;
-              left: 100%;
-              margin: 0 0 0 get-vw-sm(-110px);
-              padding: get-vw-sm(16px) get-vw-sm(24px);
+              padding: get-vw-sm(62px) 0 get-vw-sm(34px) 0;
               z-index: 11;
-              width: get-vw-sm(214px);
-              background: $color-white;
-              border-radius: get-vw-sm(8px);
+              width: 100%;
               display: block;
-              box-shadow: 0 0 get-vw-sm(60px) 0 #0000001A;
               @include animate($time: 0.3s);
-              &:before {
-                content: '';
-                width: get-vw-sm(28px);
-                height: get-vw-sm(25px);
-                position: absolute;
-                top: get-vw-sm(-15px);
-                left: 50%;
-                margin: 0 0 0 get-vw-sm(-14px);
-                background: url(../img/arrow-menu.svg) top center no-repeat;
-                background-size: contain;
-              }
               li {
-                padding: get-vw-sm(8px) 0;
+                padding: get-vw-sm(14px) 0;
+                border: none;
                 &::after {
-                  background-color: currentColor;
-                  height: get-vw-sm(2px);
+                  display: none;
                 }
                 a {
-                  @include font($family: $font-alt, $size: get-vw-sm(16px), $weight: 700, $height: get-vw-sm(19.2px));
-                  @include columns( $quant: get-vw-sm(24px) 1fr, $gutter: get-vw-sm(23px), $align: center, $template: '');
+                  @include font($family: $font-alt, $size: get-vw-sm(36px), $weight: 700, $height: 120%);
+                  @include columns( $quant: get-vw-sm(52px) 1fr, $gutter: get-vw-sm(44px), $align: center, $template: '');
                   span {
                     display: block;
-                    width: get-vw-sm(24px);
-                    height: get-vw-sm(24px);
+                    width: get-vw-sm(52px);
+                    height: get-vw-sm(52px);
                     img {
                       width: 100%;
                       height: 100%;
@@ -187,17 +183,10 @@ header {
                   }
                 }
               }
-              opacity: 0;
-              visibility: hidden;
             }
             &:hover {
               &::after {
                 width: 70%;
-              }
-              .submenu {
-                top: calc(100% - get-vw-sm(10px));
-                opacity: 1;
-                visibility: visible;
               }
             }
           }
@@ -312,6 +301,11 @@ header {
       }
     }
   }
+}
+
+.menu-open header .grid .menu nav {
+  opacity: 1;
+  visibility: visible;
 }
 
 @include breakpoint2($min:xl, $max:'') {}

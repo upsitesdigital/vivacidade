@@ -28,6 +28,14 @@ export default function() {
     return false;
   });
 
+  $(document).on('click', '#open-menu', function() {
+    //$('.seach-box').removeClass('act');
+    $('body').toggleClass('menu-open');
+    $(this).toggleClass('opened').attr('aria-expanded', 'true');
+
+    return false;
+  });
+
   $(document).on('click', 'header .grid .menu .search,header .grid .menu .box-search .close', function() {
     var $target = $(this).closest('.menu').find('.box-search');
     $target.toggleClass('act');
