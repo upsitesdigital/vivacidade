@@ -1,0 +1,527 @@
+/*======================================
+  Main structure
+======================================*/
+
+body {
+  // background: url(../images/bg.png) center top no-repeat;
+  // background-size: cover;
+}
+
+#open-menu {
+  margin-top: -0;
+  display: block;
+  position: relative;
+  z-index: 100;
+  .ani {
+    cursor: pointer;
+    display: flex;
+    padding: 0;
+    svg {}
+    .close,
+    #close {
+      margin: 0 get-vw-sm(-9px) 0 0;
+      width: get-vw-sm(70px);
+      height: get-vw-sm(70px);
+      .line {
+        fill: none;
+        stroke: $color-red;
+        stroke-width: 6;
+        transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1), stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .line1 {
+        stroke-dasharray: 60 207;
+        stroke-width: 6;
+      }
+      .line2 {
+        stroke-dasharray: 60 60;
+        stroke-width: 6;
+      }
+      .line3 {
+        stroke-dasharray: 60 207;
+        stroke-width: 6;
+      }
+    }
+  }
+  &.opened {
+    .close,
+    #close {
+      .line1 {
+        stroke-dasharray: 90 207;
+        stroke-dashoffset: -134;
+        stroke-width: 6;
+      }
+      .line2 {
+        stroke-dasharray: 1 60;
+        stroke-dashoffset: -30;
+        stroke-width: 6;
+      }
+      .line3 {
+        stroke-dasharray: 90 207;
+        stroke-dashoffset: -134;
+        stroke-width: 6;
+      }
+    }
+  }
+}
+
+// header
+header {
+  .grid {
+    padding: get-vw-sm(38px) 0 get-vw-sm(28px) 0;
+    @include columns( $quant: get-vw-sm(304px) 1fr, $gutter: get-vw-sm(30px), $align: center, $template: 'logo menu' 'location location');
+    .logo {
+      padding: 0 0 0 get-vw-sm(12px);
+      grid-area: logo;
+      a {
+        opacity: 1;
+        @include animate($time: 0.3s);
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+      img {
+        @include animate($time: 0.3s);
+        width: 100%;
+        height: auto;
+      }
+    }
+    .menu {
+      grid-area: menu;
+      @include flex($align: center, $justify: end);
+      position: relative;
+      nav {
+        display: none;
+        padding: 0 0 0 get-vw-sm(32px);
+        ul {
+          @include flex($align: center, $gap: get-vw-sm(44.1px));
+          li {
+            padding: get-vw-sm(38px) 0;
+            position: relative;
+            &::after {
+              content: '';
+              width: 0;
+              height: get-vw-sm(3px);
+              background-color: $color-red;
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              @include animate($time: 0.3s);
+            }
+            a {
+              @include font($family: $font-alt, $size: get-vw-sm(14px), $weight: 600, $height: get-vw-sm(20px), $color: #030303);
+              @include flex($align: center, $gap: get-vw-sm(3px));
+            }
+            &.has-child {
+              a {
+                .icon {
+                  width: get-vw-sm(13px);
+                  height: get-vw-sm(20px);
+                  margin: 0 get-vw-sm(-3px) 0 get-vw-sm(3px);
+                  stroke: $color-red;
+                  stroke-width: get-vw-sm(2px);
+                  stroke-linecap: round;
+                  stroke-linejoin: round;
+                }
+              }
+            }
+            &.ticket {
+              a {
+                .icon {
+                  width: get-vw-sm(20px);
+                  height: get-vw-sm(20px);
+                  fill: transparent;
+                  stroke: $color-red;
+                  stroke-width: get-vw-sm(1.5px);
+                  stroke-linecap: round;
+                  stroke-linejoin: round;
+                  margin: 0 0 0 get-vw-sm(3px);
+                }
+              }
+            }
+            &.act {
+              &::after {
+                width: 100%;
+              }
+            }
+            .submenu {
+              position: absolute;
+              top: 70%;
+              left: 100%;
+              margin: 0 0 0 get-vw-sm(-110px);
+              padding: get-vw-sm(16px) get-vw-sm(24px);
+              z-index: 11;
+              width: get-vw-sm(214px);
+              background: $color-white;
+              border-radius: get-vw-sm(8px);
+              display: block;
+              box-shadow: 0 0 get-vw-sm(60px) 0 #0000001A;
+              @include animate($time: 0.3s);
+              &:before {
+                content: '';
+                width: get-vw-sm(28px);
+                height: get-vw-sm(25px);
+                position: absolute;
+                top: get-vw-sm(-15px);
+                left: 50%;
+                margin: 0 0 0 get-vw-sm(-14px);
+                background: url(../img/arrow-menu.svg) top center no-repeat;
+                background-size: contain;
+              }
+              li {
+                padding: get-vw-sm(8px) 0;
+                &::after {
+                  background-color: currentColor;
+                  height: get-vw-sm(2px);
+                }
+                a {
+                  @include font($family: $font-alt, $size: get-vw-sm(16px), $weight: 700, $height: get-vw-sm(19.2px));
+                  @include columns( $quant: get-vw-sm(24px) 1fr, $gutter: get-vw-sm(23px), $align: center, $template: '');
+                  span {
+                    display: block;
+                    width: get-vw-sm(24px);
+                    height: get-vw-sm(24px);
+                    img {
+                      width: 100%;
+                      height: 100%;
+                    }
+                  }
+                }
+              }
+              opacity: 0;
+              visibility: hidden;
+            }
+            &:hover {
+              &::after {
+                width: 70%;
+              }
+              .submenu {
+                top: calc(100% - get-vw-sm(10px));
+                opacity: 1;
+                visibility: visible;
+              }
+            }
+          }
+        }
+      }
+      .search {
+        width: get-vw-sm(47px);
+        height: get-vw-sm(47px);
+        margin: 0 get-vw-sm(30px) 0 0;
+        padding: 0;
+        .icon {
+          width: 100%;
+          height: 100%;
+          fill: transparent;
+          stroke: $color-red;
+          stroke-width: get-vw-sm(2px);
+          stroke-linecap: round;
+          stroke-linejoin: round;
+        }
+        opacity: 1;
+        @include animate($time: 0.3s);
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+      .box-search {
+        @include animate($time: 0.3s);
+        width: 100%;
+        height: get-vw-sm(74px);
+        background-color: $color-red;
+        position: absolute;
+        top: 70%;
+        left: 0;
+        z-index: 10;
+        padding: get-vw-sm(10px) get-vw-sm(20px);
+        input {
+          width: 100%;
+          @include font($family: $font-alt, $size: get-vw-sm(18px), $weight: 500, $height: get-vw-sm(50px), $color: $color-white);
+          background: transparent;
+          outline: none;
+          border: none;
+          border-bottom: get-vw-sm(1px) solid rgba($color-white, 0.2);
+          &::-webkit-input-placeholder {
+            color: $color-white !important;
+          }
+          &:-moz-placeholder {
+            color: $color-white !important;
+          }
+          &::-moz-placeholder {
+            color: $color-white !important;
+          }
+          &:-ms-input-placeholder {
+            color: $color-white !important;
+          }
+        }
+        .close {
+          position: absolute;
+          top: 50%;
+          right: get-vw-sm(20px);
+          margin: get-vw-sm(-15px) 0 0 0;
+          .icon {
+            width: get-vw-sm(30px);
+            height: get-vw-sm(30px);
+            fill: $color-white;
+          }
+        }
+        visibility: hidden;
+        opacity: 0;
+        &.act {
+          visibility: visible;
+          opacity: 1;
+          top: 100%;
+        }
+      }
+    }
+    .location {
+      grid-area: location;
+      .box-location {
+        background: #F5F5F5;
+        width: 100%;
+        height: get-vw-sm(80px);
+        border-radius: get-vw-sm(8px);
+        @include columns( $quant: get-vw-sm(94px) 1fr get-vw-sm(47px), $gutter: 0, $align: center, $template: '');
+        .flag {
+          width: get-vw-sm(40px);
+          height: get-vw-sm(40px);
+          fill: transparent;
+          margin: 0 0 0 get-vw-sm(34px);
+          stroke: #030303;
+          stroke-width: get-vw-sm(1.5px);
+          stroke-linecap: round;
+          stroke-linejoin: round;
+        }
+        span {
+          @include font($family: $font-alt, $size: get-vw-sm(29px), $weight: 700, $height: 100%, $color: #030303);
+        }
+        .icon {
+          width: get-vw-sm(23px);
+          height: get-vw-sm(20px);
+          margin: 0 0 0 get-vw-sm(4px);
+          stroke: $color-red;
+          stroke-width: get-vw-sm(2px);
+          stroke-linecap: round;
+          stroke-linejoin: round;
+        }
+        cursor: pointer;
+        opacity: 1;
+        @include animate($time: 0.3s);
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+}
+
+@include breakpoint2($min:xl, $max:'') {}
+
+@include breakpoint2($min:lg, $max:xl) {}
+
+@include breakpoint2($min:md, $max:lg) {}
+
+@include breakpoint2($min:sm, $max:md) {}
+
+@include breakpoint2($min:xs, $max:sm) {}
+
+@include breakpoint2($min:'', $max:xs) {}
+
+// end header
+// main
+main {
+  overflow: hidden;
+  width: 100%;
+}
+
+@include breakpoint2($min:xl, $max:'') {}
+
+@include breakpoint2($min:lg, $max:xl) {}
+
+@include breakpoint2($min:md, $max:lg) {}
+
+@include breakpoint2($min:sm, $max:md) {}
+
+@include breakpoint2($min:xs, $max:sm) {}
+
+@include breakpoint2($min:'', $max:xs) {}
+
+// end main
+// footer
+footer {
+  width: 100%;
+  margin: get-vw-sm(936px) 0 0 0;
+  background: $color-orange;
+  .box-newsletter {
+    width: 100%;
+    position: relative;
+    top: get-vw-sm(-861px);
+    @include columns( $quant: 1fr, $gutter: get-vw-sm(37px), $align: start, $template: 'title' 'form' 'image');
+    border-radius: get-vw-sm(16px);
+    background: url(../img/bg-newsletter-home.png) bottom left no-repeat, linear-gradient(92.82deg, #FFFFFF -132.34%, #E7E7E7 222.7%);
+    background-size: contain;
+    .image {
+      grid-area: image;
+      padding: 0 get-vw-sm(95px);
+      img {
+        margin: 0 0 0 0;
+        width: 100%;
+        height: auto;
+      }
+    }
+    .title {
+      grid-area: title;
+      padding: get-vw-sm(116px) get-vw-sm(40px) 0;
+      h4 {
+        @include font($family: $font-alt, $size: get-vw-sm(65px), $weight: 800, $align: center, $height: 120%);
+        padding: 0 0 get-vw-sm(34px) 0;
+      }
+      p {
+        @include font($family: $font-alt, $size: get-vw-sm(33px), $weight: 500, $align: center, $height: 131%, $color: #626262);
+      }
+    }
+    .form {
+      grid-area: form;
+      padding: get-vw-sm(52px) get-vw-sm(60px) get-vw-sm(35px);
+      .grid-form {
+        @include columns( $quant: 1fr, $gutter: get-vw-sm(30px), $align: end, $template: '');
+        label {
+          .label {
+            @include font($family: $font-alt, $size: get-vw-sm(29px), $weight: 700, $align: center, $height: 120%);
+            display: block;
+            padding: 0 0 get-vw-sm(30px) 0;
+          }
+          input {
+            width: 100%;
+            height: get-vw-sm(98px);
+            border-radius: get-vw-sm(60px);
+            border: get-vw-sm(2px) solid #CDCDCD;
+            padding: 0 get-vw-sm(50px);
+            @include font($family: $font-alt, $size: get-vw-sm(29px), $weight: 400, $height: 120%, $color: #ADADAD);
+          }
+        }
+        .submit {
+          text-align: right;
+          input {
+            width: get-vw-sm(198px);
+            height: get-vw-sm(97px);
+            border-radius: get-vw-sm(60px);
+            border: get-vw-sm(1px) solid $color-red;
+            background: $color-red;
+            @include font($family: $font-alt, $size: get-vw-sm(29px), $weight: 700, $height: 100%, $align: center, $color: $color-white);
+            @include animate($time: 0.3s);
+            &:hover {
+              background: $color-white;
+              color: $color-red;
+            }
+          }
+        }
+      }
+    }
+  }
+  .grid {
+    margin: get-vw-sm(-730px) 0 0 0;
+    padding: 0 0 get-vw-sm(166px) 0;
+    @include columns( $quant: 1fr, $gutter: get-vw-sm(131px), $align: start, $template: '');
+    .item {
+      text-align: center;
+      .logo {
+        a {
+          img {
+            width: get-vw-sm(460px);
+            height: auto;
+          }
+          @include animate($time: 0.3s);
+          &:hover {
+            opacity: 0.7;
+          }
+        }
+      }
+      .social-midia {
+        @include flex($align: center, $justify: center);
+        padding: get-vw-sm(55px) 0 get-vw-sm(67px) 0;
+        gap: get-vw-sm(32px);
+        li {
+          a {
+            img {
+              width: get-vw-sm(80px);
+              height: auto;
+            }
+            @include animate($time: 0.3s);
+            &:hover {
+              opacity: 0.7;
+            }
+          }
+        }
+      }
+      h5 {
+        @include font($family: $font-alt, $size: get-vw-sm(30px), $weight: 600, $align: center, $height: 120%);
+        padding: get-vw-sm(6px) 0 get-vw-sm(16px) 0;
+      }
+      p {
+        @include font($size: get-vw-sm(28px), $height: 160%, $align: center);
+      }
+      .list {
+        margin: get-vw-sm(-1px) 0 0 0;
+        li {
+          padding: get-vw-sm(16px) 0;
+          a {
+            @include font($family: $font-alt, $size: get-vw-sm(30px), $weight: 400, $height: 120%);
+            &:hover {
+              color: $color-white;
+            }
+          }
+        }
+        &.small {
+          margin: 0 0 0 0;
+          li {
+            padding: get-vw-sm(5px) 0;
+          }
+        }
+      }
+    }
+  }
+  .bar-copyright {
+    padding: get-vw-sm(96px) 0;
+    background: #D97306;
+    .box {
+      text-align: center;
+      a,
+      p {
+        @include font($size: get-vw-sm(29px), $weight: 400, $height: 120%, $align: center, $color: $color-white);
+        letter-spacing: 0.01em;
+      }
+      a {
+        margin: get-vw-sm(56px) 0;
+        display: block;
+        &:hover {
+          color: $color-black;
+        }
+        &.upsites {
+          display: inline-flex;
+          margin: 0;
+          span {
+            @include animate($time: 0.3s);
+            &:hover {
+              position: relative;
+              top: get-vw-sm(-2px);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include breakpoint2($min:xl, $max:'') {}
+
+@include breakpoint2($min:lg, $max:xl) {}
+
+@include breakpoint2($min:md, $max:lg) {}
+
+@include breakpoint2($min:sm, $max:md) {}
+
+@include breakpoint2($min:xs, $max:sm) {}
+
+@include breakpoint2($min:'', $max:xs) {}
+
+// end footer

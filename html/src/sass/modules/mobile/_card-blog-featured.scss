@@ -1,0 +1,54 @@
+/*======================================
+  Card event
+======================================*/
+
+.card-blog-featured {
+  box-shadow: 0 get-vw-sm(10px) get-vw-sm(14px) 0 rgba($color-black, 0.1);
+  border-radius: get-vw-sm(8px);
+  background: #FFFFFF;
+  overflow: hidden;
+  display: block;
+  @include animate($time: 0.3s);
+  .image {
+    width: 100%;
+    height: get-vw-sm(292px);
+    position: relative;
+    .box {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+  .content {
+    padding: get-vw-sm(78px) get-vw-sm(64px) get-vw-sm(82px) get-vw-sm(69px);
+    .head {
+      padding: 0 0 get-vw-sm(15px) 0;
+      h3 {
+        @include font($family: $font-alt, $size: get-vw-sm(33px), $weight: 800, $height: 120%);
+      }
+      .link {
+        display: none;
+      }
+    }
+  }
+  &:hover {
+    box-shadow: 0 get-vw-sm(10px) get-vw-sm(14px) 0 rgba($color-black, 0.2);
+  }
+}
+
+@include breakpoint2($min:xl, $max:'') {}
+
+@include breakpoint2($min:lg, $max:xl) {}
+
+@include breakpoint2($min:md, $max:lg) {}
+
+@include breakpoint2($min:sm, $max:md) {}
+
+@include breakpoint2($min:xs, $max:sm) {}
+
+@include breakpoint2($min:'', $max:xs) {}

@@ -13,8 +13,34 @@ export default function() {
     centerMode: false,
     focusOnSelect: true,
     adaptiveHeight: true,
-    centerPadding: 0
+    centerPadding: 0,
+    responsive: [{
+      breakpoint: 769,
+      settings: {
+        arrows: false
+      }
+    }]
   });
+
+  const $slideCat = $('.slide-cat');
+  $slideCat.slick({
+    slidesToShow: 6,
+    slidesToScroll: 1,
+    dots: false,
+    arrows: false,
+    centerMode: false,
+    focusOnSelect: true,
+    adaptiveHeight: true,
+    centerPadding: 0,
+    responsive: [{
+      breakpoint: 769,
+      settings: {
+        slidesToShow: 2,
+      }
+    }]
+  });
+
+
   const $blogslider = $('.slide-blog .slide');
   $blogslider.slick({
     slidesToShow: 1,
@@ -40,7 +66,13 @@ export default function() {
     centerMode: false,
     focusOnSelect: true,
     adaptiveHeight: true,
-    centerPadding: 0
+    centerPadding: 0,
+    responsive: [{
+      breakpoint: 769,
+      settings: {
+        slidesToShow: 1,
+      }
+    }]
   });
 
   const $catEventsOne = $('#cat-one .slide');
@@ -54,7 +86,14 @@ export default function() {
     centerMode: false,
     focusOnSelect: true,
     adaptiveHeight: true,
-    centerPadding: 0
+    centerPadding: 0,
+    responsive: [{
+      breakpoint: 769,
+      settings: {
+        slidesToShow: 1,
+        arrows: false,
+      }
+    }]
   });
   const $catEventsTwo = $('#cat-two .slide');
   $catEventsTwo.slick({
@@ -67,7 +106,14 @@ export default function() {
     centerMode: false,
     focusOnSelect: true,
     adaptiveHeight: true,
-    centerPadding: 0
+    centerPadding: 0,
+    responsive: [{
+      breakpoint: 769,
+      settings: {
+        slidesToShow: 1,
+        arrows: false,
+      }
+    }]
   });
   const $catEventsTree = $('#cat-tree .slide');
   $catEventsTree.slick({
@@ -80,7 +126,14 @@ export default function() {
     centerMode: false,
     focusOnSelect: true,
     adaptiveHeight: true,
-    centerPadding: 0
+    centerPadding: 0,
+    responsive: [{
+      breakpoint: 769,
+      settings: {
+        slidesToShow: 1,
+        arrows: false,
+      }
+    }]
   });
 
   const $featuredBlog = $('.featured-blog .slide');
@@ -94,8 +147,16 @@ export default function() {
     centerMode: false,
     focusOnSelect: true,
     adaptiveHeight: true,
-    centerPadding: 0
+    centerPadding: 0,
+    responsive: [{
+      breakpoint: 769,
+      settings: {
+        slidesToShow: 1,
+        dots: false,
+      }
+    }]
   });
+
   const $featuredBlogCat = $('.featured-blog-categories .slide');
   $featuredBlogCat.slick({
     slidesToShow: 2,

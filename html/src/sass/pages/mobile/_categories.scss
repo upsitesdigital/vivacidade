@@ -1,0 +1,100 @@
+/*======================================
+  Blog
+======================================*/
+
+@include breakpoint2($min:sm, $max:lg) {
+  .featured-blog-categories {
+    padding: get-vw-lg(78px) 0 0 0;
+    &:before {
+      height: get-vw-lg(321px);
+    }
+    .title {
+      padding: 0 0 get-vw-lg(18px) 0;
+      .box-title {
+        @include flex($align: center, $justify: start, $gap: get-vw-lg(31px));
+        .back {
+          @include flex($align: center, $justify: start, $gap: get-vw-lg(4px));
+          @include font($family: $font-alt, $size: get-vw-lg(12px), $weight: 700, $height: get-vw-lg(14.4px), $color: $color-red);
+          .icon {
+            width: get-vw-lg(8px);
+            height: get-vw-lg(14px);
+            stroke-width: get-vw-lg(3px);
+          }
+          &:hover {
+            .icon {
+              margin: 0 get-vw-lg(5px) 0 get-vw-lg(-5px);
+            }
+          }
+        }
+        h1 {
+          @include font($family: $font-alt, $size: get-vw-lg(32px), $weight: 800, $height: get-vw-lg(38.4px));
+        }
+      }
+      .quant-post {
+        @include font($size: get-vw-lg(16px), $height: get-vw-lg(22.4px), $color: rgba($color-black, 0.7));
+      }
+    }
+    .slide-box {
+      .slide {
+        margin: 0 get-vw-lg(-14px);
+        .item {
+          padding: get-vw-lg(14px) get-vw-lg(14px) get-vw-lg(25px) get-vw-lg(14px);
+        }
+      }
+      .btn {
+        margin-top: get-vw-lg(-55px);
+        width: get-vw-lg(50px);
+        height: get-vw-lg(50px);
+        padding: 0 get-vw-lg(11px);
+        box-shadow: 0 get-vw-lg(13.89px) get-vw-lg(41.67px) 0 #0000001A;
+        &.btn-prev {
+          left: get-vw-lg(-94px);
+          &:hover {
+            .icon {
+              margin-left: get-vw-lg(-5px);
+            }
+          }
+        }
+        &.btn-next {
+          right: get-vw-lg(-91px);
+          &:hover {
+            .icon {
+              margin-right: get-vw-lg(-5px);
+            }
+          }
+        }
+      }
+      .slick-dots {
+        width: get-vw-calc(lg, 100%, '-', 28px);
+        margin: get-vw-lg(37px) auto 0 auto;
+        li {
+          height: get-vw-lg(2px);
+          button {
+            height: get-vw-lg(2px);
+          }
+        }
+      }
+    }
+  }
+  .all-posts {
+    padding: get-vw-lg(88px) 0 get-vw-lg(67px) 0;
+    h2 {
+      @include font($family: $font-alt, $size: get-vw-lg(24px), $weight: 800, $height: get-vw-lg(38.4px));
+      padding: 0 0 get-vw-lg(63px) 0;
+    }
+    .grid {
+      @include columns( $quant: repeat(4, 1fr), $gutter: get-vw-lg(72px) get-vw-lg(28px), $align: start, $template: '');
+    }
+    .full-banner {
+      padding: get-vw-lg(93px) 0 get-vw-lg(48px) 0;
+    }
+    .center {
+      padding: get-vw-lg(30px) 0;
+    }
+    .load-more {
+      padding: get-vw-lg(13px) get-vw-lg(41px);
+      border-radius: get-vw-lg(40px);
+      @include font($family: $font-alt, $size: get-vw-lg(14px), $weight: 700, $height: get-vw-lg(19.6px), $color: $color-red);
+    }
+  }
+}

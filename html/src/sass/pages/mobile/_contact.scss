@@ -1,0 +1,98 @@
+/*======================================
+  Contact
+======================================*/
+
+@include breakpoint2($min:sm, $max:lg) {
+  .contact {
+    padding: 0 0 get-vw-lg(234px) 0;
+    .title {
+      padding: get-vw-lg(65px) 0 get-vw-lg(60px) 0;
+      .tag {
+        @include font($family: $font-alt, $size: get-vw-lg(14px), $weight: 700, $align: center, $height: get-vw-lg(16.8px), $color: $color-white);
+        padding: get-vw-lg(10px) get-vw-lg(16px);
+        border-radius: get-vw-lg(30px);
+        margin: get-vw-lg(3px) 0 0 get-vw-lg(2px);
+      }
+      h1 {
+        @include font($family: $font-alt, $size: get-vw-lg(56px), $align: center, $weight: 800, $height: get-vw-lg(67.2px));
+        padding: get-vw-lg(24px) get-vw-lg(202px) get-vw-lg(20px) get-vw-lg(202px);
+      }
+      p {
+        @include font($size: get-vw-lg(18px), $height: get-vw-lg(28.8px), $align: center, $color: rgba($color-black, 0.7));
+      }
+    }
+    .grid {
+      @include columns( $quant: get-vw-lg(548px) 1fr, $gutter: get-vw-lg(174px), $align: start, $template: '');
+      padding: get-vw-lg(122px) 0 0 0;
+      .box-form {
+        h2 {
+          @include font($family: $font-alt, $size: get-vw-lg(24px), $weight: 800, $height: get-vw-lg(33.6px));
+          padding: 0 0 get-vw-lg(30px) 0;
+        }
+        .form {
+          label {
+            padding: 0 0 get-vw-lg(16px) 0;
+            input {
+              height: get-vw-lg(52px);
+              border-radius: get-vw-lg(4px);
+              @include font($family: $font-alt, $size: get-vw-lg(16px), $height: get-vw-lg(25.6px));
+              padding: 0 get-vw-lg(14px);
+            }
+            select {
+              height: get-vw-lg(52px);
+              border-radius: get-vw-lg(4px);
+              @include font($family: $font-alt, $size: get-vw-lg(16px), $height: get-vw-lg(25.6px));
+              padding: 0 get-vw-lg(44px) 0 get-vw-lg(14px);
+            }
+            textarea {
+              height: get-vw-lg(259px);
+              border-radius: get-vw-lg(4px);
+              @include font($family: $font-alt, $size: get-vw-lg(16px), $height: get-vw-lg(25.6px));
+              padding: get-vw-lg(12px) get-vw-lg(14px);
+            }
+            .count {
+              @include font($family: $font-alt, $size: get-vw-lg(12px), $weight: 500, $height: get-vw-lg(19.2px), $color: #515151);
+              padding: get-vw-lg(10px) 0 get-vw-lg(13px) 0;
+            }
+            &.select {
+              .icon {
+                width: get-vw-lg(13px);
+                height: get-vw-lg(20px);
+                margin: 0 get-vw-lg(-3px) 0 get-vw-lg(3px);
+                stroke-width: get-vw-lg(2px);
+                right: get-vw-lg(23px);
+                margin: get-vw-lg(-16px) 0 0 0;
+              }
+            }
+          }
+          .submit {
+            padding: get-vw-lg(10.5px) get-vw-lg(50px);
+            border-radius: get-vw-lg(40px);
+            @include font($family: $font-alt, $size: get-vw-lg(14px), $weight: 700, $height: get-vw-lg(19.6px), $align: center, $color: $color-white);
+          }
+        }
+      }
+      .sidebar {
+        h3 {
+          @include font($family: $font-alt, $size: get-vw-lg(20px), $weight: 800, $height: get-vw-lg(28px));
+          padding: get-vw-lg(9px) 0 get-vw-lg(18px) 0;
+        }
+        p {
+          @include font($family: $font-alt, $size: get-vw-lg(14px), $height: get-vw-lg(19.6px));
+          padding: 0 get-vw-lg(6px) get-vw-lg(20px) 0;
+          letter-spacing: get-vw-lg(0.15px);
+          a {
+            @include font($family: $font-alt, $size: get-vw-lg(14px), $weight: 800, $height: get-vw-lg(19.6px), $color: $color-red);
+            &::after {
+              height: get-vw-lg(2px);
+              bottom: get-vw-lg(-4px);
+            }
+          }
+        }
+        hr {
+          margin: get-vw-lg(7px) 0 get-vw-lg(19px) 0;
+        }
+      }
+    }
+  }
+}

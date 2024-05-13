@@ -1,0 +1,181 @@
+/*======================================
+  Register
+======================================*/
+
+@include breakpoint2($min:sm, $max:lg) {
+  .register {
+    padding: 0 0 get-vw-lg(108px) 0;
+    .title {
+      padding: get-vw-lg(65px) 0 get-vw-lg(75px) 0;
+      .grid {
+        @include columns( $quant: 1fr 1fr, $gutter: 0, $align: center, $template: '');
+        .text {
+          @include columns( $quant: auto get-vw-lg(21px) 1fr, $gutter: get-vw-lg(17px), $align: start, $template: '');
+          .tag {
+            @include font($family: $font-alt, $size: get-vw-lg(14px), $weight: 700, $height: get-vw-lg(16.8px), $color: $color-white);
+            padding: get-vw-lg(10px) get-vw-lg(16px);
+            border-radius: get-vw-lg(30px);
+            margin: get-vw-lg(3px) 0 0 get-vw-lg(2px);
+          }
+          .icon {
+            width: get-vw-lg(23px);
+            height: get-vw-lg(43px);
+            margin: 0 get-vw-lg(-1px) 0 get-vw-lg(1px);
+            stroke-width: get-vw-lg(1.5px);
+          }
+          .description {
+            h1 {
+              @include font($family: $font-alt, $size: get-vw-lg(36px), $weight: 800, $height: get-vw-lg(43.2px));
+              padding: 0 0 get-vw-lg(20px) get-vw-lg(5px);
+            }
+            p {
+              @include font($size: get-vw-lg(18px), $height: get-vw-lg(28.8px), $color: rgba($color-black, 0.7));
+              padding: 0 0 0 get-vw-lg(5px);
+            }
+          }
+        }
+        .box-list {
+          @include flex($align: center, $justify: end, $gap: get-vw-lg(22px));
+          padding: 0 get-vw-lg(3px) 0 0;
+          .box {
+            width: get-vw-lg(142px);
+            height: get-vw-lg(142px);
+            border-radius: get-vw-lg(16px);
+            .icon {
+              width: get-vw-lg(53px);
+              height: get-vw-lg(53px);
+              stroke-width: get-vw-lg(1.5px);
+            }
+            .check {
+              top: get-vw-lg(8px);
+              right: get-vw-lg(9px);
+              width: get-vw-lg(24px);
+              height: get-vw-lg(24px);
+              .checked {
+                width: get-vw-lg(13px);
+                height: get-vw-lg(13px);
+                stroke-width: get-vw-lg(1.5px);
+              }
+            }
+          }
+        }
+      }
+    }
+    .grid {
+      @include columns( $quant: get-vw-lg(355px) 1fr, $gutter: get-vw-lg(223px), $align: start, $template: '');
+      padding: get-vw-lg(54px) 0 0 0;
+      .sidebar {
+        h2 {
+          @include font($family: $font-alt, $size: get-vw-lg(24px), $weight: 800, $height: get-vw-lg(33.6px));
+          padding: 0 0 get-vw-lg(33px) 0;
+        }
+        .top {
+          margin-bottom: get-vw-lg(12px);
+        }
+        .active {
+          height: get-vw-lg(56px);
+          border-radius: get-vw-lg(40px);
+          border: get-vw-lg(2px) solid $color-red;
+          @include font($family: $font-alt, $size: get-vw-lg(18px), $weight: 600, $height: get-vw-lg(25.2px));
+          padding: 0 get-vw-lg(14px) 0 get-vw-lg(22px);
+          .icon {
+            width: get-vw-lg(27px);
+            height: get-vw-lg(27px);
+          }
+        }
+        .disabled {
+          border: get-vw-lg(2px) solid #E8E8E8;
+          height: get-vw-lg(56px);
+          border-radius: get-vw-lg(40px);
+          @include font($family: $font-alt, $size: get-vw-lg(18px), $weight: 600, $height: get-vw-lg(25.2px), $color: #828282);
+          padding: 0 get-vw-lg(25px);
+        }
+      }
+      .box-form {
+        h2 {
+          @include font($family: $font-alt, $size: get-vw-lg(24px), $weight: 800, $height: get-vw-lg(33.6px));
+          padding: get-vw-lg(6px) 0 get-vw-lg(31px) get-vw-lg(2px);
+        }
+        .form {
+          label {
+            padding: 0 0 get-vw-lg(16px) 0;
+            input {
+              height: get-vw-lg(52px);
+              border-radius: get-vw-lg(4px);
+              @include font($family: $font-alt, $size: get-vw-lg(16px), $height: get-vw-lg(25.6px));
+              padding: 0 get-vw-lg(14px);
+            }
+            select {
+              height: get-vw-lg(52px);
+              border-radius: get-vw-lg(4px);
+              @include font($family: $font-alt, $size: get-vw-lg(16px), $height: get-vw-lg(25.6px));
+              padding: 0 get-vw-lg(44px) 0 get-vw-lg(14px);
+            }
+            textarea {
+              height: get-vw-lg(172px);
+              border-radius: get-vw-lg(4px);
+              @include font($family: $font-alt, $size: get-vw-lg(16px), $height: get-vw-lg(25.6px));
+              padding: get-vw-lg(12px) get-vw-lg(14px);
+            }
+            .count {
+              @include font($family: $font-alt, $size: get-vw-lg(12px), $weight: 500, $height: get-vw-lg(19.2px), $color: #515151);
+              padding: get-vw-lg(10px) 0 0 0;
+            }
+            .info {
+              @include font($family: $font-alt, $size: get-vw-lg(12px), $weight: 500, $height: get-vw-lg(19.2px), $color: #515151);
+              padding: get-vw-lg(10px) 0 0 0;
+            }
+            &.select {
+              .icon {
+                width: get-vw-lg(13px);
+                height: get-vw-lg(20px);
+                margin: 0 get-vw-lg(-3px) 0 get-vw-lg(3px);
+                stroke-width: get-vw-lg(2px);
+                right: get-vw-lg(23px);
+                margin: get-vw-lg(-16px) 0 0 0;
+              }
+            }
+            &.input-icon {
+              .icon {
+                width: get-vw-lg(20px);
+                height: get-vw-lg(20px);
+                stroke-width: get-vw-lg(2px);
+                right: get-vw-lg(22px);
+                margin: get-vw-lg(-21px) 0 0 0;
+              }
+            }
+            &.input-file {
+              padding: 0 0 get-vw-lg(13px) 0;
+              .box-input {
+                height: get-vw-lg(52px);
+                border-radius: get-vw-lg(4px);
+                @include font($family: $font-alt, $size: get-vw-lg(16px), $height: get-vw-lg(25.6px));
+                padding: 0 get-vw-lg(21px) get-vw-lg(2px) get-vw-lg(14px);
+                .file {
+                  max-width: get-vw-lg(490px);
+                }
+                .icon {
+                  width: get-vw-lg(20px);
+                  height: get-vw-lg(20px);
+                  stroke-width: get-vw-lg(2px);
+                }
+              }
+            }
+            &.textarea {
+              padding: 0 0 get-vw-lg(13px) 0;
+            }
+          }
+          .grid-date {
+            @include columns( $quant: 1fr 1fr, $gutter: get-vw-lg(28px), $align: start, $template: '');
+          }
+          .submit {
+            padding: get-vw-lg(10.5px) get-vw-lg(78px);
+            border-radius: get-vw-lg(40px);
+            @include font($family: $font-alt, $size: get-vw-lg(14px), $weight: 700, $height: get-vw-lg(19.6px), $align: center, $color: $color-white);
+            margin: get-vw-lg(24px) 0 0 0;
+          }
+        }
+      }
+    }
+  }
+}

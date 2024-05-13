@@ -67,10 +67,10 @@ export default function() {
     return false;
   });
 
-  $.getJSON('https://api.ipify.org/?format=json', function(e) {
+  /* $.getJSON('https://api.ipify.org/?format=json', function(e) {
     $.getJSON('//www.geoplugin.net/json.gp?ip=' + e.ip, function(e) {
       $('header .grid .location .box-location span').html(e.geoplugin_city);
     });
-  });
+  }); */
 
 }

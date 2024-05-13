@@ -229,8 +229,12 @@
     @include font($family: $font-alt, $size: 24px, $weight: 800, $height: 28.8px);
     padding: 0 0 24px 0;
   }
-  .grid {
-    @include columns( $quant: repeat(6, 1fr), $gutter: 30px, $align: center, $template: '');
+  .slide {
+    //@include columns( $quant: repeat(6, 1fr), $gutter: 30px, $align: center, $template: '');
+    margin: 0 -15px;
+    .slick-slide {
+      padding: 0 15px;
+    }
     .item {
       border-radius: 8px;
       border: 2px solid #E6E6E6;

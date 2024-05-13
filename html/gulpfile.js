@@ -376,7 +376,23 @@ gulp.task('author-small', function() {
     .pipe(browserSync.stream());
 });
 
-
+/**
+ * Sass mobile
+ */
+gulp.task('home-mobile', function() {
+  return gulp.src(['./src/sass/home-mobile.scss'])
+    .pipe($.sourcemaps.init())
+    .pipe(
+      $.sass({
+        includePaths: ['./node_modules/'],
+        outputStyle: 'expanded'
+      })
+      .on('error', $.sass.logError)
+    )
+    .pipe($.sourcemaps.write())
+    .pipe(gulp.dest('./assets/css/'))
+    .pipe(browserSync.stream());
+});
 
 
 
@@ -547,6 +563,7 @@ gulp.task('build', [
   'categories-small',
   'internal-post-small',
   'author-small',
+  'home-mobile',
   'scripts',
   'svg2png'
 ], function() {
@@ -590,7 +607,8 @@ gulp.task('watch', ['serve'], function() {
     'blog-small',
     'categories-small',
     'internal-post-small',
-    'author-small'
+    'author-small',
+    'home-mobile'
 
   ]).on('change', browserSync.reload);
 
