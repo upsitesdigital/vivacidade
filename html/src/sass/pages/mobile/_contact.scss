@@ -2,97 +2,152 @@
   Contact
 ======================================*/
 
-@include breakpoint2($min:sm, $max:lg) {
-  .contact {
-    padding: 0 0 get-vw-lg(234px) 0;
-    .title {
-      padding: get-vw-lg(65px) 0 get-vw-lg(60px) 0;
-      .tag {
-        @include font($family: $font-alt, $size: get-vw-lg(14px), $weight: 700, $align: center, $height: get-vw-lg(16.8px), $color: $color-white);
-        padding: get-vw-lg(10px) get-vw-lg(16px);
-        border-radius: get-vw-lg(30px);
-        margin: get-vw-lg(3px) 0 0 get-vw-lg(2px);
+.contact {
+  padding: 0 0 get-vw-xs(134px) 0;
+  .title {
+    text-align: center;
+    padding: get-vw-xs(65px) 0 get-vw-xs(60px) 0;
+    background: #F9F9F9 url(../img/bg-contact.png) bottom center no-repeat;
+    .tag {
+      @include font($family: $font-alt, $size: get-vw-xs(14px), $weight: 700, $align: center, $height: get-vw-xs(16.8px), $color: $color-white);
+      padding: get-vw-xs(10px) get-vw-xs(16px);
+      background-color: $color-black;
+      border-radius: get-vw-xs(30px);
+      margin: get-vw-xs(3px) 0 0 get-vw-xs(2px);
+      display: inline-block;
+    }
+    h1 {
+      @include font($family: $font-alt, $size: get-vw-xs(54px), $align: center, $weight: 800, $height: get-vw-xs(67.2px));
+      padding: get-vw-xs(24px) 0 get-vw-xs(20px) 0;
+    }
+    p {
+      @include font($size: get-vw-xs(18px), $height: get-vw-xs(28.8px), $align: center, $color: rgba($color-black, 0.7));
+    }
+  }
+  .grid {
+    @include columns( $quant: 1fr, $gutter: get-vw-xs(74px), $align: start, $template: '');
+    padding: get-vw-xs(122px) 0 0 0;
+    .box-form {
+      h2 {
+        @include font($family: $font-alt, $size: get-vw-xs(24px), $weight: 800, $height: get-vw-xs(33.6px));
+        padding: 0 0 get-vw-xs(30px) 0;
       }
-      h1 {
-        @include font($family: $font-alt, $size: get-vw-lg(56px), $align: center, $weight: 800, $height: get-vw-lg(67.2px));
-        padding: get-vw-lg(24px) get-vw-lg(202px) get-vw-lg(20px) get-vw-lg(202px);
-      }
-      p {
-        @include font($size: get-vw-lg(18px), $height: get-vw-lg(28.8px), $align: center, $color: rgba($color-black, 0.7));
+      .form {
+        label {
+          padding: 0 0 get-vw-xs(16px) 0;
+          display: block;
+          input {
+            width: 100%;
+            height: get-vw-xs(52px);
+            border: get-vw-xs(1px) solid #D7D7D7;
+            border-radius: get-vw-xs(4px);
+            @include font($family: $font-alt, $size: get-vw-xs(16px), $height: get-vw-xs(25.6px));
+            padding: 0 get-vw-xs(14px);
+            background: transparent;
+          }
+          select {
+            width: 100%;
+            height: get-vw-xs(52px);
+            border: get-vw-xs(1px) solid #D7D7D7;
+            border-radius: get-vw-xs(4px);
+            @include font($family: $font-alt, $size: get-vw-xs(16px), $height: get-vw-xs(25.6px));
+            padding: 0 get-vw-xs(44px) 0 get-vw-xs(14px);
+            background: transparent;
+            appearance: none;
+          }
+          textarea {
+            width: 100%;
+            height: get-vw-xs(259px);
+            border: get-vw-xs(1px) solid #D7D7D7;
+            border-radius: get-vw-xs(4px);
+            @include font($family: $font-alt, $size: get-vw-xs(16px), $height: get-vw-xs(25.6px));
+            padding: get-vw-xs(12px) get-vw-xs(14px);
+            background: transparent;
+            resize: none;
+          }
+          .count {
+            @include font($family: $font-alt, $size: get-vw-xs(12px), $weight: 500, $height: get-vw-xs(19.2px), $color: #515151);
+            padding: get-vw-xs(10px) 0 get-vw-xs(13px) 0;
+          }
+          &.select {
+            position: relative;
+            .icon {
+              width: get-vw-xs(13px);
+              height: get-vw-xs(20px);
+              margin: 0 get-vw-xs(-3px) 0 get-vw-xs(3px);
+              stroke: $color-red;
+              stroke-width: get-vw-xs(2px);
+              stroke-linecap: round;
+              stroke-linejoin: round;
+              position: absolute;
+              top: 50%;
+              right: get-vw-xs(23px);
+              margin: get-vw-xs(-16px) 0 0 0;
+            }
+          }
+        }
+        .submit {
+          padding: get-vw-xs(10.5px) get-vw-xs(50px);
+          border: get-vw-xs(1px) solid $color-red;
+          border-radius: get-vw-xs(40px);
+          display: block;
+          @include font($family: $font-alt, $size: get-vw-xs(14px), $weight: 700, $height: get-vw-xs(19.6px), $align: center, $color: $color-white);
+          @include animate($time: 0.3s);
+          background: $color-red;
+          cursor: pointer;
+          &:hover {
+            background: $color-white;
+            color: $color-red;
+          }
+        }
       }
     }
-    .grid {
-      @include columns( $quant: get-vw-lg(548px) 1fr, $gutter: get-vw-lg(174px), $align: start, $template: '');
-      padding: get-vw-lg(122px) 0 0 0;
-      .box-form {
-        h2 {
-          @include font($family: $font-alt, $size: get-vw-lg(24px), $weight: 800, $height: get-vw-lg(33.6px));
-          padding: 0 0 get-vw-lg(30px) 0;
-        }
-        .form {
-          label {
-            padding: 0 0 get-vw-lg(16px) 0;
-            input {
-              height: get-vw-lg(52px);
-              border-radius: get-vw-lg(4px);
-              @include font($family: $font-alt, $size: get-vw-lg(16px), $height: get-vw-lg(25.6px));
-              padding: 0 get-vw-lg(14px);
-            }
-            select {
-              height: get-vw-lg(52px);
-              border-radius: get-vw-lg(4px);
-              @include font($family: $font-alt, $size: get-vw-lg(16px), $height: get-vw-lg(25.6px));
-              padding: 0 get-vw-lg(44px) 0 get-vw-lg(14px);
-            }
-            textarea {
-              height: get-vw-lg(259px);
-              border-radius: get-vw-lg(4px);
-              @include font($family: $font-alt, $size: get-vw-lg(16px), $height: get-vw-lg(25.6px));
-              padding: get-vw-lg(12px) get-vw-lg(14px);
-            }
-            .count {
-              @include font($family: $font-alt, $size: get-vw-lg(12px), $weight: 500, $height: get-vw-lg(19.2px), $color: #515151);
-              padding: get-vw-lg(10px) 0 get-vw-lg(13px) 0;
-            }
-            &.select {
-              .icon {
-                width: get-vw-lg(13px);
-                height: get-vw-lg(20px);
-                margin: 0 get-vw-lg(-3px) 0 get-vw-lg(3px);
-                stroke-width: get-vw-lg(2px);
-                right: get-vw-lg(23px);
-                margin: get-vw-lg(-16px) 0 0 0;
-              }
-            }
+    .sidebar {
+      h3 {
+        @include font($family: $font-alt, $size: get-vw-xs(20px), $weight: 800, $height: get-vw-xs(28px));
+        padding: get-vw-xs(9px) 0 get-vw-xs(18px) 0;
+      }
+      p {
+        @include font($family: $font-alt, $size: get-vw-xs(14px), $height: get-vw-xs(19.6px));
+        padding: 0 get-vw-xs(6px) get-vw-xs(20px) 0;
+        letter-spacing: get-vw-xs(0.15px);
+        a {
+          @include font($family: $font-alt, $size: get-vw-xs(14px), $weight: 800, $height: get-vw-xs(19.6px), $color: $color-red);
+          position: relative;
+          &::after {
+            @include animate($time: 0.3s);
+            content: '';
+            width: 0%;
+            height: get-vw-xs(2px);
+            background-color: $color-red;
+            position: absolute;
+            bottom: get-vw-xs(-4px);
+            left: 0;
           }
-          .submit {
-            padding: get-vw-lg(10.5px) get-vw-lg(50px);
-            border-radius: get-vw-lg(40px);
-            @include font($family: $font-alt, $size: get-vw-lg(14px), $weight: 700, $height: get-vw-lg(19.6px), $align: center, $color: $color-white);
+          &:hover {
+            &::after {
+              width: 70%;
+            }
           }
         }
       }
-      .sidebar {
-        h3 {
-          @include font($family: $font-alt, $size: get-vw-lg(20px), $weight: 800, $height: get-vw-lg(28px));
-          padding: get-vw-lg(9px) 0 get-vw-lg(18px) 0;
-        }
-        p {
-          @include font($family: $font-alt, $size: get-vw-lg(14px), $height: get-vw-lg(19.6px));
-          padding: 0 get-vw-lg(6px) get-vw-lg(20px) 0;
-          letter-spacing: get-vw-lg(0.15px);
-          a {
-            @include font($family: $font-alt, $size: get-vw-lg(14px), $weight: 800, $height: get-vw-lg(19.6px), $color: $color-red);
-            &::after {
-              height: get-vw-lg(2px);
-              bottom: get-vw-lg(-4px);
-            }
-          }
-        }
-        hr {
-          margin: get-vw-lg(7px) 0 get-vw-lg(19px) 0;
-        }
+      hr {
+        border: none;
+        border-top: get-vw-xs(1px) solid #E0E0E0;
+        margin: get-vw-xs(7px) 0 get-vw-xs(19px) 0;
       }
     }
   }
 }
+
+@include breakpoint2($min:xl, $max:'') {}
+
+@include breakpoint2($min:lg, $max:xl) {}
+
+@include breakpoint2($min:md, $max:lg) {}
+
+@include breakpoint2($min:sm, $max:md) {}
+
+@include breakpoint2($min:xs, $max:sm) {}
+
+@include breakpoint2($min:'', $max:xs) {}

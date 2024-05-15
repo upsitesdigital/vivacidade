@@ -393,6 +393,146 @@ gulp.task('home-mobile', function() {
     .pipe(gulp.dest('./assets/css/'))
     .pipe(browserSync.stream());
 });
+gulp.task('about-mobile', function() {
+  return gulp.src(['./src/sass/about-mobile.scss'])
+    .pipe($.sourcemaps.init())
+    .pipe(
+      $.sass({
+        includePaths: ['./node_modules/'],
+        outputStyle: 'expanded'
+      })
+      .on('error', $.sass.logError)
+    )
+    .pipe($.sourcemaps.write())
+    .pipe(gulp.dest('./assets/css/'))
+    .pipe(browserSync.stream());
+});
+gulp.task('list-events-mobile', function() {
+  return gulp.src(['./src/sass/list-events-mobile.scss'])
+    .pipe($.sourcemaps.init())
+    .pipe(
+      $.sass({
+        includePaths: ['./node_modules/'],
+        outputStyle: 'expanded'
+      })
+      .on('error', $.sass.logError)
+    )
+    .pipe($.sourcemaps.write())
+    .pipe(gulp.dest('./assets/css/'))
+    .pipe(browserSync.stream());
+});
+gulp.task('internal-event-mobile', function() {
+  return gulp.src(['./src/sass/internal-event-mobile.scss'])
+    .pipe($.sourcemaps.init())
+    .pipe(
+      $.sass({
+        includePaths: ['./node_modules/'],
+        outputStyle: 'expanded'
+      })
+      .on('error', $.sass.logError)
+    )
+    .pipe($.sourcemaps.write())
+    .pipe(gulp.dest('./assets/css/'))
+    .pipe(browserSync.stream());
+});
+gulp.task('list-tickets-mobile', function() {
+  return gulp.src(['./src/sass/list-tickets-mobile.scss'])
+    .pipe($.sourcemaps.init())
+    .pipe(
+      $.sass({
+        includePaths: ['./node_modules/'],
+        outputStyle: 'expanded'
+      })
+      .on('error', $.sass.logError)
+    )
+    .pipe($.sourcemaps.write())
+    .pipe(gulp.dest('./assets/css/'))
+    .pipe(browserSync.stream());
+});
+gulp.task('register-mobile', function() {
+  return gulp.src(['./src/sass/register-mobile.scss'])
+    .pipe($.sourcemaps.init())
+    .pipe(
+      $.sass({
+        includePaths: ['./node_modules/'],
+        outputStyle: 'expanded'
+      })
+      .on('error', $.sass.logError)
+    )
+    .pipe($.sourcemaps.write())
+    .pipe(gulp.dest('./assets/css/'))
+    .pipe(browserSync.stream());
+});
+gulp.task('contact-mobile', function() {
+  return gulp.src(['./src/sass/contact-mobile.scss'])
+    .pipe($.sourcemaps.init())
+    .pipe(
+      $.sass({
+        includePaths: ['./node_modules/'],
+        outputStyle: 'expanded'
+      })
+      .on('error', $.sass.logError)
+    )
+    .pipe($.sourcemaps.write())
+    .pipe(gulp.dest('./assets/css/'))
+    .pipe(browserSync.stream());
+});
+gulp.task('blog-mobile', function() {
+  return gulp.src(['./src/sass/blog-mobile.scss'])
+    .pipe($.sourcemaps.init())
+    .pipe(
+      $.sass({
+        includePaths: ['./node_modules/'],
+        outputStyle: 'expanded'
+      })
+      .on('error', $.sass.logError)
+    )
+    .pipe($.sourcemaps.write())
+    .pipe(gulp.dest('./assets/css/'))
+    .pipe(browserSync.stream());
+});
+gulp.task('categories-mobile', function() {
+  return gulp.src(['./src/sass/categories-mobile.scss'])
+    .pipe($.sourcemaps.init())
+    .pipe(
+      $.sass({
+        includePaths: ['./node_modules/'],
+        outputStyle: 'expanded'
+      })
+      .on('error', $.sass.logError)
+    )
+    .pipe($.sourcemaps.write())
+    .pipe(gulp.dest('./assets/css/'))
+    .pipe(browserSync.stream());
+});
+gulp.task('internal-post-mobile', function() {
+  return gulp.src(['./src/sass/internal-post-mobile.scss'])
+    .pipe($.sourcemaps.init())
+    .pipe(
+      $.sass({
+        includePaths: ['./node_modules/'],
+        outputStyle: 'expanded'
+      })
+      .on('error', $.sass.logError)
+    )
+    .pipe($.sourcemaps.write())
+    .pipe(gulp.dest('./assets/css/'))
+    .pipe(browserSync.stream());
+});
+gulp.task('author-mobile', function() {
+  return gulp.src(['./src/sass/author-mobile.scss'])
+    .pipe($.sourcemaps.init())
+    .pipe(
+      $.sass({
+        includePaths: ['./node_modules/'],
+        outputStyle: 'expanded'
+      })
+      .on('error', $.sass.logError)
+    )
+    .pipe($.sourcemaps.write())
+    .pipe(gulp.dest('./assets/css/'))
+    .pipe(browserSync.stream());
+});
 
 
 
@@ -564,6 +704,16 @@ gulp.task('build', [
   'internal-post-small',
   'author-small',
   'home-mobile',
+  'about-mobile',
+  'list-events-mobile',
+  'internal-event-mobile',
+  'list-tickets-mobile',
+  'register-mobile',
+  'contact-mobile',
+  'blog-mobile',
+  'categories-mobile',
+  'internal-post-mobile',
+  'author-mobile',
   'scripts',
   'svg2png'
 ], function() {
@@ -571,7 +721,19 @@ gulp.task('build', [
 });
 
 gulp.task('build:min', function() {
-  gulp.start('sass:release', 'home:release', 'about:release', 'list-events:release', 'internal-event:release', 'list-tickets:release', 'register:release', 'contact:release', 'blog:release', 'categories:release', 'internal-post:release', 'author:release', 'js:release');
+  gulp.start('sass:release',
+    'home:release',
+    'about:release',
+    'list-events:release',
+    'internal-event:release',
+    'list-tickets:release',
+    'register:release',
+    'contact:release',
+    'blog:release',
+    'categories:release',
+    'internal-post:release',
+    'author:release',
+    'js:release');
 });
 
 /**
@@ -597,6 +759,7 @@ gulp.task('watch', ['serve'], function() {
     'categories',
     'internal-post',
     'author',
+
     'home-small',
     'about-small',
     'list-events-small',
@@ -608,7 +771,18 @@ gulp.task('watch', ['serve'], function() {
     'categories-small',
     'internal-post-small',
     'author-small',
-    'home-mobile'
+
+    'home-mobile',
+    'about-mobile',
+    'list-events-mobile',
+    'internal-event-mobile',
+    'list-tickets-mobile',
+    'register-mobile',
+    'contact-mobile',
+    'blog-mobile',
+    'categories-mobile',
+    'internal-post-mobile',
+    'author-mobile',
 
   ]).on('change', browserSync.reload);
 

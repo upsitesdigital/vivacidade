@@ -2,99 +2,167 @@
   Blog
 ======================================*/
 
-@include breakpoint2($min:sm, $max:lg) {
-  .featured-blog-categories {
-    padding: get-vw-lg(78px) 0 0 0;
-    &:before {
-      height: get-vw-lg(321px);
-    }
-    .title {
-      padding: 0 0 get-vw-lg(18px) 0;
-      .box-title {
-        @include flex($align: center, $justify: start, $gap: get-vw-lg(31px));
-        .back {
-          @include flex($align: center, $justify: start, $gap: get-vw-lg(4px));
-          @include font($family: $font-alt, $size: get-vw-lg(12px), $weight: 700, $height: get-vw-lg(14.4px), $color: $color-red);
+.featured-blog-categories {
+  padding: get-vw-xs(78px) 0 0 0;
+  position: relative;
+  &:before {
+    content: '';
+    width: 100%;
+    height: get-vw-xs(321px);
+    background: #F9F9F9;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .container {
+    position: relative;
+  }
+  .title {
+    //@include flex($align: center, $justify: space-between);
+    padding: 0 0 get-vw-xs(18px) 0;
+    .box-title {
+      @include flex($align: center, $justify: start, $gap: get-vw-xs(31px));
+      .back {
+        @include flex($align: center, $justify: start, $gap: get-vw-xs(4px));
+        @include font($family: $font-alt, $size: get-vw-xs(12px), $weight: 700, $height: get-vw-xs(14.4px), $color: $color-red);
+        .icon {
+          width: get-vw-xs(8px);
+          height: get-vw-xs(14px);
+          margin: 0;
+          stroke: $color-red;
+          stroke-width: get-vw-xs(3px);
+          stroke-linecap: round;
+          stroke-linejoin: round;
+          transform: rotate(90deg);
+          @include animate($time: 0.3s);
+        }
+        &:hover {
           .icon {
-            width: get-vw-lg(8px);
-            height: get-vw-lg(14px);
-            stroke-width: get-vw-lg(3px);
+            margin: 0 get-vw-xs(5px) 0 get-vw-xs(-5px);
           }
-          &:hover {
-            .icon {
-              margin: 0 get-vw-lg(5px) 0 get-vw-lg(-5px);
-            }
-          }
-        }
-        h1 {
-          @include font($family: $font-alt, $size: get-vw-lg(32px), $weight: 800, $height: get-vw-lg(38.4px));
         }
       }
-      .quant-post {
-        @include font($size: get-vw-lg(16px), $height: get-vw-lg(22.4px), $color: rgba($color-black, 0.7));
+      h1 {
+        @include font($family: $font-alt, $size: get-vw-xs(32px), $weight: 800, $height: get-vw-xs(38.4px));
       }
     }
-    .slide-box {
-      .slide {
-        margin: 0 get-vw-lg(-14px);
-        .item {
-          padding: get-vw-lg(14px) get-vw-lg(14px) get-vw-lg(25px) get-vw-lg(14px);
-        }
-      }
-      .btn {
-        margin-top: get-vw-lg(-55px);
-        width: get-vw-lg(50px);
-        height: get-vw-lg(50px);
-        padding: 0 get-vw-lg(11px);
-        box-shadow: 0 get-vw-lg(13.89px) get-vw-lg(41.67px) 0 #0000001A;
-        &.btn-prev {
-          left: get-vw-lg(-94px);
-          &:hover {
-            .icon {
-              margin-left: get-vw-lg(-5px);
-            }
-          }
-        }
-        &.btn-next {
-          right: get-vw-lg(-91px);
-          &:hover {
-            .icon {
-              margin-right: get-vw-lg(-5px);
-            }
-          }
-        }
-      }
-      .slick-dots {
-        width: get-vw-calc(lg, 100%, '-', 28px);
-        margin: get-vw-lg(37px) auto 0 auto;
-        li {
-          height: get-vw-lg(2px);
-          button {
-            height: get-vw-lg(2px);
-          }
-        }
-      }
+    .quant-post {
+      @include font($size: get-vw-xs(16px), $height: get-vw-xs(22.4px), $color: rgba($color-black, 0.7));
     }
   }
-  .all-posts {
-    padding: get-vw-lg(88px) 0 get-vw-lg(67px) 0;
-    h2 {
-      @include font($family: $font-alt, $size: get-vw-lg(24px), $weight: 800, $height: get-vw-lg(38.4px));
-      padding: 0 0 get-vw-lg(63px) 0;
+  .slide-box {
+    position: relative;
+    .slide {
+      margin: 0 get-vw-xs(-14px);
+      .item {
+        padding: get-vw-xs(14px) get-vw-xs(14px) get-vw-xs(25px) get-vw-xs(14px);
+      }
     }
-    .grid {
-      @include columns( $quant: repeat(4, 1fr), $gutter: get-vw-lg(72px) get-vw-lg(28px), $align: start, $template: '');
+    .btn {
+      position: absolute;
+      top: 50%;
+      margin-top: get-vw-xs(-55px);
+      width: get-vw-xs(50px);
+      height: get-vw-xs(50px);
+      @include flex($align: center, $justify: center);
+      background-color: $color-white;
+      border-radius: 50%;
+      padding: 0 get-vw-xs(11px);
+      overflow: hidden;
+      box-shadow: 0 get-vw-xs(13.89px) get-vw-xs(41.67px) 0 #0000001A;
+      .icon {
+        @include animate($time: 0.3s);
+      }
+      &.btn-prev {
+        left: get-vw-xs(-94px);
+        &:hover {
+          .icon {
+            margin-left: get-vw-xs(-5px);
+          }
+        }
+      }
+      &.btn-next {
+        right: get-vw-xs(-91px);
+        .icon {
+          transform: rotate(180deg);
+        }
+        &:hover {
+          .icon {
+            margin-right: get-vw-xs(-5px);
+          }
+        }
+      }
     }
-    .full-banner {
-      padding: get-vw-lg(93px) 0 get-vw-lg(48px) 0;
-    }
-    .center {
-      padding: get-vw-lg(30px) 0;
-    }
-    .load-more {
-      padding: get-vw-lg(13px) get-vw-lg(41px);
-      border-radius: get-vw-lg(40px);
-      @include font($family: $font-alt, $size: get-vw-lg(14px), $weight: 700, $height: get-vw-lg(19.6px), $color: $color-red);
+    .slick-dots {
+      @include flex($align: center);
+      width: calc(100% - get-vw-xs(28px));
+      margin: get-vw-xs(37px) auto 0 auto;
+      li {
+        height: get-vw-xs(2px);
+        padding: 0;
+        width: 100%;
+        line-height: 0;
+        button {
+          font-size: 0;
+          border: none;
+          height: get-vw-xs(2px);
+          background-color: #E8E8E8;
+          margin: 0;
+          width: 100%;
+          @include animate($time: 0.6s);
+        }
+        &.slick-active {
+          button {
+            background-color: $color-black;
+          }
+        }
+      }
     }
   }
 }
+
+.all-posts {
+  padding: get-vw-xs(88px) 0 get-vw-xs(67px) 0;
+  h2 {
+    @include font($family: $font-alt, $size: get-vw-xs(24px), $weight: 800, $height: get-vw-xs(38.4px));
+    padding: 0 0 get-vw-xs(63px) 0;
+  }
+  .grid {
+    @include columns( $quant: 1fr, $gutter: get-vw-xs(50px), $align: start, $template: '');
+  }
+  .full-banner {
+    padding: get-vw-xs(93px) 0 get-vw-xs(48px) 0;
+    text-align: center;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .center {
+    text-align: center;
+    padding: get-vw-xs(30px) 0;
+  }
+  .load-more {
+    padding: get-vw-xs(13px) get-vw-xs(41px);
+    border: get-vw-xs(1px) solid $color-red;
+    border-radius: get-vw-xs(40px);
+    @include font($family: $font-alt, $size: get-vw-xs(14px), $weight: 700, $height: get-vw-xs(19.6px), $color: $color-red);
+    @include animate($time: 0.3s);
+    &:hover {
+      background: $color-red;
+      color: $color-white;
+    }
+  }
+}
+
+@include breakpoint2($min:xl, $max:'') {}
+
+@include breakpoint2($min:lg, $max:xl) {}
+
+@include breakpoint2($min:md, $max:lg) {}
+
+@include breakpoint2($min:sm, $max:md) {}
+
+@include breakpoint2($min:xs, $max:sm) {}
+
+@include breakpoint2($min:'', $max:xs) {}
