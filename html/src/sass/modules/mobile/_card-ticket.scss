@@ -61,7 +61,9 @@
       .box {
         height: get-vw-xs(67px);
         margin: 0 0 get-vw-xs(12px) 0;
-        background: url(../img/box.svg) top left no-repeat;
+        //background: url(../img/box.svg) top left no-repeat;
+        border: 1px dashed black;
+        border-radius: get-vw-xs(16px);
         @include font($size: get-vw-xs(14px), $weight: 600, $height: get-vw-xs(16.8px), $color: $color-red);
         padding: get-vw-xs(9px) get-vw-xs(25px);
       }
@@ -147,7 +149,9 @@
     .box {
       width: 100%;
       height: get-vw-xs(66px);
-      background: url(../img/box-modal.svg) top left no-repeat;
+      //background: url(../img/box-modal.svg) top left no-repeat;
+      border: 1px dashed black;
+      border-radius: get-vw-xs(16px);
       @include font($size: get-vw-xs(14px), $weight: 600, $height: get-vw-xs(16.8px), $color: $color-red);
       padding: get-vw-xs(9px) get-vw-xs(17px);
       @include flex($align: center);
